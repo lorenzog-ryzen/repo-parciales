@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Ejercicio 1 - Breast Cancer &#8212; PARCIAL-I-ML</title>
+    <title>Ejercicio_1_Breast_Cancer &#8212; PARCIAL-I-ML</title>
   
   
   
@@ -62,8 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Ejercicio_1_punto_1';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Ejercicio 1 - Boston Housing" href="Ejercicio_1_punto_2.html" />
-    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+    <link rel="next" title="Ejercicio_1_Boston_Housing" href="Ejercicio_1_punto_2.html" />
+    <link rel="prev" title="Parcial #1 MACHINE LEARNING" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -174,15 +174,15 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
+                    Parcial #1 MACHINE LEARNING
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ejercicio 1 - Breast Cancer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Ejercicio_1_punto_2.html">Ejercicio 1 - Boston Housing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Ejercicio_2_NEURIPS.html">Ejercicio 2 - NEURIPS BELKA</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Ejercicio_2_punto_2.html">Ejercicio 3</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ejercicio_1_Breast_Cancer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ejercicio_1_punto_2.html">Ejercicio_1_Boston_Housing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ejercicio_2_NEURIPS.html">Ejercicio_2_NEURIPS_BELKA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ejercicio_2_punto_2.html">Ejercicio_2_ID_MAP</a></li>
 
 
 
@@ -193,7 +193,14 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="Ejercicio_3_NEURIPS.html">Ejercicio 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ejercicio_3_NEURIPS.html">Ejercicio_3_NEURIPS_BELKA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ejercicio_4.html">Ejercicio_4_ID_MAP</a></li>
+
+
+
+
+
+
 </ul>
 
     </div>
@@ -379,7 +386,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Ejercicio 1 - Breast Cancer</h1>
+    <h1>Ejercicio_1_Breast_Cancer</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -409,7 +416,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ejercicio-1-breast-cancer">
-<h1>Ejercicio 1 - Breast Cancer<a class="headerlink" href="#ejercicio-1-breast-cancer" title="Link to this heading">#</a></h1>
+<h1>Ejercicio_1_Breast_Cancer<a class="headerlink" href="#ejercicio-1-breast-cancer" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_blobs</span>
@@ -1046,7 +1053,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x256c50be6a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x2917421d970&gt;
 </pre></div>
 </div>
 <img alt="_images/01c085df369a88bd4ed4f0b0e7862b74a119ca40fb72bfc33663706a6161a382.png" src="_images/01c085df369a88bd4ed4f0b0e7862b74a119ca40fb72bfc33663706a6161a382.png" />
@@ -1094,7 +1101,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x256c43e38e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x29178ad1df0&gt;
 </pre></div>
 </div>
 <img alt="_images/66150e3980fa970bfe831419702a4ce886dad16240818f7c6589248763cdcaa8.png" src="_images/66150e3980fa970bfe831419702a4ce886dad16240818f7c6589248763cdcaa8.png" />
@@ -1297,9 +1304,7 @@ y validación cruzada usando GridSearchCV y Pipeline llegamos a un buen score(0.
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Best cross-validation accuracy: 1.00
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Best set score: 1.00
+Best set score: 1.00
 Best parameters:  {&#39;logistic__C&#39;: 0.01}
 </pre></div>
 </div>
@@ -1674,7 +1679,7 @@ Best parameters:  {&#39;logistic__C&#39;: 0.01}
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome to your Jupyter Book</p>
+        <p class="prev-next-title">Parcial #1 MACHINE LEARNING</p>
       </div>
     </a>
     <a class="right-next"
@@ -1682,7 +1687,7 @@ Best parameters:  {&#39;logistic__C&#39;: 0.01}
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Ejercicio 1 - Boston Housing</p>
+        <p class="prev-next-title">Ejercicio_1_Boston_Housing</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
