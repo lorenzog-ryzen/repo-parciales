@@ -1,0 +1,1722 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Ejercicio 3 &#8212; PARCIAL-I-ML</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ejercicio_3_NEURIPS';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Ejercicio 3" href="Ejercicio_2_punto_2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="PARCIAL-I-ML - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="PARCIAL-I-ML - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Ejercicio_1_punto_1.html">Ejercicio 1 - Breast Cancer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ejercicio_1_punto_2.html">Ejercicio 1 - Boston Housing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ejercicio_2_NEURIPS.html">Ejercicio 2 - NEURIPS BELKA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ejercicio_2_punto_2.html">Ejercicio 3</a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ejercicio 3</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FEjercicio_3_NEURIPS.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Ejercicio_3_NEURIPS.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Ejercicio 3</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dato-importante">Dato Importante</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-para-proteina-bdr4">Modelos para proteina ‘BDR4’</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#knn-seh">KNN - ‘sEH’</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logistic-bdr4">Logistic - ‘BDR4’</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curva-roc-bdr4">Curva ROC - ‘BDR4’</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-para-proteina-hsa">Modelos para proteina ‘HSA’</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#knn-hsa">KNN - ‘HSA’</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logistic-hsa">Logistic - ‘HSA’</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curva-roc-hsa">Curva ROC - ‘HSA’</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-para-proteina-seh">Modelos para proteina ‘sEH’</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">KNN - ‘sEH’</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logistic-seh">Logistic - ‘sEH’</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curva-roc-seh">Curva ROC - ‘sEH’</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ejercicio-3">
+<h1>Ejercicio 3<a class="headerlink" href="#ejercicio-3" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_blobs</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.image</span> <span class="k">as</span> <span class="nn">mpimg</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">RocCurveDisplay</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_breast_cancer</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">StackingClassifier</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">StratifiedKFold</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">recall_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">statsmodels.stats.outliers_influence</span> <span class="kn">import</span> <span class="n">variance_inflation_factor</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">precision_score</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">,</span> <span class="n">f1_score</span><span class="p">,</span> <span class="n">roc_auc_score</span>
+<span class="kn">import</span> <span class="nn">mglearn</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">roc_auc_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_log_error</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">explained_variance_score</span><span class="p">,</span> <span class="n">mean_absolute_percentage_error</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">RobustScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MaxAbsScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">OneHotEncoder</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_selection</span> <span class="kn">import</span> <span class="n">SelectKBest</span><span class="p">,</span> <span class="n">chi2</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">classification_report</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="dato-importante">
+<h2>Dato Importante<a class="headerlink" href="#dato-importante" title="Link to this heading">#</a></h2>
+<p>Es importante apreciar como los datos rsultantes del proceso realizado en el punto 2 del parcial son los que se usaran aca. Datos que atravesaron procesos como el Encode, ajuste de dimensionalidad y prueba chi2.</p>
+<p>Clase Data para manejo como de la informacion</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Data</span><span class="p">():</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">X_train</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">X_test</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_train</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_test</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_split_data</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+  <span class="k">def</span> <span class="nf">_split_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;binds&#39;</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">),</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;binds&#39;</span><span class="p">],</span> <span class="n">stratify</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;binds&#39;</span><span class="p">],</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">11</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="modelos-para-proteina-bdr4">
+<h2>Modelos para proteina ‘BDR4’<a class="headerlink" href="#modelos-para-proteina-bdr4" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;bd4_train = pd.read_parquet(&#39;documentos_ejercicio3\\bd4_train.parquet&#39;)&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;bd4_train = pd.read_parquet(&#39;documentos_ejercicio3\\bd4_train.parquet&#39;)&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;bdr4 = Data(bd4_train)&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;bdr4 = Data(bd4_train)&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="knn-seh">
+<h3>KNN - ‘sEH’<a class="headerlink" href="#knn-seh" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;pipeline_knn_bd4 = Pipeline([(&#39;scaler&#39;, StandardScaler()), (&#39;clasificador&#39;, KNeighborsClassifier())])</span>
+<span class="sd">param_grid_knn_bd4 = [{ &#39;clasificador__n_neighbors&#39;: range(2 , 100),</span>
+<span class="sd">                     &#39;clasificador__weights&#39;: [&#39;distance&#39;]}]</span>
+<span class="sd">kf1 = StratifiedKFold(n_splits = 5, shuffle = True, random_state = 11)</span>
+<span class="sd">grid_knn_bd4 = GridSearchCV(pipeline_knn_bd4, param_grid_knn_bd4, cv = kf1, scoring = &#39;roc_auc&#39;)</span>
+<span class="sd">grid_knn_bd4.fit(bdr4.X_train, bdr4.y_train)</span>
+<span class="sd">print(&quot;Mejor parámetro:&quot;, grid_knn_bd4.best_params_)</span>
+<span class="sd">print(&quot;Mejor AUC en conjunto de entrenamiento: &quot;,grid_knn_bd4.best_score_)&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;pipeline_knn_bd4 = Pipeline([(\&#39;scaler\&#39;, StandardScaler()), (\&#39;clasificador\&#39;, KNeighborsClassifier())])\nparam_grid_knn_bd4 = [{ \&#39;clasificador__n_neighbors\&#39;: range(2 , 100),\n                     \&#39;clasificador__weights\&#39;: [\&#39;distance\&#39;]}]\nkf1 = StratifiedKFold(n_splits = 5, shuffle = True, random_state = 11)\ngrid_knn_bd4 = GridSearchCV(pipeline_knn_bd4, param_grid_knn_bd4, cv = kf1, scoring = \&#39;roc_auc\&#39;)\ngrid_knn_bd4.fit(bdr4.X_train, bdr4.y_train)\nprint(&quot;Mejor parámetro:&quot;, grid_knn_bd4.best_params_)\nprint(&quot;Mejor AUC en conjunto de entrenamiento: &quot;,grid_knn_bd4.best_score_)&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mejor parámetro: {‘clasificador__n_neighbors’: 99, ‘clasificador__weights’: ‘distance’} <br />
+Mejor AUC en conjunto de entrenamiento:  0.857</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;y_pred = grid_knn_bd4.predict(bdr4.X_test)</span>
+<span class="sd">predict_knn1 = grid_knn_bd4.predict_proba(bdr4.X_test)[:, 1]</span>
+<span class="sd">auc_bdr4 = roc_auc_score(bdr4.y_test, predict_knn1)</span>
+<span class="sd">print(&quot;BEST AUC&quot;, auc_bdr4)&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;y_pred = grid_knn_bd4.predict(bdr4.X_test)\npredict_knn1 = grid_knn_bd4.predict_proba(bdr4.X_test)[:, 1]\nauc_bdr4 = roc_auc_score(bdr4.y_test, predict_knn1)\nprint(&quot;BEST AUC&quot;, auc_bdr4)&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mejor AUC en conjunto de prueba:  0.846</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;y_pred = (y_pred &gt; 0.5).astype(int)</span>
+<span class="sd">cm = confusion_matrix(bdr4.y_test, y_pred)</span>
+<span class="sd">def plot_confusion_matrix(cm, class_names):</span>
+<span class="sd">    plt.figure(figsize=(6, 5))</span>
+<span class="sd">    sns.heatmap(cm, annot=True, fmt=&#39;g&#39;, cmap=&#39;Blues&#39;, cbar=False,</span>
+<span class="sd">                xticklabels=class_names, yticklabels=class_names)</span>
+<span class="sd">    plt.title(&#39;Confusion Matrix&#39;)</span>
+<span class="sd">    plt.xlabel(&#39;Predicted labels&#39;)</span>
+<span class="sd">    plt.savefig(&#39;conf1_1.png&#39;, dpi=300, bbox_inches=&#39;tight&#39;)</span>
+
+<span class="sd">    plt.ylabel(&#39;True labels&#39;)</span>
+<span class="sd">    plt.show()</span>
+<span class="sd">cm = np.array(cm)</span>
+<span class="sd">class_names = [&#39;Clase 0&#39;, &#39;Clase 1&#39;]</span>
+<span class="sd">plot_confusion_matrix(cm, class_names)&#39;&#39;&#39;</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">80</span><span class="p">))</span>  
+<span class="n">img</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;documentos_ejercicio3</span><span class="se">\\</span><span class="s1">conf1_1.png&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>  
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d41706bc8997b0ba0806c57fc8b6d2b6403acca74144297e23f8f7dfc65ca9b7.png" src="_images/d41706bc8997b0ba0806c57fc8b6d2b6403acca74144297e23f8f7dfc65ca9b7.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;data = {</span>
+<span class="sd">    &#39;Modelo&#39;: [&#39;Knn&#39;],</span>
+<span class="sd">    &#39;Precision&#39;: [</span>
+<span class="sd">        precision_score(bdr4.y_test, y_pred)</span>
+<span class="sd">    ],</span>
+<span class="sd">    &#39;Recall&#39;: [</span>
+<span class="sd">        recall_score(bdr4.y_test, y_pred)</span>
+<span class="sd">    ],</span>
+<span class="sd">    &#39;F1 Score&#39;: [</span>
+
+<span class="sd">        f1_score(bdr4.y_test, y_pred)</span>
+<span class="sd">    ],</span>
+<span class="sd">    &#39;ROC AUC&#39;: [</span>
+<span class="sd">        roc_auc_score(bdr4.y_test, predict_knn1)  # También aquí</span>
+<span class="sd">    ]</span>
+<span class="sd">}&#39;&#39;&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Modelo&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Knn&#39;</span><span class="p">],</span><span class="s1">&#39;Precision&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;Recall&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.043103</span><span class="p">],</span><span class="s1">&#39;F1 Score&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.082645</span><span class="p">],</span><span class="s1">&#39;ROC AUC&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.846602</span><span class="p">]}</span>
+<span class="n">data_knn</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">data_knn</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Modelo</th>
+      <th>Precision</th>
+      <th>Recall</th>
+      <th>F1 Score</th>
+      <th>ROC AUC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Knn</td>
+      <td>1</td>
+      <td>0.043103</td>
+      <td>0.082645</td>
+      <td>0.846602</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="logistic-bdr4">
+<h3>Logistic - ‘BDR4’<a class="headerlink" href="#logistic-bdr4" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;pipeline_log_bd4 = Pipeline([(&#39;scaler&#39;, StandardScaler()), (&#39;clasificador&#39;, LogisticRegression())])</span>
+<span class="sd">param_grid_log_bd4 = {&#39;clasificador__C&#39;: [0.01, 0.1, 1, 10, 100, 1000]}</span>
+<span class="sd">kf = StratifiedKFold(n_splits = 5, shuffle = True, random_state = 11)</span>
+<span class="sd">grid_log_bd4 = GridSearchCV(pipeline_log_bd4, param_grid_log_bd4, cv = kf, scoring = &#39;roc_auc&#39;)</span>
+<span class="sd">grid_log_bd4.fit(bdr4.X_train, bdr4.y_train)</span>
+<span class="sd">print(&quot;Mejor parámetro:&quot;, grid_log_bd4.best_params_)</span>
+<span class="sd">print(&quot;Mejor AUC en conjunto de entrenamiento: &quot;, grid_log_bd4.best_score_)&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;pipeline_log_bd4 = Pipeline([(\&#39;scaler\&#39;, StandardScaler()), (\&#39;clasificador\&#39;, LogisticRegression())])\nparam_grid_log_bd4 = {\&#39;clasificador__C\&#39;: [0.01, 0.1, 1, 10, 100, 1000]}\nkf = StratifiedKFold(n_splits = 5, shuffle = True, random_state = 11)\ngrid_log_bd4 = GridSearchCV(pipeline_log_bd4, param_grid_log_bd4, cv = kf, scoring = \&#39;roc_auc\&#39;)\ngrid_log_bd4.fit(bdr4.X_train, bdr4.y_train)\nprint(&quot;Mejor parámetro:&quot;, grid_log_bd4.best_params_)\nprint(&quot;Mejor AUC en conjunto de entrenamiento: &quot;, grid_log_bd4.best_score_)&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mejor parámetro: {‘clasificador__C’: 0.01} <br />
+Mejor AUC en conjunto de entrenamiento:  0.9030094685544606</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;y_pred = grid_log_bd4.predict(bdr4.X_test)</span>
+<span class="sd">predict_log1 = grid_log_bd4.predict_proba(bdr4.X_test)[:, 1]</span>
+<span class="sd">auc_bdr4 = roc_auc_score(bdr4.y_test, predict_log1)</span>
+<span class="sd">print(&quot;BEST AUC&quot;, auc_bdr4)&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;y_pred = grid_log_bd4.predict(bdr4.X_test)\npredict_log1 = grid_log_bd4.predict_proba(bdr4.X_test)[:, 1]\nauc_bdr4 = roc_auc_score(bdr4.y_test, predict_log1)\nprint(&quot;BEST AUC&quot;, auc_bdr4)&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>BEST AUC 0.8927653623156272</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;predict_log2 = (y_pred &gt; 0.5).astype(int)</span>
+<span class="sd">cm = confusion_matrix(bdr4.y_test, predict_log2)</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="k">def</span> <span class="nf">plot_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">class_names</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span> <span class="n">cbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                <span class="n">xticklabels</span><span class="o">=</span><span class="n">class_names</span><span class="p">,</span> <span class="n">yticklabels</span><span class="o">=</span><span class="n">class_names</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Confusion Matrix&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted labels&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;True labels&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;conf1_2.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">cm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">24877</span><span class="p">,</span>     <span class="mi">7</span><span class="p">],</span>
+       <span class="p">[</span>  <span class="mi">106</span><span class="p">,</span>    <span class="mi">10</span><span class="p">]])</span>
+<span class="n">class_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Clase 0&#39;</span><span class="p">,</span> <span class="s1">&#39;Clase 1&#39;</span><span class="p">]</span>
+<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">class_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/dc140c71ae4bb675d993b0e08a8bda46c8cc1ae4a1a4f86da92d1e37801bac91.png" src="_images/dc140c71ae4bb675d993b0e08a8bda46c8cc1ae4a1a4f86da92d1e37801bac91.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;data = {</span>
+<span class="sd">    &#39;Modelo&#39;: [&#39;Logsitc&#39;],</span>
+<span class="sd">    &#39;Precision&#39;: [</span>
+<span class="sd">        precision_score(bdr4.y_test, y_pred)</span>
+<span class="sd">    ],</span>
+<span class="sd">    &#39;Recall&#39;: [</span>
+<span class="sd">        recall_score(bdr4.y_test, y_pred)</span>
+<span class="sd">    ],</span>
+<span class="sd">    &#39;F1 Score&#39;: [</span>
+
+<span class="sd">        f1_score(bdr4.y_test, y_pred)</span>
+<span class="sd">    ],</span>
+<span class="sd">    &#39;ROC AUC&#39;: [</span>
+<span class="sd">        roc_auc_score(bdr4.y_test, predict_log1)</span>
+<span class="sd">    ]</span>
+<span class="sd">}&#39;&#39;&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Modelo&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Logsitc&#39;</span><span class="p">],</span><span class="s1">&#39;Precision&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.588235</span><span class="p">],</span><span class="s1">&#39;Recall&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.086207</span><span class="p">],</span><span class="s1">&#39;F1 Score&#39;</span><span class="p">:</span> <span class="p">[</span> <span class="mf">0.150376</span><span class="p">],</span><span class="s1">&#39;ROC AUC&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.8927</span><span class="p">]}</span>
+<span class="n">data_log</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">data_log</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Modelo</th>
+      <th>Precision</th>
+      <th>Recall</th>
+      <th>F1 Score</th>
+      <th>ROC AUC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Logsitc</td>
+      <td>0.588235</td>
+      <td>0.086207</td>
+      <td>0.150376</td>
+      <td>0.8927</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="curva-roc-bdr4">
+<h3>Curva ROC - ‘BDR4’<a class="headerlink" href="#curva-roc-bdr4" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;a, b, _ = roc_curve(bdr4.y_test, predict_knn1)</span>
+<span class="sd">roc_auc_knn = roc_auc_score(bdr4.y_test, predict_knn1)</span>
+<span class="sd">c, d, _ = roc_curve(bdr4.y_test, predict_log1)</span>
+<span class="sd">roc_auc_log = roc_auc_score(bdr4.y_test, predict_log1)</span>
+<span class="sd">plt.figure(figsize=(8, 8))</span>
+<span class="sd">plt.plot(a, b, color = &#39;#00FFFF&#39;, label = f&#39;K-NN (AUC = {roc_auc_knn:.2f})&#39;, lw = 4)</span>
+<span class="sd">plt.plot(c, d, color = &#39;#00008B&#39;, label = f&#39;Regresión Logística (AUC = {roc_auc_log:.2f})&#39;, lw = 4)</span>
+<span class="sd">plt.xlabel(&#39;Falsos Positivos (FPR)&#39;)</span>
+<span class="sd">plt.ylabel(&#39;Verdaderos Positivos (TPR)&#39;)</span>
+<span class="sd">plt.title(&#39;Curvas ROC&#39;)</span>
+<span class="sd">plt.legend(loc=&#39;lower right&#39;)</span>
+<span class="sd">plt.grid(True)</span>
+<span class="sd">plt.savefig(&#39;curva1.png&#39;, dpi=300, bbox_inches=&#39;tight&#39;)</span>
+
+<span class="sd">plt.show()&#39;&#39;&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">80</span><span class="p">))</span>  
+<span class="n">img</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;documentos_ejercicio3</span><span class="se">\\</span><span class="s1">curva2.png&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>  
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/efaf696c204a72d2c22fc198cd604047156281df792bb47fdfd78199594a496b.png" src="_images/efaf696c204a72d2c22fc198cd604047156281df792bb47fdfd78199594a496b.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_concat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">data_knn</span><span class="p">,</span> <span class="n">data_log</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_concat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Modelo</th>
+      <th>Precision</th>
+      <th>Recall</th>
+      <th>F1 Score</th>
+      <th>ROC AUC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Knn</td>
+      <td>1.000000</td>
+      <td>0.043103</td>
+      <td>0.082645</td>
+      <td>0.846602</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Logsitc</td>
+      <td>0.588235</td>
+      <td>0.086207</td>
+      <td>0.150376</td>
+      <td>0.892700</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>En esta comparación de los modelos K-Nearest Neighbors (K-NN) y Regresión Logística, se observa que la Regresión Logística sigue siendo el modelo con mejor rendimiento global. Según las curvas ROC, el AUC para K-NN es de 0.85, mientras que el de Regresión Logística es de 0.89, lo que indica que la Regresión Logística tiene una mayor capacidad de discriminación entre las clases.</p>
+<p>En cuanto a las métricas, el modelo K-NN muestra una precisión muy alta de 1.0, pero esto puede estar relacionado con un fuerte sesgo hacia la clase mayoritaria, ya que su valor de recall es extremadamente bajo (0.043). Este comportamiento indica que K-NN no está capturando bien los verdaderos positivos, a pesar de tener una alta precisión. La puntuación F1 también es baja (0.082), lo que refleja este desequilibrio en el rendimiento del modelo.</p>
+</section>
+</section>
+<section id="modelos-para-proteina-hsa">
+<h2>Modelos para proteina ‘HSA’<a class="headerlink" href="#modelos-para-proteina-hsa" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;hsa = pd.read_parquet(&#39;hsa_train.parquet&#39;)&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;hsa = pd.read_parquet(&#39;hsa_train.parquet&#39;)&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;hsa = Data(hsa)&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;hsa = Data(hsa)&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="knn-hsa">
+<h3>KNN - ‘HSA’<a class="headerlink" href="#knn-hsa" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;pipeline_knn_hsa = Pipeline([(&#39;scaler&#39;, StandardScaler()), (&#39;clasificador&#39;, KNeighborsClassifier())])</span>
+<span class="sd">param_grid_knn_hsa = [{ &#39;clasificador__n_neighbors&#39;: range(2 , 100), &#39;clasificador__weights&#39;: [&#39;distance&#39;]}]</span>
+<span class="sd">kf = StratifiedKFold(n_splits = 5, shuffle = True, random_state = 11)</span>
+<span class="sd">grid_knn_hsa = GridSearchCV(pipeline_knn_hsa, param_grid_knn_hsa, cv = kf, scoring = &#39;roc_auc&#39;)</span>
+<span class="sd">grid_knn_hsa.fit(hsa.X_train, hsa.y_train)</span>
+<span class="sd">print(&quot;Mejor parámetro:&quot;, grid_knn_hsa.best_params_)</span>
+<span class="sd">print(&quot;Mejor AUC en conjunto de entrenamiento: &quot;,grid_knn_hsa.best_score_)&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;pipeline_knn_hsa = Pipeline([(\&#39;scaler\&#39;, StandardScaler()), (\&#39;clasificador\&#39;, KNeighborsClassifier())])\nparam_grid_knn_hsa = [{ \&#39;clasificador__n_neighbors\&#39;: range(2 , 100), \&#39;clasificador__weights\&#39;: [\&#39;distance\&#39;]}]\nkf = StratifiedKFold(n_splits = 5, shuffle = True, random_state = 11)\ngrid_knn_hsa = GridSearchCV(pipeline_knn_hsa, param_grid_knn_hsa, cv = kf, scoring = \&#39;roc_auc\&#39;)\ngrid_knn_hsa.fit(hsa.X_train, hsa.y_train)\nprint(&quot;Mejor parámetro:&quot;, grid_knn_hsa.best_params_)\nprint(&quot;Mejor AUC en conjunto de entrenamiento: &quot;,grid_knn_hsa.best_score_)&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mejor parámetro: {‘clasificador__n_neighbors’: 99, ‘clasificador__weights’: ‘distance’} <br />
+Mejor AUC en conjunto de entrenamiento:  0.8285928165993697</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;predict_knn_hsa = grid_knn_hsa.predict_proba(hsa.X_test)[:, 1]</span>
+<span class="sd">auc_hsa = roc_auc_score(hsa.y_test, predict_knn_hsa)</span>
+<span class="sd">print(&quot;BEST AUC&quot;, auc_hsa)&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;predict_knn_hsa = grid_knn_hsa.predict_proba(hsa.X_test)[:, 1]\nauc_hsa = roc_auc_score(hsa.y_test, predict_knn_hsa)\nprint(&quot;BEST AUC&quot;, auc_hsa)&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>BEST AUC 0.8205461643513942</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;y_pred = (predict_knn_hsa &gt; 0.5).astype(int)</span>
+<span class="sd">cm_hsa1 = confusion_matrix(hsa.y_test, y_pred)</span>
+<span class="sd">def plot_confusion_matrix(cm, class_names):</span>
+<span class="sd">    plt.figure(figsize=(6, 5))</span>
+<span class="sd">    sns.heatmap(cm, annot=True, fmt=&#39;g&#39;, cmap=&#39;Blues&#39;, cbar=False,</span>
+<span class="sd">                xticklabels=class_names, yticklabels=class_names)</span>
+<span class="sd">    plt.title(&#39;Confusion Matrix&#39;)</span>
+<span class="sd">    plt.xlabel(&#39;Predicted labels&#39;)</span>
+<span class="sd">    plt.ylabel(&#39;True labels&#39;)</span>
+<span class="sd">    plt.savefig(&#39;conf2_1.png&#39;, dpi=300, bbox_inches=&#39;tight&#39;)</span>
+<span class="sd">    plt.show()&#39;&#39;&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">80</span><span class="p">))</span>  
+<span class="n">img</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;documentos_ejercicio3</span><span class="se">\\</span><span class="s1">conf2_1.png&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>  
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/19eac887eb992bc3da2b99eccfa99ee0484732c1c4b3ac5b41f6d192cf45f3c8.png" src="_images/19eac887eb992bc3da2b99eccfa99ee0484732c1c4b3ac5b41f6d192cf45f3c8.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;data = {</span>
+<span class="sd">    &#39;Modelo&#39;: [&#39;Knn&#39;],</span>
+<span class="sd">    &#39;Precision&#39;: [</span>
+<span class="sd">        precision_score(hsa.y_test, y_pred)</span>
+<span class="sd">    ],</span>
+<span class="sd">    &#39;Recall&#39;: [</span>
+<span class="sd">        recall_score(hsa.y_test, y_pred)</span>
+<span class="sd">    ],</span>
+<span class="sd">    &#39;F1 Score&#39;: [</span>
+
+<span class="sd">        f1_score(hsa.y_test, y_pred)</span>
+<span class="sd">    ],</span>
+<span class="sd">    &#39;ROC AUC&#39;: [</span>
+<span class="sd">        roc_auc_score(hsa.y_test,predict_knn_hsa)</span>
+<span class="sd">    ]</span>
+<span class="sd">}&#39;&#39;&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Modelo&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Knn&#39;</span><span class="p">],</span><span class="s1">&#39;Precision&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.33</span><span class="p">],</span><span class="s1">&#39;Recall&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.0192</span><span class="p">],</span><span class="s1">&#39;F1 Score&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.0363</span><span class="p">],</span><span class="s1">&#39;ROC AUC&#39;</span><span class="p">:</span> <span class="p">[</span> <span class="mf">0.8205</span><span class="p">]}</span>
+<span class="n">data_knn</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">data_knn</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Modelo</th>
+      <th>Precision</th>
+      <th>Recall</th>
+      <th>F1 Score</th>
+      <th>ROC AUC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Knn</td>
+      <td>0.33</td>
+      <td>0.0192</td>
+      <td>0.0363</td>
+      <td>0.8205</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="logistic-hsa">
+<h3>Logistic - ‘HSA’<a class="headerlink" href="#logistic-hsa" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;pipeline_log_hsa = Pipeline([(&#39;scaler&#39;, StandardScaler()), (&#39;clasificador&#39;, LogisticRegression())])</span>
+<span class="sd">param_grid_log_hsa = {&#39;clasificador__C&#39;: [0.01, 0.1, 1, 10, 100, 1000]}</span>
+<span class="sd">kf = StratifiedKFold(n_splits = 5, shuffle = True, random_state = 11)</span>
+<span class="sd">grid_log_hsa = GridSearchCV(pipeline_log_hsa, param_grid_log_hsa, cv = kf, scoring = &#39;roc_auc&#39;)</span>
+<span class="sd">grid_log_hsa.fit(hsa.X_train, hsa.y_train)</span>
+<span class="sd">print(&quot;Mejor parámetro:&quot;, grid_log_hsa.best_params_)</span>
+<span class="sd">print(&quot;Mejor AUC en conjunto de entrenamiento: &quot;, grid_log_hsa.best_score_)&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;pipeline_log_hsa = Pipeline([(\&#39;scaler\&#39;, StandardScaler()), (\&#39;clasificador\&#39;, LogisticRegression())])\nparam_grid_log_hsa = {\&#39;clasificador__C\&#39;: [0.01, 0.1, 1, 10, 100, 1000]}\nkf = StratifiedKFold(n_splits = 5, shuffle = True, random_state = 11)\ngrid_log_hsa = GridSearchCV(pipeline_log_hsa, param_grid_log_hsa, cv = kf, scoring = \&#39;roc_auc\&#39;)\ngrid_log_hsa.fit(hsa.X_train, hsa.y_train)\nprint(&quot;Mejor parámetro:&quot;, grid_log_hsa.best_params_)\nprint(&quot;Mejor AUC en conjunto de entrenamiento: &quot;, grid_log_hsa.best_score_)&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mejor parámetro: {‘clasificador__C’: 0.01}
+Mejor AUC en conjunto de entrenamiento:  0.8832779175332582</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;y_pred = grid_log_hsa.predict(hsa.X_test)</span>
+<span class="sd">predict_log_hsa = grid_log_hsa.predict_proba(hsa.X_test)[:, 1]</span>
+<span class="sd">auc_hsa = roc_auc_score(hsa.y_test, predict_log_hsa)</span>
+<span class="sd">print(&quot;BEST AUC&quot;, auc_hsa)&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;y_pred = grid_log_hsa.predict(hsa.X_test)\npredict_log_hsa = grid_log_hsa.predict_proba(hsa.X_test)[:, 1]\nauc_hsa = roc_auc_score(hsa.y_test, predict_log_hsa)\nprint(&quot;BEST AUC&quot;, auc_hsa)&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>BEST AUC 0.8390135656639313</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;y_pred = (predict_log_hsa &gt; 0.5).astype(int)</span>
+<span class="sd">coo_matrix = confusion_matrix(hsa.y_test, y_pred)</span>
+<span class="sd">def plot_confusion_matrix(cm, class_names):</span>
+<span class="sd">    plt.figure(figsize=(6, 5))</span>
+<span class="sd">    sns.heatmap(cm, annot=True, fmt=&#39;g&#39;, cmap=&#39;Blues&#39;, cbar=False,</span>
+<span class="sd">                xticklabels=class_names, yticklabels=class_names)</span>
+<span class="sd">    plt.title(&#39;Confusion Matrix&#39;)</span>
+<span class="sd">    plt.xlabel(&#39;Predicted labels&#39;)</span>
+<span class="sd">    plt.savefig(&#39;conf2_2.png&#39;, dpi=300, bbox_inches=&#39;tight&#39;)</span>
+<span class="sd">    plt.ylabel(&#39;True labels&#39;)</span>
+<span class="sd">    plt.show()</span>
+<span class="sd">cm2 = np.array(coo_matrix)</span>
+<span class="sd">class_names = [&#39;Clase 0&#39;, &#39;Clase 1&#39;]</span>
+<span class="sd">plot_confusion_matrix(cm2, class_names)</span>
+<span class="sd">print(cm2)&#39;&#39;&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">80</span><span class="p">))</span>  
+<span class="n">img</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;documentos_ejercicio3</span><span class="se">\\</span><span class="s1">conf2_2.png&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>  
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/95aa82b15e1895646d599c7729f38e7af08651f113a2eb009baf82087a170154.png" src="_images/95aa82b15e1895646d599c7729f38e7af08651f113a2eb009baf82087a170154.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;data = {</span>
+<span class="sd">    &#39;Modelo&#39;: [&#39;Logsitc&#39;],</span>
+<span class="sd">    &#39;Precision&#39;: [</span>
+<span class="sd">        precision_score(hsa.y_test, y_pred)</span>
+<span class="sd">    ],</span>
+<span class="sd">    &#39;Recall&#39;: [</span>
+<span class="sd">        recall_score(hsa.y_test, y_pred)</span>
+<span class="sd">    ],</span>
+<span class="sd">    &#39;F1 Score&#39;: [</span>
+
+<span class="sd">        f1_score(hsa.y_test, y_pred)</span>
+<span class="sd">    ],</span>
+<span class="sd">    &#39;ROC AUC&#39;: [</span>
+<span class="sd">        roc_auc_score(hsa.y_test, predict_log_hsa)</span>
+<span class="sd">    ]</span>
+<span class="sd">}&#39;&#39;&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Modelo&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Logsitc&#39;</span><span class="p">],</span><span class="s1">&#39;Precision&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">],</span><span class="s1">&#39;Recall&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.0028</span><span class="p">],</span><span class="s1">&#39;F1 Score&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.0562</span><span class="p">],</span><span class="s1">&#39;ROC AUC&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.8390</span>  <span class="p">]}</span>
+<span class="n">data_log</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">data_log</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Modelo</th>
+      <th>Precision</th>
+      <th>Recall</th>
+      <th>F1 Score</th>
+      <th>ROC AUC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Logsitc</td>
+      <td>0.3</td>
+      <td>0.0028</td>
+      <td>0.0562</td>
+      <td>0.839</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="curva-roc-hsa">
+<h3>Curva ROC - ‘HSA’<a class="headerlink" href="#curva-roc-hsa" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;a, b, _ = roc_curve(hsa.y_test, predict_knn_hsa)</span>
+<span class="sd">roc_auc_knn = roc_auc_score(hsa.y_test, predict_knn_hsa)</span>
+<span class="sd">c, d, _ = roc_curve(hsa.y_test, predict_log_hsa)</span>
+<span class="sd">roc_auc_log = roc_auc_score(hsa.y_test, predict_log_hsa)</span>
+<span class="sd">plt.figure(figsize=(8, 8))</span>
+<span class="sd">plt.plot(a, b, color = &#39;#00FFFF&#39;, label = f&#39;K-NN (AUC = {roc_auc_knn:.2f})&#39;, lw = 4)</span>
+<span class="sd">plt.plot(c, d, color = &#39;#00008B&#39;, label = f&#39;Regresión Logística (AUC = {roc_auc_log:.2f})&#39;, lw = 4)</span>
+<span class="sd">plt.xlabel(&#39;Falsos Positivos (FPR)&#39;)</span>
+<span class="sd">plt.ylabel(&#39;Verdaderos Positivos (TPR)&#39;)</span>
+<span class="sd">plt.title(&#39;Curvas ROC&#39;)</span>
+<span class="sd">plt.legend(loc=&#39;lower right&#39;)</span>
+<span class="sd">plt.grid(True)</span>
+<span class="sd">plt.savefig(&#39;curva2.png&#39;, dpi=300, bbox_inches=&#39;tight&#39;)</span>
+
+<span class="sd">plt.show()&#39;&#39;&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">80</span><span class="p">))</span>  
+<span class="n">img</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;documentos_ejercicio3</span><span class="se">\\</span><span class="s1">curva2.png&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>  
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/efaf696c204a72d2c22fc198cd604047156281df792bb47fdfd78199594a496b.png" src="_images/efaf696c204a72d2c22fc198cd604047156281df792bb47fdfd78199594a496b.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_concat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">data_knn</span><span class="p">,</span> <span class="n">data_log</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_concat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Modelo</th>
+      <th>Precision</th>
+      <th>Recall</th>
+      <th>F1 Score</th>
+      <th>ROC AUC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Knn</td>
+      <td>0.33</td>
+      <td>0.0192</td>
+      <td>0.0363</td>
+      <td>0.8205</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Logsitc</td>
+      <td>0.30</td>
+      <td>0.0028</td>
+      <td>0.0562</td>
+      <td>0.8390</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>En los resultados obtenidos, se comparan los modelos de K-Nearest Neighbors (K-NN) y la Regresión Logística mediante la curva ROC y varias métricas de evaluación. La curva ROC muestra que ambos modelos tienen un rendimiento decente en términos de discriminación entre clases. El área bajo la curva (AUC) para el modelo K-NN es de 0.82, mientras que el modelo de Regresión Logística presenta un AUC ligeramente superior de 0.84, lo que indica una mejor capacidad de predicción para este último.</p>
+</section>
+</section>
+<section id="modelos-para-proteina-seh">
+<h2>Modelos para proteina ‘sEH’<a class="headerlink" href="#modelos-para-proteina-seh" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;seh = Data(pd.read_parquet(&#39;seh_train.parquet&#39;))&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;seh = Data(pd.read_parquet(&#39;seh_train.parquet&#39;))&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id1">
+<h3>KNN - ‘sEH’<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;pipeline_knn_seh = Pipeline([(&#39;scaler&#39;, StandardScaler()), (&#39;clasificador&#39;, KNeighborsClassifier())])</span>
+<span class="sd">param_grid_knn_seh = [{ &#39;clasificador__n_neighbors&#39;: range(2 , 100), &#39;clasificador__weights&#39;: [&#39;distance&#39;]}]</span>
+<span class="sd">kf = StratifiedKFold(n_splits = 5, shuffle = True, random_state = 11)</span>
+<span class="sd">grid_knn_seh = GridSearchCV(pipeline_knn_seh, param_grid_knn_seh, cv = kf, scoring = &#39;roc_auc&#39;)</span>
+<span class="sd">grid_knn_seh.fit(seh.X_train, seh.y_train)</span>
+<span class="sd">print(&quot;Mejor parámetro:&quot;, grid_knn_hsa.best_params_)</span>
+<span class="sd">print(&quot;Mejor AUC en conjunto de entrenamiento: &quot;,grid_knn_seh.best_score_)&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;pipeline_knn_seh = Pipeline([(\&#39;scaler\&#39;, StandardScaler()), (\&#39;clasificador\&#39;, KNeighborsClassifier())])\nparam_grid_knn_seh = [{ \&#39;clasificador__n_neighbors\&#39;: range(2 , 100), \&#39;clasificador__weights\&#39;: [\&#39;distance\&#39;]}]\nkf = StratifiedKFold(n_splits = 5, shuffle = True, random_state = 11)\ngrid_knn_seh = GridSearchCV(pipeline_knn_seh, param_grid_knn_seh, cv = kf, scoring = \&#39;roc_auc\&#39;)\ngrid_knn_seh.fit(seh.X_train, seh.y_train)\nprint(&quot;Mejor parámetro:&quot;, grid_knn_hsa.best_params_)\nprint(&quot;Mejor AUC en conjunto de entrenamiento: &quot;,grid_knn_seh.best_score_)&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mejor parámetro: {‘clasificador__n_neighbors’: 99, ‘clasificador__weights’: ‘distance’}
+Mejor AUC en conjunto de entrenamiento:  0.7062024516199912</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;predict_knn_seh = grid_knn_seh.predict_proba(seh.X_test)[:, 1]</span>
+<span class="sd">auc_seh = roc_auc_score(seh.y_test, predict_knn_seh)</span>
+<span class="sd">print(&quot;BEST AUC&quot;, auc_seh)&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;predict_knn_seh = grid_knn_seh.predict_proba(seh.X_test)[:, 1]\nauc_seh = roc_auc_score(seh.y_test, predict_knn_seh)\nprint(&quot;BEST AUC&quot;, auc_seh)&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mejor parámetro: {‘clasificador__n_neighbors’: 99, ‘clasificador__weights’: ‘distance’}
+Mejor AUC en conjunto de entrenamiento:  0.7062024516199912</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;y_pred = (predict_knn_seh &gt; 0.5).astype(int)</span>
+<span class="sd">cm_seh  = confusion_matrix(seh.y_test, y_pred)</span>
+<span class="sd">def plot_confusion_matrix(cm, class_names):</span>
+<span class="sd">    plt.figure(figsize=(6, 5))</span>
+<span class="sd">    sns.heatmap(cm, annot=True, fmt=&#39;g&#39;, cmap=&#39;Blues&#39;, cbar=False,</span>
+<span class="sd">                xticklabels=class_names, yticklabels=class_names)</span>
+<span class="sd">    plt.title(&#39;Confusion Matrix&#39;)</span>
+<span class="sd">    plt.xlabel(&#39;Predicted labels&#39;)</span>
+<span class="sd">    plt.ylabel(&#39;True labels&#39;)</span>
+<span class="sd">    plt.savefig(&#39;conf3_1.png&#39;, dpi=300, bbox_inches=&#39;tight&#39;)</span>
+<span class="sd">    plt.show()</span>
+<span class="sd">cm1 = np.array(cm_seh )</span>
+<span class="sd">class_names = [&#39;Clase 0&#39;, &#39;Clase 1&#39;]</span>
+<span class="sd">plot_confusion_matrix(cm1, class_names)</span>
+<span class="sd">print(cm1)&#39;&#39;&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">80</span><span class="p">))</span>  
+<span class="n">img</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;documentos_ejercicio3</span><span class="se">\\</span><span class="s1">conf3_1.png&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>  
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/8713d0b1965c2923feb61294939f3403e40120dd1dc97e6c8508897ae877c3c5.png" src="_images/8713d0b1965c2923feb61294939f3403e40120dd1dc97e6c8508897ae877c3c5.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;data = {</span>
+<span class="sd">    &#39;Modelo&#39;: [&#39;Knn&#39;],</span>
+<span class="sd">    &#39;Precision&#39;: [</span>
+<span class="sd">        precision_score(seh.y_test, y_pred)</span>
+<span class="sd">    ],</span>
+<span class="sd">    &#39;Recall&#39;: [</span>
+<span class="sd">        recall_score(seh.y_test, y_pred)</span>
+<span class="sd">    ],</span>
+<span class="sd">    &#39;F1 Score&#39;: [</span>
+<span class="sd">        f1_score(seh.y_test, y_pred)</span>
+<span class="sd">    ],</span>
+<span class="sd">    &#39;ROC AUC&#39;: [</span>
+<span class="sd">        roc_auc_score(seh.y_test,predict_knn_seh)</span>
+<span class="sd">    ]</span>
+<span class="sd">}&#39;&#39;&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Modelo&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Knn&#39;</span><span class="p">],</span><span class="s1">&#39;Precision&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;Recall&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;F1 Score&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;ROC AUC&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.6905</span><span class="p">]}</span>
+<span class="n">data_knn</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">data_knn</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Modelo</th>
+      <th>Precision</th>
+      <th>Recall</th>
+      <th>F1 Score</th>
+      <th>ROC AUC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Knn</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.6905</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="logistic-seh">
+<h3>Logistic - ‘sEH’<a class="headerlink" href="#logistic-seh" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;pipeline_log_seh = Pipeline([(&#39;scaler&#39;, StandardScaler()), (&#39;clasificador&#39;, LogisticRegression())])</span>
+<span class="sd">param_grid_log_seh = {&#39;clasificador__C&#39;: [0.01, 0.1, 1, 10, 100, 1000]}</span>
+<span class="sd">kf = StratifiedKFold(n_splits = 5, shuffle = True, random_state = 11)</span>
+<span class="sd">grid_log_seh = GridSearchCV(pipeline_log_seh, param_grid_log_seh, cv = kf, scoring = &#39;roc_auc&#39;)</span>
+<span class="sd">grid_log_seh.fit(seh.X_train, seh.y_train)</span>
+<span class="sd">print(&quot;Mejor parámetro:&quot;, grid_log_seh.best_params_)</span>
+<span class="sd">print(&quot;Mejor AUC en conjunto de entrenamiento: &quot;, grid_log_seh.best_score_)&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;pipeline_log_seh = Pipeline([(\&#39;scaler\&#39;, StandardScaler()), (\&#39;clasificador\&#39;, LogisticRegression())])\nparam_grid_log_seh = {\&#39;clasificador__C\&#39;: [0.01, 0.1, 1, 10, 100, 1000]}\nkf = StratifiedKFold(n_splits = 5, shuffle = True, random_state = 11)\ngrid_log_seh = GridSearchCV(pipeline_log_seh, param_grid_log_seh, cv = kf, scoring = \&#39;roc_auc\&#39;)\ngrid_log_seh.fit(seh.X_train, seh.y_train)\nprint(&quot;Mejor parámetro:&quot;, grid_log_seh.best_params_)\nprint(&quot;Mejor AUC en conjunto de entrenamiento: &quot;, grid_log_seh.best_score_)&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mejor parámetro: {‘clasificador__C’: 0.01}
+Mejor AUC en conjunto de entrenamiento:  0.7055255954860691</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;y_pred1 = grid_log_seh.predict(seh.X_test)</span>
+<span class="sd">predict_log_seh = grid_log_seh.predict_proba(seh.X_test)[:, 1]</span>
+<span class="sd">auc_seh = roc_auc_score(seh.y_test, predict_log_seh)</span>
+<span class="sd">print(&quot;BEST AUC&quot;, auc_seh)&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;y_pred1 = grid_log_seh.predict(seh.X_test)\npredict_log_seh = grid_log_seh.predict_proba(seh.X_test)[:, 1]\nauc_seh = roc_auc_score(seh.y_test, predict_log_seh)\nprint(&quot;BEST AUC&quot;, auc_seh)&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>BEST AUC 0.6826679141087096</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;y_pred = (predict_log_seh &gt; 0.5).astype(int)</span>
+<span class="sd">coo_matrix = confusion_matrix(seh.y_test, y_pred)</span>
+<span class="sd">def plot_confusion_matrix(cm, class_names):</span>
+<span class="sd">    plt.figure(figsize=(6, 5))</span>
+<span class="sd">    sns.heatmap(cm, annot=True, fmt=&#39;g&#39;, cmap=&#39;Blues&#39;, cbar=False,</span>
+<span class="sd">                xticklabels=class_names, yticklabels=class_names)</span>
+<span class="sd">    plt.title(&#39;Confusion Matrix&#39;)</span>
+<span class="sd">    plt.xlabel(&#39;Predicted labels&#39;)</span>
+<span class="sd">    plt.ylabel(&#39;True labels&#39;)</span>
+<span class="sd">    plt.savefig(&#39;conf3_2.png&#39;, dpi=300, bbox_inches=&#39;tight&#39;)</span>
+<span class="sd">    plt.show()</span>
+<span class="sd">cm2 = np.array(coo_matrix)</span>
+<span class="sd">class_names = [&#39;Clase 0&#39;, &#39;Clase 1&#39;]</span>
+<span class="sd">plot_confusion_matrix(cm2, class_names)</span>
+<span class="sd">print(cm2)&#39;&#39;&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">80</span><span class="p">))</span>  
+<span class="n">img</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;documentos_ejercicio3</span><span class="se">\\</span><span class="s1">conf3_2.png&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>  
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/e3a4028ab3eb0e4f9d79ba6d52913dce1e0990449c2e4ccdd3592ae8c47fb95c.png" src="_images/e3a4028ab3eb0e4f9d79ba6d52913dce1e0990449c2e4ccdd3592ae8c47fb95c.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;data = {</span>
+<span class="sd">    &#39;Modelo&#39;: [&#39;Logsitc&#39;],</span>
+<span class="sd">    &#39;Precision&#39;: [</span>
+<span class="sd">        precision_score(seh.y_test, y_pred1)</span>
+<span class="sd">    ],</span>
+<span class="sd">    &#39;Recall&#39;: [</span>
+<span class="sd">        recall_score(seh.y_test, y_pred1)</span>
+<span class="sd">    ],</span>
+<span class="sd">    &#39;F1 Score&#39;: [</span>
+
+<span class="sd">        f1_score(seh.y_test, y_pred1)</span>
+<span class="sd">    ],</span>
+<span class="sd">    &#39;ROC AUC&#39;: [</span>
+<span class="sd">        roc_auc_score(seh.y_test, predict_log_seh)</span>
+<span class="sd">    ]</span>
+<span class="sd">}&#39;&#39;&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Modelo&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Logsitc&#39;</span><span class="p">],</span><span class="s1">&#39;Precision&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;Recall&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;F1 Score&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;ROC AUC&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.68266</span><span class="p">]}</span>
+<span class="n">data_log</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">data_log</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Modelo</th>
+      <th>Precision</th>
+      <th>Recall</th>
+      <th>F1 Score</th>
+      <th>ROC AUC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Logsitc</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.68266</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="curva-roc-seh">
+<h3>Curva ROC - ‘sEH’<a class="headerlink" href="#curva-roc-seh" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;a, b, _ = roc_curve(seh.y_test, predict_knn_seh)</span>
+<span class="sd">roc_auc_knn = roc_auc_score(seh.y_test, predict_knn_seh)</span>
+<span class="sd">c, d, _ = roc_curve(seh.y_test, predict_log_seh)</span>
+<span class="sd">roc_auc_log = roc_auc_score(seh.y_test, predict_log_seh)</span>
+<span class="sd">plt.figure(figsize=(8, 8))</span>
+<span class="sd">plt.plot(a, b, color = &#39;#00FFFF&#39;, label = f&#39;K-NN (AUC = {roc_auc_knn:.2f})&#39;, lw = 4)</span>
+<span class="sd">plt.plot(c, d, color = &#39;#00008B&#39;, label = f&#39;Regresión Logística (AUC = {roc_auc_log:.2f})&#39;, lw = 4)</span>
+<span class="sd">plt.xlabel(&#39;Falsos Positivos (FPR)&#39;)</span>
+<span class="sd">plt.ylabel(&#39;Verdaderos Positivos (TPR)&#39;)</span>
+<span class="sd">plt.title(&#39;Curvas ROC&#39;)</span>
+<span class="sd">plt.legend(loc=&#39;lower right&#39;)</span>
+<span class="sd">plt.savefig(&#39;cuva3.png&#39;, dpi=300, bbox_inches=&#39;tight&#39;)</span>
+<span class="sd">plt.grid(True)</span>
+<span class="sd">plt.show()&#39;&#39;&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">80</span><span class="p">))</span>  
+<span class="n">img</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;documentos_ejercicio3</span><span class="se">\\</span><span class="s1">cuva3.png&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>  
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/c15e55298a1ef2e41152fd090787ab05ca2f2c545f0f02266956b644a7f7fe7e.png" src="_images/c15e55298a1ef2e41152fd090787ab05ca2f2c545f0f02266956b644a7f7fe7e.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_concat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">data_knn</span><span class="p">,</span> <span class="n">data_log</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_concat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Modelo</th>
+      <th>Precision</th>
+      <th>Recall</th>
+      <th>F1 Score</th>
+      <th>ROC AUC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Knn</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.69050</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Logsitc</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.68266</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>En este análisis comparativo entre los modelos K-Nearest Neighbors (K-NN) y la Regresión Logística, las curvas ROC reflejan que ambos modelos presentan rendimientos relativamente similares. El AUC para el modelo K-NN es de 0.69, mientras que el de Regresión Logística es de 0.68. Ambos valores sugieren un desempeño moderado en términos de discriminación entre clases, con una ligera ventaja para K-NN.</p>
+<p>Al observar las métricas en el DataFrame, vemos que tanto el modelo K-NN como el de Regresión Logística tienen valores de precisión, recall y F1 Score igual a 0. Esto indica que, en esta evaluación en particular, ninguno de los dos modelos está capturando correctamente las clases positivas</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Ejercicio_2_punto_2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Ejercicio 3</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dato-importante">Dato Importante</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-para-proteina-bdr4">Modelos para proteina ‘BDR4’</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#knn-seh">KNN - ‘sEH’</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logistic-bdr4">Logistic - ‘BDR4’</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curva-roc-bdr4">Curva ROC - ‘BDR4’</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-para-proteina-hsa">Modelos para proteina ‘HSA’</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#knn-hsa">KNN - ‘HSA’</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logistic-hsa">Logistic - ‘HSA’</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curva-roc-hsa">Curva ROC - ‘HSA’</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-para-proteina-seh">Modelos para proteina ‘sEH’</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">KNN - ‘sEH’</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logistic-seh">Logistic - ‘sEH’</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curva-roc-seh">Curva ROC - ‘sEH’</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By LORENZO GUTIERREZ, JUAN SEBASTIAN QUINTANA
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1986 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Ejercicio 3 &#8212; PARCIAL-I-ML</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ejercicio_2_punto_2';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Ejercicio 3" href="Ejercicio_3_NEURIPS.html" />
+    <link rel="prev" title="Ejercicio 2 - NEURIPS BELKA" href="Ejercicio_2_NEURIPS.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="PARCIAL-I-ML - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="PARCIAL-I-ML - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Ejercicio_1_punto_1.html">Ejercicio 1 - Breast Cancer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ejercicio_1_punto_2.html">Ejercicio 1 - Boston Housing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ejercicio_2_NEURIPS.html">Ejercicio 2 - NEURIPS BELKA</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ejercicio 3</a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Ejercicio_3_NEURIPS.html">Ejercicio 3</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FEjercicio_2_punto_2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Ejercicio_2_punto_2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Ejercicio 3</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Ejercicio 3</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-al-analisis-exploratorio-de-datos">Introducción al Análisis Exploratorio de Datos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importancia-del-problema">Importancia del Problema</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-del-conjunto-de-datos">Descripción del Conjunto de Datos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo-del-eda">Objetivo del (EDA)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fuentes-de-datos">Fuentes de Datos</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-frames-usados-para-eda">Data frames usados para EDA</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-frame-a-usar-para-modelo">Data frame a usar para Modelo</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eda">EDA</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-frame-de-adata-obs-meta">Data frame de “adata_obs_meta”</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-del-archivo-adata-obs-meta-csv">Descripción del Archivo <code class="docutils literal notranslate"><span class="pre">adata_obs_meta.csv</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-categorica">Variable categórica</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-numericas">Variables numéricas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-na-s">Análisis de NA’S</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-frame-de-id-map">Data frame de “id_map”</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-del-archivo-id-map-csv">Descripción del Archivo <code class="docutils literal notranslate"><span class="pre">id_map.csv</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-graficas">Análisis de Gráficas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Análisis de NA’S</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-frame-de-de-train">Data frame de “de_train”</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-del-archivo-de-train-parquet">Descripción del Archivo <code class="docutils literal notranslate"><span class="pre">de_train.parquet</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo-del-proyecto">Objetivo del Proyecto:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-datos-na-s">Análisis de datos NA’S</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-variables-categoricas">Análisis de Variables Categóricas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-la-proporcion">Análisis de la Proporción</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-variables-numericas">Análisis de Variables Numéricas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-respuesta">Variable respuesta</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-datos-atipicos">Análisis de datos atípicos</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-datos">Análisis de datos:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#reducion-de-dimensionalidad">Reducion de dimensionalidad</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">tabulate</span> <span class="kn">import</span> <span class="n">tabulate</span>
+<span class="kn">from</span> <span class="nn">statsmodels.stats.outliers_influence</span> <span class="kn">import</span> <span class="n">variance_inflation_factor</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_selection</span> <span class="kn">import</span> <span class="n">VarianceThreshold</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="ejercicio-3">
+<h1>Ejercicio 3<a class="headerlink" href="#ejercicio-3" title="Link to this heading">#</a></h1>
+<section id="introduccion-al-analisis-exploratorio-de-datos">
+<h2>Introducción al Análisis Exploratorio de Datos<a class="headerlink" href="#introduccion-al-analisis-exploratorio-de-datos" title="Link to this heading">#</a></h2>
+<p>En el contexto de la biología y la medicina de precisión, el estudio de las respuestas celulares a diferentes compuestos es fundamental para entender la variabilidad biológica y el impacto de los tratamientos a nivel molecular. Este análisis se vuelve especialmente relevante cuando se trata de datos de expresión génica en células individuales, ya que permite identificar cómo distintas células responden a perturbaciones químicas y cómo estas respuestas varían entre diferentes tipos celulares y contextos biológicos.</p>
+<section id="importancia-del-problema">
+<h3>Importancia del Problema<a class="headerlink" href="#importancia-del-problema" title="Link to this heading">#</a></h3>
+<p>El objetivo de este problema es explorar y predecir las respuestas de las células mononucleares de sangre periférica (PBMC) humanas a una serie de compuestos seleccionados. Estos compuestos fueron elegidos del Mapa de conectividad de la Biblioteca de firmas celulares basadas en redes integradas (LINCS) y aplicados a células humanas sanas durante 24 horas. Dada la relevancia de las PBMC en enfermedades inmunológicas y otras condiciones.</p>
+</section>
+<section id="descripcion-del-conjunto-de-datos">
+<h3>Descripción del Conjunto de Datos<a class="headerlink" href="#descripcion-del-conjunto-de-datos" title="Link to this heading">#</a></h3>
+<p>El conjunto de datos utilizado en este análisis fue generado específicamente para este ejericicio. Se seleccionaron 144 compuestos del conjunto de datos de LINCS, y se midieron los perfiles de expresión génica en células individuales después de 24 horas de tratamiento en PBMC humanas provenientes de tres donantes sanos. Las células PBMC, que incluyen tipos celulares como células T, células B, células mieloides y células NK, fueron elegidas por su relevancia como tejido primario en la enfermedad y su disponibilidad comercial con el consentimiento adecuado para la publicación pública.</p>
+<p>Además de los datos de expresión génica, también se recolectaron mediciones conjuntas de la accesibilidad de la cromatina y el ARNsc mediante el ensayo Multiome 10x para cada donante al inicio del estudio. Este enfoque multiómico pretende enriquecer el contexto biológico del estudio, proporcionando una base para entender cómo diferentes tipos de células responden a las perturbaciones y cómo estas respuestas pueden ser moduladas por la accesibilidad de la cromatina.</p>
+</section>
+<section id="objetivo-del-eda">
+<h3>Objetivo del (EDA)<a class="headerlink" href="#objetivo-del-eda" title="Link to this heading">#</a></h3>
+<p>El análisis exploratorio de datos que realizamos tiene como objetivo:</p>
+<ol class="arabic simple">
+<li><p><strong>Comprender la distribución de las variables clave</strong>: incluyendo el tipo de célula (<code class="docutils literal notranslate"><span class="pre">cell_type</span></code>), el nombre del compuesto (<code class="docutils literal notranslate"><span class="pre">sm_name</span></code>) y los valores de expresión diferencial de genes.</p></li>
+<li><p><strong>Identificar patrones en los datos</strong>: mediante la visualización de la frecuencia de diferentes tipos de células y compuestos, así como la exploración de posibles relaciones entre las variables.</p></li>
+<li><p><strong>Detectar outliers y datos faltantes</strong>: lo que es crucial para garantizar la calidad del modelo predictivo.</p></li>
+</ol>
+</section>
+<section id="fuentes-de-datos">
+<h3>Fuentes de Datos<a class="headerlink" href="#fuentes-de-datos" title="Link to this heading">#</a></h3>
+<p>Los datos utilizados provienen del experimento diseñado para esta ejericicio de la pag kaggle, que incluye mediciones de expresión génica de células individuales tratadas con compuestos seleccionados del conjunto de datos LINCS. Adicionalmente, se incorporaron datos multiómicos para enriquecer el contexto biológico de cada donante y tipo celular al inicio del estudio.</p>
+<p>Este conjunto de datos, junto con las técnicas de análisis exploratorio, permite una comprensión más profunda de la variabilidad biológica.</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-frames-usados-para-eda">
+<h1>Data frames usados para EDA<a class="headerlink" href="#data-frames-usados-para-eda" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_dataobs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;documentos_ejercicio2.2</span><span class="se">\\</span><span class="s1">adata_obs_meta.csv&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_dataobs</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_dataobs</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------------------------&quot;</span><span class="p">)</span>
+<span class="n">df_map</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;documentos_ejercicio2.2</span><span class="se">\\</span><span class="s1">id_map.csv&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_map</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_map</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             obs_id  library_id plate_name well row  col cell_id donor_id  \
+0  000006a87ba75b72   library_4    plate_4   F7   F    7    PBMC  donor_2   
+1  0000233976e3cd37   library_0    plate_3   D4   D    4    PBMC  donor_1   
+2  0001533c5e876362   library_2    plate_0  B11   B   11    PBMC  donor_0   
+3  00022f989630d14b  library_35    plate_2   E6   E    6    PBMC  donor_0   
+4  0002560bd38ce03e  library_22    plate_4   B6   B    6    PBMC  donor_2   
+
+            cell_type sm_lincs_id      sm_name  \
+0        T cells CD4+    LSM-4944     MLN 2238   
+1        T cells CD4+   LSM-46203   BMS-265246   
+2  T regulatory cells   LSM-45663  Resminostat   
+3        T cells CD4+   LSM-43216       FK 866   
+4        T cells CD4+    LSM-1099    Nilotinib   
+
+                                              SMILES  dose_uM  timepoint_hr  \
+0      CC(C)C[C@H](NC(=O)CNC(=O)c1cc(Cl)ccc1Cl)B(O)O      1.0            24   
+1        CCCCOc1c(C(=O)c2c(F)cc(C)cc2F)cnc2[nH]ncc12      1.0            24   
+2     CN(C)Cc1ccc(S(=O)(=O)n2ccc(/C=C/C(=O)NO)c2)cc1      1.0            24   
+3     O=C(/C=C/c1cccnc1)NCCCCC1CCN(C(=O)c2ccccc2)CC1      1.0            24   
+4  Cc1cn(-c2cc(NC(=O)c3ccc(C)c(Nc4nccc(-c5cccnc5)...      1.0            24   
+
+   control  
+0    False  
+1    False  
+2    False  
+3    False  
+4    False  
+3601350
+---------------------------
+   id cell_type                                            sm_name
+0   0   B cells  5-(9-Isopropyl-8-methyl-2-morpholino-9H-purin-...
+1   1   B cells                                 ABT-199 (GDC-0199)
+2   2   B cells                                             ABT737
+3   3   B cells                            AMD-070 (hydrochloride)
+4   4   B cells                                            AT 7867
+765
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Selección de Bases de Datos para EDA</strong></p>
+<p>Del conjunto de bases de datos disponibles en el ejercicio, decidimos enfocarnos en las siguientes:</p>
+<ol class="arabic simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">adata_obs_meta.csv</span></code></strong>: Esta base de datos contiene observaciones que consideramos esenciales para entender el problema en estudio, ya que ofrece detalles que permiten una exploración más profunda y contextualizada de las variables clave.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">id_map.csv</span></code></strong>: Esta base de datos es complementaria a la base de datos que usaremos en para nuestro modelo, proporcionando un mapeo de identificadores que facilita la integración de información relevante.</p></li>
+</ol>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-frame-a-usar-para-modelo">
+<h1>Data frame a usar para Modelo<a class="headerlink" href="#data-frame-a-usar-para-modelo" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_parqdtra</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s1">&#39;documentos_ejercicio2.2</span><span class="se">\\</span><span class="s1">de_train.parquet&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_parqdtra</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_parqdtra</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            cell_type             sm_name sm_lincs_id  \
+0            NK cells        Clotrimazole    LSM-5341   
+1        T cells CD4+        Clotrimazole    LSM-5341   
+2        T cells CD8+        Clotrimazole    LSM-5341   
+3  T regulatory cells        Clotrimazole    LSM-5341   
+4            NK cells  Mometasone Furoate    LSM-3349   
+
+                                              SMILES  control      A1BG  \
+0             Clc1ccccc1C(c1ccccc1)(c1ccccc1)n1ccnc1    False  0.104720   
+1             Clc1ccccc1C(c1ccccc1)(c1ccccc1)n1ccnc1    False  0.915953   
+2             Clc1ccccc1C(c1ccccc1)(c1ccccc1)n1ccnc1    False -0.387721   
+3             Clc1ccccc1C(c1ccccc1)(c1ccccc1)n1ccnc1    False  0.232893   
+4  C[C@@H]1C[C@H]2[C@@H]3CCC4=CC(=O)C=C[C@]4(C)[C...    False  4.290652   
+
+   A1BG-AS1       A2M   A2M-AS1     A2MP1  ...      ZUP1      ZW10    ZWILCH  \
+0 -0.077524 -1.625596 -0.144545  0.143555  ... -0.227781 -0.010752 -0.023881   
+1 -0.884380  0.371834 -0.081677 -0.498266  ... -0.494985 -0.303419  0.304955   
+2 -0.305378  0.567777  0.303895 -0.022653  ... -0.119422 -0.033608 -0.153123   
+3  0.129029  0.336897  0.486946  0.767661  ...  0.451679  0.704643  0.015468   
+4 -0.063864 -0.017443 -0.541154  0.570982  ...  0.758474  0.510762  0.607401   
+
+      ZWINT      ZXDA      ZXDB      ZXDC    ZYG11B       ZYX     ZZEF1  
+0  0.674536 -0.453068  0.005164 -0.094959  0.034127  0.221377  0.368755  
+1 -0.333905 -0.315516 -0.369626 -0.095079  0.704780  1.096702 -0.869887  
+2  0.183597 -0.555678 -1.494789 -0.213550  0.415768  0.078439 -0.259365  
+3 -0.103868  0.865027  0.189114  0.224700 -0.048233  0.216139 -0.085024  
+4 -0.123059  0.214366  0.487838 -0.819775  0.112365 -0.122193  0.676629  
+
+[5 rows x 18216 columns]
+11184624
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Datos Fundamentales para Modelos de Machine Learning</strong></p>
+<p>El conjunto de datos cargado desde <code class="docutils literal notranslate"><span class="pre">df_parqdtra</span></code> (<code class="docutils literal notranslate"><span class="pre">/content/de_train.parquet</span></code>) contiene la información necesaria para entrenar nuestros modelos de machine learning. Este dataset fue seleccionado porque incluye todas nuestras variables “target”, lo cual es esencial para desarrollar modelos predictivos robustos y precisos.</p>
+<p>Además, <code class="docutils literal notranslate"><span class="pre">df_parqdtra</span></code> incluye las características que mencionamos en nuestra introducción, asegurando que nuestros modelos utilicen los patrones necesarios para realizar predicciones efectivas.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="eda">
+<h1>EDA<a class="headerlink" href="#eda" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-frame-de-adata-obs-meta">
+<h1>Data frame de “adata_obs_meta”<a class="headerlink" href="#data-frame-de-adata-obs-meta" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_dataobs</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>obs_id</th>
+      <th>library_id</th>
+      <th>plate_name</th>
+      <th>well</th>
+      <th>row</th>
+      <th>col</th>
+      <th>cell_id</th>
+      <th>donor_id</th>
+      <th>cell_type</th>
+      <th>sm_lincs_id</th>
+      <th>sm_name</th>
+      <th>SMILES</th>
+      <th>dose_uM</th>
+      <th>timepoint_hr</th>
+      <th>control</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>240085</th>
+      <td>ffff28f274e983df</td>
+      <td>library_27</td>
+      <td>plate_0</td>
+      <td>G12</td>
+      <td>G</td>
+      <td>12</td>
+      <td>PBMC</td>
+      <td>donor_0</td>
+      <td>NK cells</td>
+      <td>LSM-3349</td>
+      <td>Mometasone Furoate</td>
+      <td>C[C@@H]1C[C@H]2[C@@H]3CCC4=CC(=O)C=C[C@]4(C)[C...</td>
+      <td>1.0</td>
+      <td>24</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>240086</th>
+      <td>ffff32893af5befb</td>
+      <td>library_31</td>
+      <td>plate_4</td>
+      <td>E7</td>
+      <td>E</td>
+      <td>7</td>
+      <td>PBMC</td>
+      <td>donor_2</td>
+      <td>T cells CD4+</td>
+      <td>LSM-2287</td>
+      <td>Midostaurin</td>
+      <td>CO[C@@H]1[C@H](N(C)C(=O)c2ccccc2)C[C@H]2O[C@]1...</td>
+      <td>1.0</td>
+      <td>24</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>240087</th>
+      <td>ffff6c3e0a7b05ad</td>
+      <td>library_38</td>
+      <td>plate_1</td>
+      <td>C5</td>
+      <td>C</td>
+      <td>5</td>
+      <td>PBMC</td>
+      <td>donor_2</td>
+      <td>NK cells</td>
+      <td>LSM-45786</td>
+      <td>BAY 87-2243</td>
+      <td>Cc1cc(-c2nc(-c3ccc(OC(F)(F)F)cc3)no2)nn1Cc1ccn...</td>
+      <td>1.0</td>
+      <td>24</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>240088</th>
+      <td>ffff8e571c7e8cb0</td>
+      <td>library_28</td>
+      <td>plate_5</td>
+      <td>B1</td>
+      <td>B</td>
+      <td>1</td>
+      <td>PBMC</td>
+      <td>donor_1</td>
+      <td>B cells</td>
+      <td>LSM-43181</td>
+      <td>Belinostat</td>
+      <td>O=C(/C=C/c1cccc(S(=O)(=O)Nc2ccccc2)c1)NO</td>
+      <td>0.1</td>
+      <td>24</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>240089</th>
+      <td>ffffe67500d95d8d</td>
+      <td>library_9</td>
+      <td>plate_3</td>
+      <td>E1</td>
+      <td>E</td>
+      <td>1</td>
+      <td>PBMC</td>
+      <td>donor_1</td>
+      <td>Myeloid cells</td>
+      <td>LSM-43181</td>
+      <td>Belinostat</td>
+      <td>O=C(/C=C/c1cccc(S(=O)(=O)Nc2ccccc2)c1)NO</td>
+      <td>0.1</td>
+      <td>24</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<section id="descripcion-del-archivo-adata-obs-meta-csv">
+<h2>Descripción del Archivo <code class="docutils literal notranslate"><span class="pre">adata_obs_meta.csv</span></code><a class="headerlink" href="#descripcion-del-archivo-adata-obs-meta-csv" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">library_id</span></code></strong>: Un identificador único para cada biblioteca, correspondiente a una medición realizada en muestras agrupadas de cada fila de la placa. Todas las células en los pocillos de la misma fila de la misma placa compartirán el mismo identificador de biblioteca.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">plate_name</span></code></strong>: Identificación única para todas las muestras de la misma placa.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">well</span></code></strong>: La ubicación del pocillo de la muestra en cada placa (esto es estándar en los experimentos con placas de 96 pocillos). Es una concatenación de filas y columnas.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">row</span></code></strong>: Fila de la placa de la que proviene la muestra.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">col</span></code></strong>: Columna de la placa de la que proviene la muestra.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">donor_id</span></code></strong>: Identifica la fuente donante de la muestra, una de tres posibles.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">cell_type</span></code></strong>: Tipo de célula anotado para cada célula en función de la expresión de ARN. Coincide con el <code class="docutils literal notranslate"><span class="pre">cell_type</span></code> en el archivo <code class="docutils literal notranslate"><span class="pre">de_train.parquet</span></code>.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">cell_id</span></code></strong>: Incluido para mantener la coherencia con los metadatos del Mapa de Conectividad LINCS, que denota un <code class="docutils literal notranslate"><span class="pre">cell_id</span></code> para cada línea celular.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">sm_name</span></code></strong>: Nombre principal del compuesto (principal) en una representación estandarizada, elegido por LINCS. Se proporciona para mapear los datos de este experimento con los datos del Mapa de Conectividad de LINCS.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">sm_lincs_id</span></code></strong>: ID global de LINCS (principal) para el compuesto en una representación estandarizada. Se proporciona para mapear los datos de este experimento con los datos del Mapa de Conectividad de LINCS.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">SMILES</span></code></strong>: Representaciones simplificadas del sistema de entrada de línea molecular (SMILES) de los compuestos utilizados en el experimento. Es una representación unidimensional de la estructura molecular. Cellarity proporciona estos SMILES en función de los compuestos específicos solicitados para este experimento.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">dose_uM</span></code></strong>: Dosis del compuesto en escala micromolar. Corresponde al <code class="docutils literal notranslate"><span class="pre">pert_idosecampo</span></code> en LINCS.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">timepoint_hr</span></code></strong>: Duración del tratamiento en horas. Se asigna al <code class="docutils literal notranslate"><span class="pre">pert_itimecampo</span></code> en LINCS.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">control</span></code></strong>: Indica si esta observación se utilizó como control. Puede ser Verdadero o Falso.</p></li>
+</ul>
+<p><em>Información proporcionada por Kaggle para el ejercicio.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_dataobs</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 240090 entries, 0 to 240089
+Data columns (total 15 columns):
+ #   Column        Non-Null Count   Dtype  
+---  ------        --------------   -----  
+ 0   obs_id        240090 non-null  object 
+ 1   library_id    240090 non-null  object 
+ 2   plate_name    240090 non-null  object 
+ 3   well          240090 non-null  object 
+ 4   row           240090 non-null  object 
+ 5   col           240090 non-null  int64  
+ 6   cell_id       240090 non-null  object 
+ 7   donor_id      240090 non-null  object 
+ 8   cell_type     240090 non-null  object 
+ 9   sm_lincs_id   240090 non-null  object 
+ 10  sm_name       240090 non-null  object 
+ 11  SMILES        240090 non-null  object 
+ 12  dose_uM       240090 non-null  float64
+ 13  timepoint_hr  240090 non-null  int64  
+ 14  control       240090 non-null  bool   
+dtypes: bool(1), float64(1), int64(2), object(11)
+memory usage: 25.9+ MB
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Descripción del Tipo de Variables</strong></p>
+<p>Este DataFrame contiene 240,090 entradas y 15 columnas. La mayoría de las columnas son de tipo <code class="docutils literal notranslate"><span class="pre">object</span></code>, que incluyen identificadores y nombres. También hay columnas numéricas de tipo <code class="docutils literal notranslate"><span class="pre">int64</span></code> y <code class="docutils literal notranslate"><span class="pre">float64</span></code>, así como una columna de tipo <code class="docutils literal notranslate"><span class="pre">bool</span></code>.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="variable-categorica">
+<h1>Variable categórica<a class="headerlink" href="#variable-categorica" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">orderli</span> <span class="o">=</span> <span class="n">df_dataobs</span><span class="p">[</span><span class="s1">&#39;library_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">index</span>
+<span class="n">orderli_top20</span> <span class="o">=</span> <span class="n">orderli</span><span class="p">[:</span><span class="mi">20</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;library_id&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_dataobs</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">orderli_top20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frecuencia de 20 valores más comunes en la columna &quot;library_id&quot;&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/52985067cff816f31604e31ad28f4d4de9c22608d841d4a8f7120af433828ae6.png" src="_images/52985067cff816f31604e31ad28f4d4de9c22608d841d4a8f7120af433828ae6.png" />
+</div>
+</div>
+<p>Aquí observamos la distribución de los datos en relación con la variable <code class="docutils literal notranslate"><span class="pre">library_id</span></code>, que identifica de manera única cada biblioteca. Este identificador corresponde a una medición realizada en muestras agrupadas por fila de la placa.</p>
+<p>Se destaca que la biblioteca con mayor frecuencia es la número 8, seguida por la número 23. Estos dos identificadores de biblioteca presentan una frecuencia superior a 6,000 datos cada uno.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">orderr</span> <span class="o">=</span> <span class="n">df_dataobs</span><span class="p">[</span><span class="s1">&#39;row&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">index</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;row&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_dataobs</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">orderr</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frecuencia en la columna &quot;row&quot;&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/054cd53f4c71c3f1224648f4c1279a5957c0e0f524c5144839a9277852253100.png" src="_images/054cd53f4c71c3f1224648f4c1279a5957c0e0f524c5144839a9277852253100.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_dataobs</span><span class="p">[</span><span class="s1">&#39;row&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>row
+A    33695
+B    31636
+H    30917
+C    30701
+D    29952
+E    29747
+F    26801
+G    26641
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Análisis de la Distribución de row</strong></p>
+<p>En el archivo <code class="docutils literal notranslate"><span class="pre">adata_obs_meta.csv</span></code>, la variable <code class="docutils literal notranslate"><span class="pre">row</span></code> que indica la fila de la placa presenta la siguiente distribución de muestras:</p>
+<ul class="simple">
+<li><p><strong>Fila A</strong>: 33,695 muestras (la fila con mayor frecuencia)</p></li>
+<li><p><strong>Fila G</strong>: 26,641 muestras.(La fila con menos muestras)</p></li>
+</ul>
+<p>Este análisis revela un desequilibrio en la distribución de muestras entre las filas de la placa.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_dataobs</span><span class="p">[</span><span class="s1">&#39;cell_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_id
+PBMC    240090
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>En la variable <strong><code class="docutils literal notranslate"><span class="pre">cell_id</span></code></strong>, todos los valores son <strong>PBMC</strong>, según la información proporcionada al principio.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">orderdon</span> <span class="o">=</span> <span class="n">df_dataobs</span><span class="p">[</span><span class="s1">&#39;donor_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">index</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;donor_id&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_dataobs</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">orderdon</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frecuencia en la columna &quot;donor_id&quot;&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/34a7309c30694dd6001ebee027f9eaeeb4dfe737456100efc46e2afc435eff33.png" src="_images/34a7309c30694dd6001ebee027f9eaeeb4dfe737456100efc46e2afc435eff33.png" />
+</div>
+</div>
+<p>Observamos que la variable con mayor cantidad de datos es <strong><code class="docutils literal notranslate"><span class="pre">donor_id</span></code></strong>, indicando que la mayoría de los datos provienen de este donante. En contraste, la menor cantidad de datos proviene de <strong><code class="docutils literal notranslate"><span class="pre">donor_0</span></code></strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">orderce</span> <span class="o">=</span> <span class="n">df_dataobs</span><span class="p">[</span><span class="s1">&#39;cell_type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">index</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;cell_type&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_dataobs</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">orderce</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d6e9927389f1ef87489abfadbea8a49c151862499afcea8d3caeffde09c6f74d.png" src="_images/d6e9927389f1ef87489abfadbea8a49c151862499afcea8d3caeffde09c6f74d.png" />
+</div>
+</div>
+<p>De los tipos de células, la categoría con mayor presencia es <strong>“T cells CD4 +”</strong>, que cuenta con más de 12,000 datos, siendo la de mayor proporción. En contraste, la categoría con menor presencia es <strong>“T regulatory cells”</strong>, la cual tiene la menor cantidad de datos, según las expresiones de ARN.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ordersm</span> <span class="o">=</span> <span class="n">df_dataobs</span><span class="p">[</span><span class="s1">&#39;sm_lincs_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">index</span>
+<span class="n">ordersm_top10</span> <span class="o">=</span> <span class="n">ordersm</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+
+<span class="n">ordersma</span> <span class="o">=</span> <span class="n">df_dataobs</span><span class="p">[</span><span class="s1">&#39;sm_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">index</span>
+<span class="n">ordersma_top10</span> <span class="o">=</span> <span class="n">ordersma</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+
+<span class="c1"># Primer gráfico</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;sm_lincs_id&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_dataobs</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">ordersm_top10</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Frecuencia de los 10 valores más comunes en la columna &quot;sm_lincs_id&quot;&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+
+<span class="c1"># Segundo gráfico</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;sm_name&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_dataobs</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">ordersma_top10</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Frecuencia en la columna &quot;sm_name&quot;&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/e9bcf9796da94cc89f997baa6848fbaff8f0313f2ea99882314c4e36deda4165.png" src="_images/e9bcf9796da94cc89f997baa6848fbaff8f0313f2ea99882314c4e36deda4165.png" />
+</div>
+</div>
+<p>Aquí, en estas gráficas, se muestra el compuesto brindado por LINCS estandarizado. Los datos indican que los compuestos con mayores componentes son <strong>“LSM-36361”</strong>, <strong>“LSM-6303”</strong> y <strong>“LSM-43181”</strong>. En la parte inferior, se encuentra el nombre correspondiente a cada compuesto.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Las 10 mayores frecuencias en la columna SMILES&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-----------------------------------------------------------&#39;</span><span class="p">)</span>
+<span class="n">frequency_table</span> <span class="o">=</span> <span class="n">df_dataobs</span><span class="p">[</span><span class="s1">&#39;SMILES&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frequency_table</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Las 10 mayores frecuencias en la columna SMILES
+-----------------------------------------------------------
+SMILES
+C[S+](C)[O-]                                                         28462
+CC(C)(C)c1nc(-c2cccc(NS(=O)(=O)c3c(F)cccc3F)c2F)c(-c2ccnc(N)n2)s1    26346
+O=C(/C=C/c1cccc(S(=O)(=O)Nc2ccccc2)c1)NO                             24059
+c1ccc2c(-c3cnn4cc(-c5ccc(N6CCNCC6)cc5)cnc34)ccnc2c1                   1939
+O=C(CSc1nc2c(c(=O)n1-c1ccccc1)SCC2)Nc1ccc(-c2ccccc2)cn1               1900
+Cc1cnc(-c2cnc(NCCNc3ccc(C#N)cn3)nc2-c2ccc(Cl)cc2Cl)[nH]1              1798
+OC1(c2ccc(Cl)c(C(F)(F)F)c2)CCN(CCCC(c2ccc(F)cc2)c2ccc(F)cc2)CC1       1744
+CC#CCn1c(N2CCC[C@@H](N)C2)nc2c1c(=O)n(Cc1nc(C)c3ccccc3n1)c(=O)n2C     1600
+CC(=O)c1c(C)c2cnc(Nc3ccc(N4CCNCC4)cn3)nc2n(C2CCCC2)c1=O               1573
+COc1ccc(S(=O)(=O)N(C(C)=O)c2ccccc2/C=C/c2cc[n+]([O-])cc2)cc1          1514
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observamos en esta tabla las representaciones simplificadas del sistema de entrada de línea molecular (SMILES) de los compuestos, donde se encuentran ubicados con mayor frecuencia. A continuación, se muestran los 10 principales.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;control&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_dataobs</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frecuencia en la columna &quot;control&quot;&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/068ca4d521ded56115e7ffb7dcf516027cff9df3311566f575ee863cdb761398.png" src="_images/068ca4d521ded56115e7ffb7dcf516027cff9df3311566f575ee863cdb761398.png" />
+</div>
+</div>
+<p>Aquí se nos indica la proporción de control: esta variable indica si una observación se utilizó como control, con valores de Verdadero o Falso. La mayoría de los datos no fueron controlados, con aproximadamente 160,000 registros, lo que muestra una diferencia significativa en comparación con aquellos que sí tuvieron control.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="variables-numericas">
+<h1>Variables numéricas<a class="headerlink" href="#variables-numericas" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summary_numeric</span> <span class="o">=</span> <span class="n">df_dataobs</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">summary_numeric</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                col        dose_uM  timepoint_hr
+count  240090.00000  240090.000000      240090.0
+mean        6.05665       2.462781          24.0
+std         3.55246       4.276144           0.0
+min         1.00000       0.100000          24.0
+25%         3.00000       1.000000          24.0
+50%         6.00000       1.000000          24.0
+75%         9.00000       1.000000          24.0
+max        12.00000      14.100000          24.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Se presenta un análisis general de las variables numéricas <code class="docutils literal notranslate"><span class="pre">col</span></code>, <code class="docutils literal notranslate"><span class="pre">dose_uM</span></code>, y <code class="docutils literal notranslate"><span class="pre">timepoint_hr</span></code> con los siguientes resultados:</p>
+<p>En el análisis, se observa que la variable <code class="docutils literal notranslate"><span class="pre">col</span></code> varía entre 1 y 12, con una media de 6.06 y una desviación estándar de 3.55. La dosis <code class="docutils literal notranslate"><span class="pre">dose_uM</span></code> tiene un rango entre 1.00 y 12.00 micromolares, con una media de 6.06 y una desviación estándar de 3.55. Para la variable <code class="docutils literal notranslate"><span class="pre">timepoint_hr</span></code>, los valores oscilan entre 24.0 horas, con una media de 24.0 y una desviación estándar de 0.0. ya que se tomaron los datos en mismo intervalo de tiempo para todos los datos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;col&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_dataobs</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frecuencia en la columna &quot;col&quot;&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/4ca2669b03ffbf8af82445afea93ee888c61536e057b1a6f093106fcd39cbb2c.png" src="_images/4ca2669b03ffbf8af82445afea93ee888c61536e057b1a6f093106fcd39cbb2c.png" />
+</div>
+</div>
+<p>La columna de la placa con mayor cantidad de datos fue la #3, mientras que las columnas con menos datos fueron la #7 y la #10. Estas últimas fueron las que tuvieron la menor cantidad de muestras en las placas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">orderdose</span> <span class="o">=</span> <span class="n">df_dataobs</span><span class="p">[</span><span class="s1">&#39;dose_uM&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">index</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;dose_uM&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_dataobs</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">orderdose</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frecuencia en la columna &quot;dose_uM&quot;&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/303b57d44614ec2503ca9ece93e7413422f9de1593deb0a1a223416ff951918f.png" src="_images/303b57d44614ec2503ca9ece93e7413422f9de1593deb0a1a223416ff951918f.png" />
+</div>
+</div>
+<p>La dosis del compuesto en escala micromolar con la mayor cantidad de datos fue “1.0”, con aproximadamente más de 175,000 muestras, mientras que la menor dosis fue “0.1”, cercana a “14.1”.</p>
+<section id="analisis-de-na-s">
+<h2>Análisis de NA’S<a class="headerlink" href="#analisis-de-na-s" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_dataobs</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>obs_id          0
+library_id      0
+plate_name      0
+well            0
+row             0
+col             0
+cell_id         0
+donor_id        0
+cell_type       0
+sm_lincs_id     0
+sm_name         0
+SMILES          0
+dose_uM         0
+timepoint_hr    0
+control         0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Análisis de Valores NA en el Conjunto de Datos</strong></p>
+<p>En el conjunto de datos, se observa que ninguna de las columnas presenta valores faltanteS. Esto significa que todas las columnas, incluyendo obs_id, library_id, plate_name, well, row, col, cell_id, donor_id, cell_type, sm_lincs_id, sm_name, SMILES, dose_uM, timepoint_hr, y control, están completamente completas.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-frame-de-id-map">
+<h1>Data frame de “id_map”<a class="headerlink" href="#data-frame-de-id-map" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_map</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>cell_type</th>
+      <th>sm_name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>250</th>
+      <td>250</td>
+      <td>Myeloid cells</td>
+      <td>Vandetanib</td>
+    </tr>
+    <tr>
+      <th>251</th>
+      <td>251</td>
+      <td>Myeloid cells</td>
+      <td>Vanoxerine</td>
+    </tr>
+    <tr>
+      <th>252</th>
+      <td>252</td>
+      <td>Myeloid cells</td>
+      <td>Vardenafil</td>
+    </tr>
+    <tr>
+      <th>253</th>
+      <td>253</td>
+      <td>Myeloid cells</td>
+      <td>Vorinostat</td>
+    </tr>
+    <tr>
+      <th>254</th>
+      <td>254</td>
+      <td>Myeloid cells</td>
+      <td>YK 4-279</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<section id="descripcion-del-archivo-id-map-csv">
+<h2>Descripción del Archivo <code class="docutils literal notranslate"><span class="pre">id_map.csv</span></code><a class="headerlink" href="#descripcion-del-archivo-id-map-csv" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">id</span></code></strong>: Identificador único para cada entrada en el archivo.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">cell_type</span></code></strong>: Tipo de célula que se debe predecir para el identificador dado. Este campo especifica el tipo de célula asociado con el <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">sm_name</span></code></strong>: Nombre del compuesto que se debe predecir para el identificador dado. Este campo indica el nombre del compuesto relacionado con el <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p></li>
+</ul>
+<p><em>Información proporcionada por Kaggle para el ejercicio.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_map</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 255 entries, 0 to 254
+Data columns (total 3 columns):
+ #   Column     Non-Null Count  Dtype 
+---  ------     --------------  ----- 
+ 0   id         255 non-null    int64 
+ 1   cell_type  255 non-null    object
+ 2   sm_name    255 non-null    object
+dtypes: int64(1), object(2)
+memory usage: 6.1+ KB
+None
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
+
+<span class="c1"># 1. Gráfico para la columna &#39;id&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df_map</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;skyblue&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de la Columna &quot;id&quot;&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;ID&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># 2. Gráfico para la columna &#39;cell_type&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;cell_type&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_map</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frecuencia de los Tipos de Célula en &quot;cell_type&quot;&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tipo de Célula&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/7214e7309e182c9ab866a7667932aff64805e2bf702a3a2f27308cbbb983a311.png" src="_images/7214e7309e182c9ab866a7667932aff64805e2bf702a3a2f27308cbbb983a311.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\loren\AppData\Local\Temp\ipykernel_13508\3103301280.py:14: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.countplot(x=&#39;cell_type&#39;, data=df_map, palette=&#39;viridis&#39;)
+</pre></div>
+</div>
+<img alt="_images/cc6933ba9323af7b1808c1fa41c4a8d57c8f3ec36fef1ac60c36fe6c7b4259dd.png" src="_images/cc6933ba9323af7b1808c1fa41c4a8d57c8f3ec36fef1ac60c36fe6c7b4259dd.png" />
+</div>
+</div>
+</section>
+<section id="analisis-de-graficas">
+<h2>Análisis de Gráficas<a class="headerlink" href="#analisis-de-graficas" title="Link to this heading">#</a></h2>
+<p>Observamos que en el histograma de “id” se presenta una concentración bastante uniforme para la mayoría de los datos. Sin embargo, hay algunos identificadores que tienen una frecuencia ligeramente menor que el resto.</p>
+<p>En la gráfica siguiente, se nota que existe una proporción casi igual para los tipos de células en ambos tipos que presenta la base de datos, siendo esta alrededor de 120 datos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Supongamos que has cargado tu DataFrame desde &#39;id_map.csv&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;documentos_ejercicio2.2</span><span class="se">\\</span><span class="s1">id_map.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Contar las frecuencias de cada valor en la columna &#39;sm_name&#39;</span>
+<span class="n">sm_name_counts</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;sm_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+
+<span class="c1"># Seleccionar los primeros 30 valores más frecuentes</span>
+<span class="n">top_30_sm_names</span> <span class="o">=</span> <span class="n">sm_name_counts</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span><span class="o">.</span><span class="n">index</span>
+
+<span class="c1"># Filtrar el DataFrame para solo incluir los valores seleccionados</span>
+<span class="n">df_top_30</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;sm_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">top_30_sm_names</span><span class="p">)]</span>
+
+<span class="c1"># Crear el gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;sm_name&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_top_30</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">top_30_sm_names</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frecuencia de los 30 Nombres de Compuestos Más Comunes en &quot;sm_name&quot;&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Nombre del Compuesto&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>  <span class="c1"># Rota las etiquetas del eje x para una mejor legibilidad</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\loren\AppData\Local\Temp\ipykernel_13508\1065589472.py:15: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.countplot(x=&#39;sm_name&#39;, data=df_top_30, palette=&#39;viridis&#39;, order=top_30_sm_names)
+</pre></div>
+</div>
+<img alt="_images/e0843659411dc842195032b350cff4d6f8a9814912df4beb38bb210c805bbfef.png" src="_images/e0843659411dc842195032b350cff4d6f8a9814912df4beb38bb210c805bbfef.png" />
+</div>
+</div>
+<p>Aquí observamos que los compuestos que se presentan con mayor frecuencia son los que se muestran en las gráficas, indicando que en estas variables está la mayor proporción.</p>
+</section>
+<section id="id1">
+<h2>Análisis de NA’S<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Valores Faltantes en el DataFrame:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_map</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valores Faltantes en el DataFrame:
+id           0
+cell_type    0
+sm_name      0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observamos además que no existen datos NA, siendo todos los datos de las variables completos.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-frame-de-de-train">
+<h1>Data frame de “de_train”<a class="headerlink" href="#data-frame-de-de-train" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_parqdtra</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>cell_type</th>
+      <th>sm_name</th>
+      <th>sm_lincs_id</th>
+      <th>SMILES</th>
+      <th>control</th>
+      <th>A1BG</th>
+      <th>A1BG-AS1</th>
+      <th>A2M</th>
+      <th>A2M-AS1</th>
+      <th>A2MP1</th>
+      <th>...</th>
+      <th>ZUP1</th>
+      <th>ZW10</th>
+      <th>ZWILCH</th>
+      <th>ZWINT</th>
+      <th>ZXDA</th>
+      <th>ZXDB</th>
+      <th>ZXDC</th>
+      <th>ZYG11B</th>
+      <th>ZYX</th>
+      <th>ZZEF1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>609</th>
+      <td>T regulatory cells</td>
+      <td>Atorvastatin</td>
+      <td>LSM-5771</td>
+      <td>CC(C)c1c(C(=O)Nc2ccccc2)c(-c2ccccc2)c(-c2ccc(F...</td>
+      <td>False</td>
+      <td>-0.014372</td>
+      <td>-0.122464</td>
+      <td>-0.456366</td>
+      <td>-0.147894</td>
+      <td>-0.545382</td>
+      <td>...</td>
+      <td>-0.549987</td>
+      <td>-2.200925</td>
+      <td>0.359806</td>
+      <td>1.073983</td>
+      <td>0.356939</td>
+      <td>-0.029603</td>
+      <td>-0.528817</td>
+      <td>0.105138</td>
+      <td>0.491015</td>
+      <td>-0.979951</td>
+    </tr>
+    <tr>
+      <th>610</th>
+      <td>NK cells</td>
+      <td>Riociguat</td>
+      <td>LSM-45758</td>
+      <td>COC(=O)N(C)c1c(N)nc(-c2nn(Cc3ccccc3F)c3ncccc23...</td>
+      <td>False</td>
+      <td>-0.455549</td>
+      <td>0.188181</td>
+      <td>0.595734</td>
+      <td>-0.100299</td>
+      <td>0.786192</td>
+      <td>...</td>
+      <td>-1.236905</td>
+      <td>0.003854</td>
+      <td>-0.197569</td>
+      <td>-0.175307</td>
+      <td>0.101391</td>
+      <td>1.028394</td>
+      <td>0.034144</td>
+      <td>-0.231642</td>
+      <td>1.023994</td>
+      <td>-0.064760</td>
+    </tr>
+    <tr>
+      <th>611</th>
+      <td>T cells CD4+</td>
+      <td>Riociguat</td>
+      <td>LSM-45758</td>
+      <td>COC(=O)N(C)c1c(N)nc(-c2nn(Cc3ccccc3F)c3ncccc23...</td>
+      <td>False</td>
+      <td>0.338168</td>
+      <td>-0.109079</td>
+      <td>0.270182</td>
+      <td>-0.436586</td>
+      <td>-0.069476</td>
+      <td>...</td>
+      <td>0.077579</td>
+      <td>-1.101637</td>
+      <td>0.457201</td>
+      <td>0.535184</td>
+      <td>-0.198404</td>
+      <td>-0.005004</td>
+      <td>0.552810</td>
+      <td>-0.209077</td>
+      <td>0.389751</td>
+      <td>-0.337082</td>
+    </tr>
+    <tr>
+      <th>612</th>
+      <td>T cells CD8+</td>
+      <td>Riociguat</td>
+      <td>LSM-45758</td>
+      <td>COC(=O)N(C)c1c(N)nc(-c2nn(Cc3ccccc3F)c3ncccc23...</td>
+      <td>False</td>
+      <td>0.101138</td>
+      <td>-0.409724</td>
+      <td>-0.606292</td>
+      <td>-0.071300</td>
+      <td>-0.001789</td>
+      <td>...</td>
+      <td>0.005951</td>
+      <td>-0.893093</td>
+      <td>-1.003029</td>
+      <td>-0.080367</td>
+      <td>-0.076604</td>
+      <td>0.024849</td>
+      <td>0.012862</td>
+      <td>-0.029684</td>
+      <td>0.005506</td>
+      <td>-1.733112</td>
+    </tr>
+    <tr>
+      <th>613</th>
+      <td>T regulatory cells</td>
+      <td>Riociguat</td>
+      <td>LSM-45758</td>
+      <td>COC(=O)N(C)c1c(N)nc(-c2nn(Cc3ccccc3F)c3ncccc23...</td>
+      <td>False</td>
+      <td>-0.757116</td>
+      <td>0.085910</td>
+      <td>-0.730025</td>
+      <td>-1.367801</td>
+      <td>-0.695944</td>
+      <td>...</td>
+      <td>0.232343</td>
+      <td>-2.247816</td>
+      <td>-0.346036</td>
+      <td>-0.919567</td>
+      <td>-1.131372</td>
+      <td>-0.120252</td>
+      <td>-0.064537</td>
+      <td>-0.603280</td>
+      <td>-0.098041</td>
+      <td>-0.750681</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 18216 columns</p>
+</div></div></div>
+</div>
+<section id="descripcion-del-archivo-de-train-parquet">
+<h2>Descripción del Archivo <code class="docutils literal notranslate"><span class="pre">de_train.parquet</span></code><a class="headerlink" href="#descripcion-del-archivo-de-train-parquet" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">de_train.parquet</span></code></strong>: Contiene datos de expresión diferencial en formato de matriz densa.</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p><strong>Genes</strong>:</p>
+<ul class="simple">
+<li><p><strong>Ejemplo</strong>: <code class="docutils literal notranslate"><span class="pre">A1BG</span></code>, <code class="docutils literal notranslate"><span class="pre">A1BG-AS1</span></code>, …, <code class="docutils literal notranslate"><span class="pre">ZZEF1</span></code></p></li>
+<li><p><strong>Total</strong>: 18.211 genes</p></li>
+<li><p><strong>Valor de expresión diferencial</strong>: Calculado como <code class="docutils literal notranslate"><span class="pre">-log10(p-value)</span> <span class="pre">*</span> <span class="pre">sign(LFC)</span></code>. Aquí, <code class="docutils literal notranslate"><span class="pre">LFC</span></code> es el cambio estimado en el logaritmo de la expresión entre la condición de tratamiento y la de control. Un <code class="docutils literal notranslate"><span class="pre">LFC</span></code> positivo indica que el gen aumenta en la condición de tratamiento en comparación con el control.</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">cell_type</span></code></strong>:</p>
+<ul class="simple">
+<li><p><strong>Descripción</strong>: Tipo de célula anotado para cada célula basado en la expresión de ARN.</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">sm_name</span></code></strong>:</p>
+<ul class="simple">
+<li><p><strong>Descripción</strong>: Nombre principal del compuesto (en una representación estandarizada) elegido por LINCS. Esto se proporciona para mapear los datos de este experimento con los datos del Mapa de conectividad de LINCS.</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">sm_lincs_id</span></code></strong>:</p>
+<ul class="simple">
+<li><p><strong>Descripción</strong>: ID global de LINCS (principal) compuesto (en una representación estandarizada). Se utiliza para mapear los datos de este experimento a los datos del Mapa de conectividad de LINCS.</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">SMILES</span></code></strong>:</p>
+<ul class="simple">
+<li><p><strong>Descripción</strong>: Representaciones simplificadas del sistema de entrada de línea molecular (SMILES) de los compuestos utilizados en el experimento. Es una representación unidimensional de la estructura molecular proporcionada por Cellarity.</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">control</span></code></strong>:</p>
+<ul class="simple">
+<li><p><strong>Descripción</strong>: Booleano que indica si esta instancia se utilizó como control.</p></li>
+</ul>
+</li>
+</ol>
+<section id="objetivo-del-proyecto">
+<h3>Objetivo del Proyecto:<a class="headerlink" href="#objetivo-del-proyecto" title="Link to this heading">#</a></h3>
+<p>El archivo <code class="docutils literal notranslate"><span class="pre">de_train.parquet</span></code> incluye los datos principales. Contiene valores para una serie de pares <code class="docutils literal notranslate"><span class="pre">cell_type</span></code>/<code class="docutils literal notranslate"><span class="pre">sm_name</span></code>. El objetivo es predecir los valores correspondientes para los pares <code class="docutils literal notranslate"><span class="pre">cell_type</span></code>/<code class="docutils literal notranslate"><span class="pre">sm_name</span></code> indicados en <code class="docutils literal notranslate"><span class="pre">id_map.csv</span></code>.</p>
+<p><strong>Nota</strong>: No hay datos de expresión diferencial para la muestra de DMSO, ya que se utiliza como control negativo. Todos los resultados de expresión diferencial se calculan en referencia al DMSO, es decir, el análisis de expresión diferencial investiga “¿qué tan seguro estoy de que cada gen aumentó o disminuyó en relación con el DMSO debido al tratamiento con el compuesto?”.</p>
+<p><em>Información proporcionada por Kaggle para el ejercicio.</em></p>
+<p>predecir cambios en la expresion genica segun compuesta y tipo de celula que se le aplica</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_parqdtra</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 614 entries, 0 to 613
+Columns: 18216 entries, cell_type to ZZEF1
+dtypes: bool(1), float64(18211), object(4)
+memory usage: 85.3+ MB
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="analisis-de-datos-na-s">
+<h2>Análisis de datos NA’S<a class="headerlink" href="#analisis-de-datos-na-s" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_parqdtra</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_type      0
+sm_name        0
+sm_lincs_id    0
+SMILES         0
+control        0
+              ..
+ZXDB           0
+ZXDC           0
+ZYG11B         0
+ZYX            0
+ZZEF1          0
+Length: 18216, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Antes de iniciar con el EDA, observamos que ninguna columna tiene datos NA, lo cual es un buen indicio, ya que el DataFrame está completo, al igual que los anteriores.</p>
+</section>
+<section id="analisis-de-variables-categoricas">
+<h2>Análisis de Variables Categóricas<a class="headerlink" href="#analisis-de-variables-categoricas" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;cell_type&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_parqdtra</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frecuencia de Tipos de Célula&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tipo de Célula&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\loren\AppData\Local\Temp\ipykernel_13508\3530360793.py:2: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.countplot(x=&#39;cell_type&#39;, data=df_parqdtra, palette=&#39;viridis&#39;)
+</pre></div>
+</div>
+<img alt="_images/6f61957fb745003a97b145a0b273f8ff9f9b66287561820438304373a6d25093.png" src="_images/6f61957fb745003a97b145a0b273f8ff9f9b66287561820438304373a6d25093.png" />
+</div>
+</div>
+<p>En esta gráfica se presenta la mayor frecuencia de los tipos de células, mostrando que “NK cells” es el tipo con mayor frecuencia, seguido muy de cerca por “T cells CD4+”, “T cells CD8+” y “T regulatory cells”. Los tipos restantes tienen frecuencias muy similares.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell_type_counts</span> <span class="o">=</span> <span class="n">df_parqdtra</span><span class="p">[</span><span class="s1">&#39;cell_type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;tab20&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">colors</span>
+
+<span class="c1"># Crea el gráfico circular</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">cell_type_counts</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">cell_type_counts</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%1.1f%%</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">colors</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">cell_type_counts</span><span class="p">)])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de Tipos de Célula&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/c6696a1b8903949050c1a5bbc8c9a0009fc11632603ee9168f2608569524e2ba.png" src="_images/c6696a1b8903949050c1a5bbc8c9a0009fc11632603ee9168f2608569524e2ba.png" />
+</div>
+</div>
+<section id="analisis-de-la-proporcion">
+<h3>Análisis de la Proporción<a class="headerlink" href="#analisis-de-la-proporcion" title="Link to this heading">#</a></h3>
+<p>Se observa la distribución de la proporción de los datos del tipo de célula, información relacionada con la anterior. La proporción es casi igual para “T cells CD4+”, “NK cells” y “T regulatory cells”, siendo estos los tipos de células con mayor porcentaje. Por otro lado, “B cells” y “Myeloid cells” tienen las proporciones más bajas, de manera similar.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;control&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_parqdtra</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frecuencia de Observaciones de Control&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Es Control&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\loren\AppData\Local\Temp\ipykernel_13508\511625904.py:2: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.countplot(x=&#39;control&#39;, data=df_parqdtra, palette=&#39;viridis&#39;)
+</pre></div>
+</div>
+<img alt="_images/ed576adcd42725f8085db224996fda0254c0eef78c3ef5541734c4d3c3f29e1f.png" src="_images/ed576adcd42725f8085db224996fda0254c0eef78c3ef5541734c4d3c3f29e1f.png" />
+</div>
+</div>
+<p>Esta gráfica proporciona un análisis sobre si los datos tuvieron un control o no. Se aprecia que la mayoría de los datos no fueron controlados, con una gran proporción sin control (alrededor de 600 datos), mientras que los datos con control son muy bajos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Las frecuencias en la columna SMILES&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-----------------------------------------------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_parqdtra</span><span class="p">[</span><span class="s1">&#39;SMILES&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Las frecuencias en la columna SMILES
+-----------------------------------------------------------
+SMILES
+Nc1nc(Nc2ccc3c(c2)CC[C@@H](N2CCCC2)CC3)nn1-c1cc2c(nn1)-c1ccccc1CCC2                                 6
+Cn1c(=O)n(-c2ccc(C(C)(C)C#N)cc2)c2c3cc(-c4cnc5ccccc5c4)ccc3ncc21                                    6
+c1ccc2c(-c3cnn4cc(-c5ccc(N6CCNCC6)cc5)cnc34)ccnc2c1                                                 6
+O=C(CSc1nc2c(c(=O)n1-c1ccccc1)SCC2)Nc1ccc(-c2ccccc2)cn1                                             6
+O=C(O)c1ccc2cc(-c3ccc(O)c(C45CC6CC(CC(C6)C4)C5)c3)ccc2c1                                            6
+                                                                                                   ..
+CN1CCC[C@@H]1CCO[C@](C)(c1ccccc1)c1ccc(Cl)cc1                                                       4
+Cc1nc2c(-c3cnc(N)nc3)nc(N3CCOCC3)nc2n1C(C)C                                                         4
+COc1cc2c(cc1OC(C)C)[C@H](c1ccc(Cl)cc1)N(c1ccc(N(C)C[C@H]3CC[C@H](N4CCN(C)C(=O)C4)CC3)cc1)C(=O)C2    4
+CN(C)Cc1ccc(S(=O)(=O)n2ccc(/C=C/C(=O)NO)c2)cc1                                                      3
+OCCCNc1cc(-c2ccnc(Nc3cccc(Cl)c3)n2)ccn1                                                             3
+Name: count, Length: 146, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>En esta tabla se observan las representaciones simplificadas del sistema de entrada de línea molecular (SMILES). Vemos las que ocupan los primeros lugares y las que se ubican al final.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">ordersma</span> <span class="o">=</span> <span class="n">df_parqdtra</span><span class="p">[</span><span class="s1">&#39;sm_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">index</span>
+<span class="n">ordersma_top10</span> <span class="o">=</span> <span class="n">ordersma</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">ordersm</span> <span class="o">=</span> <span class="n">df_parqdtra</span><span class="p">[</span><span class="s1">&#39;sm_lincs_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">index</span>
+<span class="n">ordersm_top10</span> <span class="o">=</span> <span class="n">ordersm</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;sm_name&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_parqdtra</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">ordersma_top10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Top 10 de las Frecuencias en la columna &quot;sm_name&quot;&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;sm_lincs_id&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_parqdtra</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">ordersm_top10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frecuencia de los 10 valores más comunes en la columna &quot;sm_lincs_id&quot;&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/42ecf8695ad893b6defbda853988cec09915f35faf807dc26a0452e1b5716631.png" src="_images/42ecf8695ad893b6defbda853988cec09915f35faf807dc26a0452e1b5716631.png" />
+</div>
+</div>
+<p>En estas gráficas se observa el nombre principal del compuesto y el ID del compuesto. Se puede ver que los compuestos con mayor proporción son “R428” y “Dactolisib”, con IDs de “LSM-45574” y “LSM-4255”, respectivamente. Estos compuestos están ubicados en los primeros dos puestos, aunque tienen una proporción similar a la de los demás compuestos mostrados en las gráficas.</p>
+</section>
+</section>
+<section id="analisis-de-variables-numericas">
+<h2>Análisis de Variables Numéricas<a class="headerlink" href="#analisis-de-variables-numericas" title="Link to this heading">#</a></h2>
+<p>Nuestras variables numéricas son las mismas que las de respuesta.</p>
+<section id="variable-respuesta">
+<h3>Variable respuesta<a class="headerlink" href="#variable-respuesta" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_parqdtra</span><span class="p">[</span><span class="s1">&#39;cell_type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_type
+NK cells              146
+T cells CD4+          146
+T regulatory cells    146
+T cells CD8+          142
+B cells                17
+Myeloid cells          17
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aquí observamos la frecuencia de nuestra variable objetivo y vemos que las que tienen mayor frecuencia son:</p>
+<ul class="simple">
+<li><p><strong>NK cells</strong>: 146</p></li>
+<li><p><strong>T cells CD4+</strong>: 146</p></li>
+<li><p><strong>T regulatory cells</strong>: 146</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="analisis-de-datos-atipicos">
+<h1>Análisis de datos atípicos<a class="headerlink" href="#analisis-de-datos-atipicos" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_numeric</span> <span class="o">=</span> <span class="n">df_parqdtra</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Seleccionar solo columnas numéricas</span>
+<span class="n">df_numeric</span> <span class="o">=</span> <span class="n">df_parqdtra</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;float64&#39;</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">])</span>
+
+<span class="c1"># Calcular los percentiles de una sola vez para todas las columnas</span>
+<span class="n">Q1</span> <span class="o">=</span> <span class="n">df_numeric</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">Q3</span> <span class="o">=</span> <span class="n">df_numeric</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
+<span class="n">IQR</span> <span class="o">=</span> <span class="n">Q3</span> <span class="o">-</span> <span class="n">Q1</span>
+
+<span class="c1"># Calcular los límites inferior y superior</span>
+<span class="n">lower_bound</span> <span class="o">=</span> <span class="n">Q1</span> <span class="o">-</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">IQR</span>
+<span class="n">upper_bound</span> <span class="o">=</span> <span class="n">Q3</span> <span class="o">+</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">IQR</span>
+
+<span class="c1"># Identificar outliers en todas las columnas a la vez</span>
+<span class="n">outliers_condition</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_numeric</span> <span class="o">&lt;</span> <span class="n">lower_bound</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df_numeric</span> <span class="o">&gt;</span> <span class="n">upper_bound</span><span class="p">)</span>
+
+<span class="c1"># Contar los outliers por columna</span>
+<span class="n">outliers_summary</span> <span class="o">=</span> <span class="n">outliers_condition</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+
+<span class="c1"># Convertir el diccionario a un DataFrame para visualización</span>
+<span class="n">outliers_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">outliers_summary</span><span class="o">.</span><span class="n">items</span><span class="p">()),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Variable&#39;</span><span class="p">,</span> <span class="s1">&#39;Outliers&#39;</span><span class="p">])</span>
+<span class="n">outliers_df</span> <span class="o">=</span> <span class="n">outliers_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Outliers&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Mostrar los primeros 10 resultados en formato tabular</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">(</span><span class="n">outliers_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">headers</span><span class="o">=</span><span class="s1">&#39;keys&#39;</span><span class="p">,</span> <span class="n">tablefmt</span><span class="o">=</span><span class="s1">&#39;pipe&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|       | Variable   |   Outliers |
+|------:|:-----------|-----------:|
+|  7389 | FTH1       |        123 |
+|  7397 | FTL        |        107 |
+|  5980 | DDX5       |        105 |
+| 16761 | TXNIP      |        105 |
+|  7984 | H1FX       |        104 |
+|  6550 | EIF4A2     |         98 |
+|  5786 | CXCR4      |         97 |
+|  8035 | HBB        |         97 |
+|  4925 | CD7        |         97 |
+|  8171 | HIST1H1D   |         96 |
+</pre></div>
+</div>
+</div>
+</div>
+<section id="analisis-de-datos">
+<h2>Análisis de datos:<a class="headerlink" href="#analisis-de-datos" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">outliers_df</span><span class="p">[</span><span class="s1">&#39;Outliers&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Outliers&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">spines</span><span class="p">[[</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="s1">&#39;right&#39;</span><span class="p">,]]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/3f8d6f240fd469a18442db773e3a79fe86cd50a79e194af27a9d8ae186ef16b3.png" src="_images/3f8d6f240fd469a18442db773e3a79fe86cd50a79e194af27a9d8ae186ef16b3.png" />
+</div>
+</div>
+<p>Observamos la distribución de los datos atípicos en nuestras variables de genes y cómo se distribuyen, indicando que hay una mayor concentración de la mayoría de los datos alrededor de 60 datos atípicos en las variables de genes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear un boxplot para visualizar los outliers</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">outliers_df</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;Outliers&#39;</span><span class="p">,</span> <span class="n">vert</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># Cambia &#39;Outliers&#39; por la columna relevante en tu DataFrame</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de Outliers&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">spines</span><span class="p">[[</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="s1">&#39;right&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Valores&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/5c7c801be63c9be274055d08928a434bd7c5978c19a541a59c3984a688258170.png" src="_images/5c7c801be63c9be274055d08928a434bd7c5978c19a541a59c3984a688258170.png" />
+</div>
+</div>
+<p>Observamos en este <strong>boxplot</strong> cómo se distribuyen los datos, indicando que dentro de los datos atípicos de nuestras variables de genes también existen algunos datos con una alta cantidad de valores atípicos. Estos datos atípicos están claramente representados en el boxplot, confirmando lo que mencionamos en el análisis anterior.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="reducion-de-dimensionalidad">
+<h1>Reducion de dimensionalidad<a class="headerlink" href="#reducion-de-dimensionalidad" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ajustar el selector al DataFrame original</span>
+<span class="n">selector</span> <span class="o">=</span> <span class="n">VarianceThreshold</span><span class="p">(</span><span class="n">threshold</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>  <span class="c1"># Umbral de varianza</span>
+<span class="n">selector</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_numeric</span><span class="p">)</span>
+
+<span class="c1"># Obtener las columnas que se mantuvieron después de la selección</span>
+<span class="n">columns_selected</span> <span class="o">=</span> <span class="n">df_numeric</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">selector</span><span class="o">.</span><span class="n">get_support</span><span class="p">(</span><span class="n">indices</span><span class="o">=</span><span class="kc">True</span><span class="p">)]</span>
+
+<span class="c1"># Mostrar las columnas eliminadas</span>
+<span class="n">columns_eliminated</span> <span class="o">=</span> <span class="n">df_numeric</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">columns_selected</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Columnas eliminadas debido a baja varianza:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">columns_eliminated</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Columnas eliminadas debido a baja varianza:
+Index([], dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Análisis de la Reducción de Dimensionalidad</strong></p>
+<p>En el resultado obtenido, se muestra que al intentar reducir la dimensionalidad del DataFrame, ninguna variable fue eliminada. Esto indica que no se eliminó ninguna columna debido a la baja varianza, ya que la lista de columnas eliminadas está vacía (Index([], dtype=’object’)).</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Ejercicio_2_NEURIPS.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Ejercicio 2 - NEURIPS BELKA</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Ejercicio_3_NEURIPS.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Ejercicio 3</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Ejercicio 3</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-al-analisis-exploratorio-de-datos">Introducción al Análisis Exploratorio de Datos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importancia-del-problema">Importancia del Problema</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-del-conjunto-de-datos">Descripción del Conjunto de Datos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo-del-eda">Objetivo del (EDA)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fuentes-de-datos">Fuentes de Datos</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-frames-usados-para-eda">Data frames usados para EDA</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-frame-a-usar-para-modelo">Data frame a usar para Modelo</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eda">EDA</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-frame-de-adata-obs-meta">Data frame de “adata_obs_meta”</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-del-archivo-adata-obs-meta-csv">Descripción del Archivo <code class="docutils literal notranslate"><span class="pre">adata_obs_meta.csv</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-categorica">Variable categórica</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-numericas">Variables numéricas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-na-s">Análisis de NA’S</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-frame-de-id-map">Data frame de “id_map”</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-del-archivo-id-map-csv">Descripción del Archivo <code class="docutils literal notranslate"><span class="pre">id_map.csv</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-graficas">Análisis de Gráficas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Análisis de NA’S</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-frame-de-de-train">Data frame de “de_train”</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-del-archivo-de-train-parquet">Descripción del Archivo <code class="docutils literal notranslate"><span class="pre">de_train.parquet</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo-del-proyecto">Objetivo del Proyecto:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-datos-na-s">Análisis de datos NA’S</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-variables-categoricas">Análisis de Variables Categóricas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-la-proporcion">Análisis de la Proporción</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-variables-numericas">Análisis de Variables Numéricas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-respuesta">Variable respuesta</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-datos-atipicos">Análisis de datos atípicos</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-datos">Análisis de datos:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#reducion-de-dimensionalidad">Reducion de dimensionalidad</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By LORENZO GUTIERREZ, JUAN SEBASTIAN QUINTANA
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

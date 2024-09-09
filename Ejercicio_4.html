@@ -1,0 +1,1089 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Ejercicio 4 &#8212; PARCIAL-I-ML</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ejercicio_4';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Ejercicio 3" href="Ejercicio_3_NEURIPS.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="PARCIAL-I-ML - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="PARCIAL-I-ML - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Ejercicio_1_punto_1.html">Ejercicio 1 - Breast Cancer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ejercicio_1_punto_2.html">Ejercicio 1 - Boston Housing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ejercicio_2_NEURIPS.html">Ejercicio 2 - NEURIPS BELKA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ejercicio_2_punto_2.html">Ejercicio 3</a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Ejercicio_3_NEURIPS.html">Ejercicio 3</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ejercicio 4</a></li>
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FEjercicio_4.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Ejercicio_4.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Ejercicio 4</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Ejercicio 4</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion"><strong>Introducción:</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias">Librerias</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#base-de-datos">Base de datos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-y-gridsearchcv">Pipeline y Gridsearchcv()</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dividir-el-conjunto-de-datos">Dividir el conjunto de datos</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-de-regresion-knn">Modelo de regresion KNN:</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-resultados-k-nn">LOS RESULTADOS K-NN:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">Linear Regression</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-resultados-regresion-lineal">LOS RESULTADOS REGRESION LINEAL:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-de-resultados">Comparación de Resultados</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluacion-de-los-modelos">Evaluación de los Modelos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-de-modelos">COMPARACIÓN DE MODELOS:</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ejercicio-4">
+<h1>Ejercicio 4<a class="headerlink" href="#ejercicio-4" title="Link to this heading">#</a></h1>
+<section id="introduccion">
+<h2><strong>Introducción:</strong><a class="headerlink" href="#introduccion" title="Link to this heading">#</a></h2>
+<p>En este punto, usaremos el problema de predicción utilizando la base de datos “<strong>Open Problems– Single-Cell Perturbations</strong>”, la cual contiene datos experimentales sobre perturbaciones en células individuales. Para ello, utilizaremos técnicas de machine learning, incluyendo K-NN (lineal regresion) y regresión lineal, con el fin de identificar el modelo que mejor se ajuste a los datos.</p>
+<p>Finalmente, evaluaremos el desempeño de los modelos construidos mediante la creación de una tabla de error que incluirá las métricas más relevantes en problemas de regresión: MAPE, MAE, RMSE, MSE y R². Esta tabla nos permitirá comparar la eficacia de los modelos.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="librerias">
+<h1>Librerias<a class="headerlink" href="#librerias" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span><span class="p">,</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span><span class="p">,</span><span class="n">make_scorer</span><span class="p">,</span> <span class="n">mean_absolute_percentage_error</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span><span class="p">,</span> <span class="n">KFold</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">make_scorer</span><span class="p">,</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="base-de-datos">
+<h1>Base de datos<a class="headerlink" href="#base-de-datos" title="Link to this heading">#</a></h1>
+<p>En esta sección, cargamos la base de datos que utilizaremos para nuestros modelos: K-NN (lineal regresion) y regresión lineal. Es importante tener en cuenta que el análisis descriptivo de esta variable se encuentra desarrollado en el punto 2, inciso 2, del examen práctico.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;# Ruta del archivo Parquet</span>
+<span class="sd">file_path = &#39;https://drive.google.com/uc?export=download&amp;id=1Jwi-8080GYIStM3Wp6AyVQ-KmQsXr0YO&#39;</span>
+<span class="sd">df_parqdtra = pd.read_parquet(file_path, engine=&#39;pyarrow&#39;)</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;# Ruta del archivo Parquet\nfile_path = &#39;https://drive.google.com/uc?export=download&amp;id=1Jwi-8080GYIStM3Wp6AyVQ-KmQsXr0YO&#39;\ndf_parqdtra = pd.read_parquet(file_path, engine=&#39;pyarrow&#39;)\n&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;print(df_parqdtra.head())</span>
+<span class="sd">print(df_parqdtra.size)&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;print(df_parqdtra.head())\nprint(df_parqdtra.size)&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>            <span class="n">cell_type</span>             <span class="n">sm_name</span> <span class="n">sm_lincs_id</span>  \
+<span class="mi">0</span>            <span class="n">NK</span> <span class="n">cells</span>        <span class="n">Clotrimazole</span>    <span class="n">LSM</span><span class="o">-</span><span class="mi">5341</span>   
+<span class="mi">1</span>        <span class="n">T</span> <span class="n">cells</span> <span class="n">CD4</span><span class="o">+</span>        <span class="n">Clotrimazole</span>    <span class="n">LSM</span><span class="o">-</span><span class="mi">5341</span>   
+<span class="mi">2</span>        <span class="n">T</span> <span class="n">cells</span> <span class="n">CD8</span><span class="o">+</span>        <span class="n">Clotrimazole</span>    <span class="n">LSM</span><span class="o">-</span><span class="mi">5341</span>   
+<span class="mi">3</span>  <span class="n">T</span> <span class="n">regulatory</span> <span class="n">cells</span>        <span class="n">Clotrimazole</span>    <span class="n">LSM</span><span class="o">-</span><span class="mi">5341</span>   
+<span class="mi">4</span>            <span class="n">NK</span> <span class="n">cells</span>  <span class="n">Mometasone</span> <span class="n">Furoate</span>    <span class="n">LSM</span><span class="o">-</span><span class="mi">3349</span>   
+
+                                              <span class="n">SMILES</span>  <span class="n">control</span>      <span class="n">A1BG</span>  \
+<span class="mi">0</span>             <span class="n">Clc1ccccc1C</span><span class="p">(</span><span class="n">c1ccccc1</span><span class="p">)(</span><span class="n">c1ccccc1</span><span class="p">)</span><span class="n">n1ccnc1</span>    <span class="kc">False</span>  <span class="mf">0.104720</span>   
+<span class="mi">1</span>             <span class="n">Clc1ccccc1C</span><span class="p">(</span><span class="n">c1ccccc1</span><span class="p">)(</span><span class="n">c1ccccc1</span><span class="p">)</span><span class="n">n1ccnc1</span>    <span class="kc">False</span>  <span class="mf">0.915953</span>   
+<span class="mi">2</span>             <span class="n">Clc1ccccc1C</span><span class="p">(</span><span class="n">c1ccccc1</span><span class="p">)(</span><span class="n">c1ccccc1</span><span class="p">)</span><span class="n">n1ccnc1</span>    <span class="kc">False</span> <span class="o">-</span><span class="mf">0.387721</span>   
+<span class="mi">3</span>             <span class="n">Clc1ccccc1C</span><span class="p">(</span><span class="n">c1ccccc1</span><span class="p">)(</span><span class="n">c1ccccc1</span><span class="p">)</span><span class="n">n1ccnc1</span>    <span class="kc">False</span>  <span class="mf">0.232893</span>   
+<span class="mi">4</span>  <span class="n">C</span><span class="p">[</span><span class="n">C</span><span class="o">@</span><span class="nd">@H</span><span class="p">]</span><span class="mi">1</span><span class="n">C</span><span class="p">[</span><span class="n">C</span><span class="nd">@H</span><span class="p">]</span><span class="mi">2</span><span class="p">[</span><span class="n">C</span><span class="o">@</span><span class="nd">@H</span><span class="p">]</span><span class="mi">3</span><span class="n">CCC4</span><span class="o">=</span><span class="n">CC</span><span class="p">(</span><span class="o">=</span><span class="n">O</span><span class="p">)</span><span class="n">C</span><span class="o">=</span><span class="n">C</span><span class="p">[</span><span class="n">C</span><span class="o">@</span><span class="p">]</span><span class="mi">4</span><span class="p">(</span><span class="n">C</span><span class="p">)[</span><span class="n">C</span><span class="o">...</span>    <span class="kc">False</span>  <span class="mf">4.290652</span>   
+
+   <span class="n">A1BG</span><span class="o">-</span><span class="n">AS1</span>       <span class="n">A2M</span>   <span class="n">A2M</span><span class="o">-</span><span class="n">AS1</span>     <span class="n">A2MP1</span>  <span class="o">...</span>      <span class="n">ZUP1</span>      <span class="n">ZW10</span>    <span class="n">ZWILCH</span>  \
+<span class="mi">0</span> <span class="o">-</span><span class="mf">0.077524</span> <span class="o">-</span><span class="mf">1.625596</span> <span class="o">-</span><span class="mf">0.144545</span>  <span class="mf">0.143555</span>  <span class="o">...</span> <span class="o">-</span><span class="mf">0.227781</span> <span class="o">-</span><span class="mf">0.010752</span> <span class="o">-</span><span class="mf">0.023881</span>   
+<span class="mi">1</span> <span class="o">-</span><span class="mf">0.884380</span>  <span class="mf">0.371834</span> <span class="o">-</span><span class="mf">0.081677</span> <span class="o">-</span><span class="mf">0.498266</span>  <span class="o">...</span> <span class="o">-</span><span class="mf">0.494985</span> <span class="o">-</span><span class="mf">0.303419</span>  <span class="mf">0.304955</span>   
+<span class="mi">2</span> <span class="o">-</span><span class="mf">0.305378</span>  <span class="mf">0.567777</span>  <span class="mf">0.303895</span> <span class="o">-</span><span class="mf">0.022653</span>  <span class="o">...</span> <span class="o">-</span><span class="mf">0.119422</span> <span class="o">-</span><span class="mf">0.033608</span> <span class="o">-</span><span class="mf">0.153123</span>   
+<span class="mi">3</span>  <span class="mf">0.129029</span>  <span class="mf">0.336897</span>  <span class="mf">0.486946</span>  <span class="mf">0.767661</span>  <span class="o">...</span>  <span class="mf">0.451679</span>  <span class="mf">0.704643</span>  <span class="mf">0.015468</span>   
+<span class="mi">4</span> <span class="o">-</span><span class="mf">0.063864</span> <span class="o">-</span><span class="mf">0.017443</span> <span class="o">-</span><span class="mf">0.541154</span>  <span class="mf">0.570982</span>  <span class="o">...</span>  <span class="mf">0.758474</span>  <span class="mf">0.510762</span>  <span class="mf">0.607401</span>   
+
+      <span class="n">ZWINT</span>      <span class="n">ZXDA</span>      <span class="n">ZXDB</span>      <span class="n">ZXDC</span>    <span class="n">ZYG11B</span>       <span class="n">ZYX</span>     <span class="n">ZZEF1</span>  
+<span class="mi">0</span>  <span class="mf">0.674536</span> <span class="o">-</span><span class="mf">0.453068</span>  <span class="mf">0.005164</span> <span class="o">-</span><span class="mf">0.094959</span>  <span class="mf">0.034127</span>  <span class="mf">0.221377</span>  <span class="mf">0.368755</span>  
+<span class="mi">1</span> <span class="o">-</span><span class="mf">0.333905</span> <span class="o">-</span><span class="mf">0.315516</span> <span class="o">-</span><span class="mf">0.369626</span> <span class="o">-</span><span class="mf">0.095079</span>  <span class="mf">0.704780</span>  <span class="mf">1.096702</span> <span class="o">-</span><span class="mf">0.869887</span>  
+<span class="mi">2</span>  <span class="mf">0.183597</span> <span class="o">-</span><span class="mf">0.555678</span> <span class="o">-</span><span class="mf">1.494789</span> <span class="o">-</span><span class="mf">0.213550</span>  <span class="mf">0.415768</span>  <span class="mf">0.078439</span> <span class="o">-</span><span class="mf">0.259365</span>  
+<span class="o">...</span>
+<span class="mi">4</span> <span class="o">-</span><span class="mf">0.123059</span>  <span class="mf">0.214366</span>  <span class="mf">0.487838</span> <span class="o">-</span><span class="mf">0.819775</span>  <span class="mf">0.112365</span> <span class="o">-</span><span class="mf">0.122193</span>  <span class="mf">0.676629</span>  
+
+<span class="p">[</span><span class="mi">5</span> <span class="n">rows</span> <span class="n">x</span> <span class="mi">18216</span> <span class="n">columns</span><span class="p">]</span>
+<span class="mi">11184624</span>
+</pre></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="pipeline-y-gridsearchcv">
+<h1>Pipeline y Gridsearchcv()<a class="headerlink" href="#pipeline-y-gridsearchcv" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;import pandas as pd</span>
+<span class="sd">from sklearn.preprocessing import OneHotEncoder</span>
+
+<span class="sd"># Crea una copia del DataFrame original</span>
+<span class="sd">df_parqdtra_copy = df_parqdtra.copy()</span>
+
+<span class="sd"># Aplicar One-Hot Encoding a &#39;cell_type&#39; y &#39;sm_name&#39;</span>
+<span class="sd">encoder = OneHotEncoder(sparse=False, drop=&#39;first&#39;)  # drop=&#39;first&#39; evita la multicolinealidad</span>
+<span class="sd">encoded_features = encoder.fit_transform(df_parqdtra_copy[[&#39;cell_type&#39;, &#39;sm_name&#39;]])</span>
+
+<span class="sd"># Crear un DataFrame con las columnas codificadas</span>
+<span class="sd">df_encoded = pd.DataFrame(encoded_features, columns=encoder.get_feature_names_out([&#39;cell_type&#39;, &#39;sm_name&#39;]))</span>
+
+<span class="sd"># Concatenar las columnas codificadas con el resto del DataFrame (excluyendo &#39;cell_type&#39; y &#39;sm_name&#39;)</span>
+<span class="sd">df_parqdtra_encoded = pd.concat([df_parqdtra_copy.drop(columns=[&#39;cell_type&#39;, &#39;sm_name&#39;]), df_encoded], axis=1)</span>
+
+<span class="sd">X = df_encoded</span>
+<span class="sd"># Las columnas de genes</span>
+<span class="sd">y = df_parqdtra_encoded[df_parqdtra.columns[4:]]</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;import pandas as pd\nfrom sklearn.preprocessing import OneHotEncoder\n\n# Crea una copia del DataFrame original\ndf_parqdtra_copy = df_parqdtra.copy()\n\n# Aplicar One-Hot Encoding a &#39;cell_type&#39; y &#39;sm_name&#39;\nencoder = OneHotEncoder(sparse=False, drop=&#39;first&#39;)  # drop=&#39;first&#39; evita la multicolinealidad\nencoded_features = encoder.fit_transform(df_parqdtra_copy[[&#39;cell_type&#39;, &#39;sm_name&#39;]])\n\n# Crear un DataFrame con las columnas codificadas\ndf_encoded = pd.DataFrame(encoded_features, columns=encoder.get_feature_names_out([&#39;cell_type&#39;, &#39;sm_name&#39;]))\n\n# Concatenar las columnas codificadas con el resto del DataFrame (excluyendo &#39;cell_type&#39; y &#39;sm_name&#39;)\ndf_parqdtra_encoded = pd.concat([df_parqdtra_copy.drop(columns=[&#39;cell_type&#39;, &#39;sm_name&#39;]), df_encoded], axis=1)\n\nX = df_encoded\n# Las columnas de genes\ny = df_parqdtra_encoded[df_parqdtra.columns[4:]]\n&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aca se toman los datos para el modelo de machine learning. Aplica One-Hot Encoding a las columnas categóricas ‘cell_type’ y ‘sm_name’, convirtiéndolas en variables numéricas, y luego las combina con el resto del DataFrame. Finalmente, coge estas columnas para las variables predictoras (X) y las columnas de genes como variables objetivo (y).</p>
+<section id="dividir-el-conjunto-de-datos">
+<h2>Dividir el conjunto de datos<a class="headerlink" href="#dividir-el-conjunto-de-datos" title="Link to this heading">#</a></h2>
+<p><strong>se divide asi:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;print(X.head())</span>
+<span class="sd">print(&quot;-------------------------------&quot;)</span>
+<span class="sd">print(y.head())&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;print(X.head())\nprint(&quot;-------------------------------&quot;)\nprint(y.head())&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>            cell_type             sm_name sm_lincs_id  \
+0            NK cells        Clotrimazole    LSM-5341   
+1        T cells CD4+        Clotrimazole    LSM-5341   
+2        T cells CD8+        Clotrimazole    LSM-5341   
+3  T regulatory cells        Clotrimazole    LSM-5341   
+4            NK cells  Mometasone Furoate    LSM-3349   
+
+                                              SMILES  control      A1BG  \
+0             Clc1ccccc1C(c1ccccc1)(c1ccccc1)n1ccnc1    False  0.104720   
+1             Clc1ccccc1C(c1ccccc1)(c1ccccc1)n1ccnc1    False  0.915953   
+2             Clc1ccccc1C(c1ccccc1)(c1ccccc1)n1ccnc1    False -0.387721   
+3             Clc1ccccc1C(c1ccccc1)(c1ccccc1)n1ccnc1    False  0.232893   
+4  C[C@@H]1C[C@H]2[C@@H]3CCC4=CC(=O)C=C[C@]4(C)[C...    False  4.290652   
+
+   A1BG-AS1       A2M   A2M-AS1     A2MP1  ...      ZUP1      ZW10    ZWILCH  \
+0 -0.077524 -1.625596 -0.144545  0.143555  ... -0.227781 -0.010752 -0.023881   
+1 -0.884380  0.371834 -0.081677 -0.498266  ... -0.494985 -0.303419  0.304955   
+2 -0.305378  0.567777  0.303895 -0.022653  ... -0.119422 -0.033608 -0.153123   
+3  0.129029  0.336897  0.486946  0.767661  ...  0.451679  0.704643  0.015468   
+4 -0.063864 -0.017443 -0.541154  0.570982  ...  0.758474  0.510762  0.607401   
+
+      ZWINT      ZXDA      ZXDB      ZXDC    ZYG11B       ZYX     ZZEF1  
+0  0.674536 -0.453068  0.005164 -0.094959  0.034127  0.221377  0.368755  
+1 -0.333905 -0.315516 -0.369626 -0.095079  0.704780  1.096702 -0.869887  
+2  0.183597 -0.555678 -1.494789 -0.213550  0.415768  0.078439 -0.259365  
+...
+4 -0.123059  0.214366  0.487838 -0.819775  0.112365 -0.122193  0.676629  
+
+[5 rows x 18216 columns]
+11184624
+Output is truncated. View as a scrollable element or open in a text editor. Adjust cell output settings...
+/usr/local/lib/python3.10/dist-packages/sklearn/preprocessing/_encoders.py:975: FutureWarning: `sparse` was renamed to `sparse_output` in version 1.2 and will be removed in 1.4. `sparse_output` is ignored unless you leave `sparse` to its default value.
+  warnings.warn(
+   cell_type_Myeloid cells  cell_type_NK cells  cell_type_T cells CD4+  \
+0                      0.0                 1.0                     0.0   
+1                      0.0                 0.0                     1.0   
+2                      0.0                 0.0                     0.0   
+3                      0.0                 0.0                     0.0   
+4                      0.0                 1.0                     0.0   
+
+   cell_type_T cells CD8+  cell_type_T regulatory cells  \
+0                     0.0                           0.0   
+1                     0.0                           0.0   
+2                     1.0                           0.0   
+3                     0.0                           1.0   
+4                     0.0                           0.0   
+
+   sm_name_ABT-199 (GDC-0199)  sm_name_ABT737  \
+0                         0.0             0.0   
+1                         0.0             0.0   
+2                         0.0             0.0   
+3                         0.0             0.0   
+4                         0.0             0.0   
+
+   sm_name_AMD-070 (hydrochloride)  sm_name_AT 7867  sm_name_AT13387  ...  \
+0                              0.0              0.0              0.0  ...   
+1                              0.0              0.0              0.0  ...   
+2                              0.0              0.0              0.0  ...   
+...
+3  0.865027  0.189114  0.224700 -0.048233  0.216139 -0.085024  
+4  0.214366  0.487838 -0.819775  0.112365 -0.122193  0.676629  
+
+[5 rows x 18212 columns]
+</pre></div>
+</div>
+<p><strong>Análisis de Tablas:</strong></p>
+<p>Aquí observamos cómo quedaron los DataFrames que vamos a utilizar en nuestro modelo. Además, se muestra cómo quedaron las variables <code class="docutils literal notranslate"><span class="pre">sm_names</span></code> y <code class="docutils literal notranslate"><span class="pre">cell_type</span></code>. Esto se hizo para poder realizar los modelos solicitados.</p>
+<p>Utilicé la métrica <strong>Mean Rowwise Root Mean Squared Error (MRRMSE)</strong> para la evaluación y validación del modelo, ya que permite capturar el error promedio de manera más precisa a nivel de filas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;def MRRMSE(y_real, y_pred):</span>
+<span class="sd">    rowwise_rmse = np.sqrt(np.mean((y_real - y_pred) ** 2, axis=1))</span>
+<span class="sd">    return np.mean(rowwise_rmse)&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;def MRRMSE(y_real, y_pred):\n    rowwise_rmse = np.sqrt(np.mean((y_real - y_pred) ** 2, axis=1))\n    return np.mean(rowwise_rmse)&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1)</span>
+<span class="sd">resul = make_scorer(MRRMSE, greater_is_better = False)</span>
+<span class="sd">print(&quot;Size of training set: {} size of validation set: {} size of test set: {}\n&quot;.</span>
+<span class="sd">      format(X_train.shape[0], X_test.shape[0], X_test.shape[0]))&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1)\nresul = make_scorer(MRRMSE, greater_is_better = False)\nprint(&quot;Size of training set: {} size of validation set: {} size of test set: {}\n&quot;.\n      format(X_train.shape[0], X_test.shape[0], X_test.shape[0]))&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Size of training set: 491 size of validation set: 123 size of test set: 123</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;print(X_test.head())</span>
+<span class="sd">print(&quot;------------------------------&quot;)</span>
+<span class="sd">print(y_test.head())&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;print(X_test.head())\nprint(&quot;------------------------------&quot;)\nprint(y_test.head())&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">cell_type_Myeloid</span> <span class="n">cells</span>  <span class="n">cell_type_NK</span> <span class="n">cells</span>  <span class="n">cell_type_T</span> <span class="n">cells</span> <span class="n">CD4</span><span class="o">+</span>  \
+<span class="mi">533</span>                      <span class="mf">0.0</span>                 <span class="mf">0.0</span>                     <span class="mf">0.0</span>   
+<span class="mi">544</span>                      <span class="mf">0.0</span>                 <span class="mf">1.0</span>                     <span class="mf">0.0</span>   
+<span class="mi">41</span>                       <span class="mf">0.0</span>                 <span class="mf">0.0</span>                     <span class="mf">1.0</span>   
+<span class="mi">148</span>                      <span class="mf">0.0</span>                 <span class="mf">0.0</span>                     <span class="mf">0.0</span>   
+<span class="mi">111</span>                      <span class="mf">0.0</span>                 <span class="mf">0.0</span>                     <span class="mf">1.0</span>   
+
+     <span class="n">cell_type_T</span> <span class="n">cells</span> <span class="n">CD8</span><span class="o">+</span>  <span class="n">cell_type_T</span> <span class="n">regulatory</span> <span class="n">cells</span>  \
+<span class="mi">533</span>                     <span class="mf">1.0</span>                           <span class="mf">0.0</span>   
+<span class="mi">544</span>                     <span class="mf">0.0</span>                           <span class="mf">0.0</span>   
+<span class="mi">41</span>                      <span class="mf">0.0</span>                           <span class="mf">0.0</span>   
+<span class="mi">148</span>                     <span class="mf">1.0</span>                           <span class="mf">0.0</span>   
+<span class="mi">111</span>                     <span class="mf">0.0</span>                           <span class="mf">0.0</span>   
+
+     <span class="n">sm_name_ABT</span><span class="o">-</span><span class="mi">199</span> <span class="p">(</span><span class="n">GDC</span><span class="o">-</span><span class="mi">0199</span><span class="p">)</span>  <span class="n">sm_name_ABT737</span>  \
+<span class="mi">533</span>                         <span class="mf">0.0</span>             <span class="mf">0.0</span>   
+<span class="mi">544</span>                         <span class="mf">0.0</span>             <span class="mf">0.0</span>   
+<span class="mi">41</span>                          <span class="mf">0.0</span>             <span class="mf">0.0</span>   
+<span class="mi">148</span>                         <span class="mf">0.0</span>             <span class="mf">0.0</span>   
+<span class="mi">111</span>                         <span class="mf">0.0</span>             <span class="mf">0.0</span>   
+
+     <span class="n">sm_name_AMD</span><span class="o">-</span><span class="mi">070</span> <span class="p">(</span><span class="n">hydrochloride</span><span class="p">)</span>  <span class="n">sm_name_AT</span> <span class="mi">7867</span>  <span class="n">sm_name_AT13387</span>  <span class="o">...</span>  \
+<span class="mi">533</span>                              <span class="mf">0.0</span>              <span class="mf">0.0</span>              <span class="mf">0.0</span>  <span class="o">...</span>   
+<span class="mi">544</span>                              <span class="mf">0.0</span>              <span class="mf">0.0</span>              <span class="mf">0.0</span>  <span class="o">...</span>   
+<span class="mi">41</span>                               <span class="mf">0.0</span>              <span class="mf">0.0</span>              <span class="mf">0.0</span>  <span class="o">...</span>   
+<span class="o">...</span>
+<span class="mi">148</span>  <span class="mf">0.394251</span>  <span class="mf">0.522069</span>  <span class="mf">0.251634</span>  <span class="mf">0.000173</span> <span class="o">-</span><span class="mf">0.190295</span>  <span class="mf">1.289288</span>  <span class="mf">0.388646</span>  
+<span class="mi">111</span>  <span class="mf">0.173986</span>  <span class="mf">1.400341</span>  <span class="mf">1.571638</span> <span class="o">-</span><span class="mf">0.242477</span> <span class="o">-</span><span class="mf">2.021973</span> <span class="o">-</span><span class="mf">4.161092</span>  <span class="mf">0.953246</span>  
+
+<span class="p">[</span><span class="mi">5</span> <span class="n">rows</span> <span class="n">x</span> <span class="mi">18212</span> <span class="n">columns</span><span class="p">]</span>
+
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;print(X_train.head())</span>
+<span class="sd">print(&quot;------------------------------&quot;)</span>
+<span class="sd">print(y_train.head())&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;print(X_train.head())\nprint(&quot;------------------------------&quot;)\nprint(y_train.head())&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>     <span class="n">cell_type_Myeloid</span> <span class="n">cells</span>  <span class="n">cell_type_NK</span> <span class="n">cells</span>  <span class="n">cell_type_T</span> <span class="n">cells</span> <span class="n">CD4</span><span class="o">+</span>  \
+<span class="mi">291</span>                      <span class="mf">0.0</span>                 <span class="mf">0.0</span>                     <span class="mf">0.0</span>   
+<span class="mi">507</span>                      <span class="mf">0.0</span>                 <span class="mf">0.0</span>                     <span class="mf">0.0</span>   
+<span class="mi">328</span>                      <span class="mf">0.0</span>                 <span class="mf">0.0</span>                     <span class="mf">1.0</span>   
+<span class="mi">609</span>                      <span class="mf">0.0</span>                 <span class="mf">0.0</span>                     <span class="mf">0.0</span>   
+<span class="mi">69</span>                       <span class="mf">0.0</span>                 <span class="mf">0.0</span>                     <span class="mf">1.0</span>   
+
+     <span class="n">cell_type_T</span> <span class="n">cells</span> <span class="n">CD8</span><span class="o">+</span>  <span class="n">cell_type_T</span> <span class="n">regulatory</span> <span class="n">cells</span>  \
+<span class="mi">291</span>                     <span class="mf">1.0</span>                           <span class="mf">0.0</span>   
+<span class="mi">507</span>                     <span class="mf">1.0</span>                           <span class="mf">0.0</span>   
+<span class="mi">328</span>                     <span class="mf">0.0</span>                           <span class="mf">0.0</span>   
+<span class="mi">609</span>                     <span class="mf">0.0</span>                           <span class="mf">1.0</span>   
+<span class="mi">69</span>                      <span class="mf">0.0</span>                           <span class="mf">0.0</span>   
+
+     <span class="n">sm_name_ABT</span><span class="o">-</span><span class="mi">199</span> <span class="p">(</span><span class="n">GDC</span><span class="o">-</span><span class="mi">0199</span><span class="p">)</span>  <span class="n">sm_name_ABT737</span>  \
+<span class="mi">291</span>                         <span class="mf">0.0</span>             <span class="mf">0.0</span>   
+<span class="mi">507</span>                         <span class="mf">0.0</span>             <span class="mf">0.0</span>   
+<span class="mi">328</span>                         <span class="mf">0.0</span>             <span class="mf">0.0</span>   
+<span class="mi">609</span>                         <span class="mf">0.0</span>             <span class="mf">0.0</span>   
+<span class="mi">69</span>                          <span class="mf">0.0</span>             <span class="mf">0.0</span>   
+
+     <span class="n">sm_name_AMD</span><span class="o">-</span><span class="mi">070</span> <span class="p">(</span><span class="n">hydrochloride</span><span class="p">)</span>  <span class="n">sm_name_AT</span> <span class="mi">7867</span>  <span class="n">sm_name_AT13387</span>  <span class="o">...</span>  \
+<span class="mi">291</span>                              <span class="mf">0.0</span>              <span class="mf">0.0</span>              <span class="mf">0.0</span>  <span class="o">...</span>   
+<span class="mi">507</span>                              <span class="mf">0.0</span>              <span class="mf">0.0</span>              <span class="mf">0.0</span>  <span class="o">...</span>   
+<span class="mi">328</span>                              <span class="mf">0.0</span>              <span class="mf">0.0</span>              <span class="mf">0.0</span>  <span class="o">...</span>   
+<span class="o">...</span>
+<span class="mi">609</span>  <span class="mf">1.073983</span>  <span class="mf">0.356939</span> <span class="o">-</span><span class="mf">0.029603</span> <span class="o">-</span><span class="mf">0.528817</span>  <span class="mf">0.105138</span>  <span class="mf">0.491015</span> <span class="o">-</span><span class="mf">0.979951</span>  
+<span class="mi">69</span>   <span class="mf">0.192888</span>  <span class="mf">0.179910</span>  <span class="mf">0.143050</span>  <span class="mf">0.220797</span> <span class="o">-</span><span class="mf">0.881506</span> <span class="o">-</span><span class="mf">1.374488</span> <span class="o">-</span><span class="mf">0.258518</span>  
+
+<span class="p">[</span><span class="mi">5</span> <span class="n">rows</span> <span class="n">x</span> <span class="mi">18212</span> <span class="n">columns</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>En estas tablas se observa los datos utilizados para el modelo. Los datos se dividen en conjuntos de entrenamiento y prueba, denominados <code class="docutils literal notranslate"><span class="pre">X_train</span></code>, <code class="docutils literal notranslate"><span class="pre">X_test</span></code>, <code class="docutils literal notranslate"><span class="pre">y_train</span></code>, y <code class="docutils literal notranslate"><span class="pre">y_test</span></code>.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="modelo-de-regresion-knn">
+<h1>Modelo de regresion KNN:<a class="headerlink" href="#modelo-de-regresion-knn" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">pipeline_kr = Pipeline([</span>
+<span class="sd">    (&#39;scaler&#39;, StandardScaler()),</span>
+<span class="sd">    (&#39;regressor&#39;, KNeighborsRegressor())</span>
+<span class="sd">])</span>
+<span class="sd">param_grid_kr = {</span>
+<span class="sd">    &#39;regressor__n_neighbors&#39;: [5, 10],</span>
+<span class="sd">    &#39;regressor__weights&#39;: [&#39;uniform&#39;, &#39;distance&#39;]</span>
+<span class="sd">}</span>
+
+<span class="sd"># Configurar validación cruzada</span>
+<span class="sd">kfo = KFold(n_splits=3, shuffle=True, random_state=42)</span>
+
+<span class="sd"># Crear el scorer utilizando la métrica Mean Rowwise Root Mean Squared Error (MRRMSE)</span>
+<span class="sd">def MRRMSE(y_real, y_pred):</span>
+<span class="sd">    rowwise_rmse = np.sqrt(np.mean((y_real - y_pred) ** 2, axis=1))</span>
+<span class="sd">    return np.mean(rowwise_rmse)</span>
+
+<span class="sd">resul = make_scorer(MRRMSE, greater_is_better=False)</span>
+
+<span class="sd"># Inicializar GridSearchCV</span>
+<span class="sd">grid_knr = GridSearchCV(pipeline_kr, param_grid_kr, cv=kfo, scoring=resul, n_jobs=-1)</span>
+
+<span class="sd">try:</span>
+<span class="sd">    # Ajustar el modelo</span>
+<span class="sd">    grid_knr.fit(X_train, y_train)</span>
+<span class="sd">except KeyboardInterrupt:</span>
+<span class="sd">    print(&quot;Interrupción manual del proceso.&quot;)</span>
+
+<span class="sd"># Realizar predicciones y mostrar los resultados</span>
+<span class="sd">knn_y_pred = grid_knr.predict(X_test)</span>
+<span class="sd">print(f&#39;Best parameters: {grid_knr.best_params_}&#39;)</span>
+<span class="sd">print(f&#39;MRRMSE en el conjunto de prueba: {MRRMSE(y_test, knn_y_pred)}&#39;)</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\npipeline_kr = Pipeline([\n    (\&#39;scaler\&#39;, StandardScaler()),\n    (\&#39;regressor\&#39;, KNeighborsRegressor())\n])\nparam_grid_kr = {\n    \&#39;regressor__n_neighbors\&#39;: [5, 10],\n    \&#39;regressor__weights\&#39;: [\&#39;uniform\&#39;, \&#39;distance\&#39;]\n}\n\n# Configurar validación cruzada\nkfo = KFold(n_splits=3, shuffle=True, random_state=42)\n\n# Crear el scorer utilizando la métrica Mean Rowwise Root Mean Squared Error (MRRMSE)\ndef MRRMSE(y_real, y_pred):\n    rowwise_rmse = np.sqrt(np.mean((y_real - y_pred) ** 2, axis=1))\n    return np.mean(rowwise_rmse)\n\nresul = make_scorer(MRRMSE, greater_is_better=False)\n\n# Inicializar GridSearchCV\ngrid_knr = GridSearchCV(pipeline_kr, param_grid_kr, cv=kfo, scoring=resul, n_jobs=-1)\n\ntry:\n    # Ajustar el modelo\n    grid_knr.fit(X_train, y_train)\nexcept KeyboardInterrupt:\n    print(&quot;Interrupción manual del proceso.&quot;)\n\n# Realizar predicciones y mostrar los resultados\nknn_y_pred = grid_knr.predict(X_test)\nprint(f\&#39;Best parameters: {grid_knr.best_params_}\&#39;)\nprint(f\&#39;MRRMSE en el conjunto de prueba: {MRRMSE(y_test, knn_y_pred)}\&#39;)\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="los-resultados-k-nn">
+<h2>LOS RESULTADOS K-NN:<a class="headerlink" href="#los-resultados-k-nn" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Best</span> <span class="n">parameters</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;regressor__n_neighbors&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;regressor__weights&#39;</span><span class="p">:</span> <span class="s1">&#39;uniform&#39;</span><span class="p">}</span>
+<span class="n">MRRMSE</span> <span class="n">en</span> <span class="n">el</span> <span class="n">conjunto</span> <span class="n">de</span> <span class="n">prueba</span><span class="p">:</span> <span class="mf">1.0797109579201776</span>
+</pre></div>
+</div>
+<p><em>Se muestran los resultados de esta forma por el alto costo computacional.</em></p>
+<p>Los resultados muestran que el modelo KNN-Regressor, con los mejores parámetros identificados (<code class="docutils literal notranslate"><span class="pre">n_neighbors</span></code> = 10 y <code class="docutils literal notranslate"><span class="pre">weights</span></code> = ‘uniform’), presenta un rendimiento moderado en el conjunto de prueba, con un MRRMSE de 1.08.</p>
+<p><strong>Interpretación:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Número de Vecinos (<code class="docutils literal notranslate"><span class="pre">n_neighbors</span></code>)</strong>: Con 10 vecinos, el modelo podría no estar capturando todas las variaciones en los datos. aumentar el numero de vecinos nos ayudaria a tener un mejor score aunque esto también puede incrementar el tiempo de cálculo y potencialmente llevar a un sobreajuste si se elige un número excesivamente alto.</p></li>
+<li><p><strong>Pesos Uniformes (<code class="docutils literal notranslate"><span class="pre">weights</span></code> = ‘uniform’)</strong>: El uso de pesos uniformes implica que todos los vecinos tienen el mismo peso en las predicciones.</p></li>
+<li><p><strong>Capacidad de Generalización</strong>: El MRRMSE relativamente alto sugiere que el modelo aún no está generalizando de manera óptima.</p></li>
+</ol>
+<p>En resumen, aunque los parámetros seleccionados han mejorado el rendimiento, el MRRMSE indica que el modelo aún puede ser optimizado. Considerar ajustes adicionales en la configuración del KNN.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="linear-regression">
+<h1>Linear Regression<a class="headerlink" href="#linear-regression" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">linear = LinearRegression()</span>
+
+<span class="sd"># Configurar el pipeline con un escalador y el modelo de regresión lineal</span>
+<span class="sd">pipe = Pipeline([(&#39;scaler&#39;, StandardScaler()), (&#39;lr&#39;, linear)])</span>
+<span class="sd">pipe.fit(X_train, y_train)</span>
+
+<span class="sd"># Predicciones</span>
+<span class="sd">y_predtrain = pipe.predict(X_train)</span>
+<span class="sd">y_pred = pipe.predict(X_test)</span>
+
+<span class="sd"># Calcular MRRMSE</span>
+<span class="sd">mrrmse_train = MRRMSE(y_train, y_predtrain)</span>
+<span class="sd">mrrmse = MRRMSE(y_test, y_pred)</span>
+
+<span class="sd"># Coeficientes e Intercepción</span>
+<span class="sd">coefficients = pipe.named_steps[&#39;lr&#39;].coef_</span>
+<span class="sd">intercept = pipe.named_steps[&#39;lr&#39;].intercept_</span>
+
+<span class="sd"># Imprimir resultados</span>
+<span class="sd">print(f&#39;MRRMSE en el conjunto de entrenamiento: {mrrmse_train}&#39;)</span>
+<span class="sd">print(f&#39;Intercepción del modelo: {intercept}&#39;)</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;\nlinear = LinearRegression()\n\n# Configurar el pipeline con un escalador y el modelo de regresión lineal\npipe = Pipeline([(&#39;scaler&#39;, StandardScaler()), (&#39;lr&#39;, linear)])\npipe.fit(X_train, y_train)\n\n# Predicciones\ny_predtrain = pipe.predict(X_train)\ny_pred = pipe.predict(X_test)\n\n# Calcular MRRMSE\nmrrmse_train = MRRMSE(y_train, y_predtrain)\nmrrmse = MRRMSE(y_test, y_pred)\n\n# Coeficientes e Intercepción\ncoefficients = pipe.named_steps[&#39;lr&#39;].coef_\nintercept = pipe.named_steps[&#39;lr&#39;].intercept_\n\n# Imprimir resultados\nprint(f&#39;MRRMSE en el conjunto de entrenamiento: {mrrmse_train}&#39;)\nprint(f&#39;Intercepción del modelo: {intercept}&#39;)\n&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="los-resultados-regresion-lineal">
+<h2>LOS RESULTADOS REGRESION LINEAL:<a class="headerlink" href="#los-resultados-regresion-lineal" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MRRMSE</span> <span class="n">en</span> <span class="n">el</span> <span class="n">conjunto</span> <span class="n">de</span> <span class="n">entrenamiento</span><span class="p">:</span> <span class="mf">0.9926474178039006</span>
+<span class="n">Intercepción</span> <span class="k">del</span> <span class="n">modelo</span><span class="p">:</span> <span class="p">[</span> <span class="mf">0.02240326</span>  <span class="mf">0.36188023</span>  <span class="mf">0.26452489</span> <span class="o">...</span>  <span class="mf">0.17108057</span> <span class="o">-</span><span class="mf">0.17544219</span>
+ <span class="o">-</span><span class="mf">0.09517982</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><em>Se muestran los resultados de esta forma por el alto costo computacional.</em></p>
+<p>Los resultados muestran que el modelo de regresión lineal tiene un <strong>MRRMSE de 0.993</strong> en el conjunto de entrenamiento, lo que indica un ajuste relativamente bueno a los datos de entrenamiento. Este valor es inferior a 1, sugiriendo que el modelo predice con una buena precisión.</p>
+<p>La <strong>intercepción del modelo</strong> muestra una variedad de valores, con algunos positivos y otros negativos, reflejando cómo el modelo ajusta las predicciones en función de las características de entrada.</p>
+<p><strong>Conclusión</strong>: El modelo presenta un error de entrenamiento bajo, lo que es una señal positiva para el ajuste.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="comparacion-de-resultados">
+<h1>Comparación de Resultados<a class="headerlink" href="#comparacion-de-resultados" title="Link to this heading">#</a></h1>
+<section id="evaluacion-de-los-modelos">
+<h2>Evaluación de los Modelos<a class="headerlink" href="#evaluacion-de-los-modelos" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_percentage_error</span><span class="p">,</span> <span class="n">mean_absolute_error</span><span class="p">,</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=20)</span>
+
+<span class="sd"># Realizar predicciones usando los modelos optimizados</span>
+<span class="sd">knn_y_pred = grid_knr.predict(X_test)</span>
+<span class="sd">lin_y_pred = pipe.predict(X_test)</span>
+
+<span class="sd"># Crear un diccionario con las métricas de evaluación para ambos modelos</span>
+<span class="sd">data = {</span>
+<span class="sd">    &#39;Modelo&#39;: [&#39;K-NN&#39;, &#39;Linear Regression&#39;],</span>
+<span class="sd">    &#39;MAPE&#39;: [</span>
+<span class="sd">        mean_absolute_percentage_error(y_test, knn_y_pred),</span>
+<span class="sd">        mean_absolute_percentage_error(y_test, lin_y_pred)</span>
+<span class="sd">    ],</span>
+<span class="sd">    &#39;MAE&#39;: [</span>
+<span class="sd">        mean_absolute_error(y_test, knn_y_pred),</span>
+<span class="sd">        mean_absolute_error(y_test, lin_y_pred)</span>
+<span class="sd">    ],</span>
+<span class="sd">    &#39;RMSE&#39;: [</span>
+<span class="sd">        mean_squared_error(y_test, knn_y_pred, squared=False),  # RMSE = Raíz del MSE</span>
+<span class="sd">        mean_squared_error(y_test, lin_y_pred, squared=False)</span>
+<span class="sd">    ],</span>
+<span class="sd">    &#39;MSE&#39;: [</span>
+<span class="sd">        mean_squared_error(y_test, knn_y_pred),</span>
+<span class="sd">        mean_squared_error(y_test, lin_y_pred)</span>
+<span class="sd">    ],</span>
+<span class="sd">    &#39;R²&#39;: [</span>
+<span class="sd">        r2_score(y_test, knn_y_pred),</span>
+<span class="sd">        r2_score(y_test, lin_y_pred)</span>
+<span class="sd">    ]</span>
+<span class="sd">}</span>
+
+<span class="sd"># Convertir el diccionario en un DataFrame de Pandas para una mejor visualización</span>
+<span class="sd">df = pd.DataFrame(data)</span>
+<span class="sd">print(df)</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=20)\n\n# Realizar predicciones usando los modelos optimizados\nknn_y_pred = grid_knr.predict(X_test)\nlin_y_pred = pipe.predict(X_test)\n\n# Crear un diccionario con las métricas de evaluación para ambos modelos\ndata = {\n    &#39;Modelo&#39;: [&#39;K-NN&#39;, &#39;Linear Regression&#39;],\n    &#39;MAPE&#39;: [\n        mean_absolute_percentage_error(y_test, knn_y_pred),\n        mean_absolute_percentage_error(y_test, lin_y_pred)\n    ],\n    &#39;MAE&#39;: [\n        mean_absolute_error(y_test, knn_y_pred),\n        mean_absolute_error(y_test, lin_y_pred)\n    ],\n    &#39;RMSE&#39;: [\n        mean_squared_error(y_test, knn_y_pred, squared=False),  # RMSE = Raíz del MSE\n        mean_squared_error(y_test, lin_y_pred, squared=False)\n    ],\n    &#39;MSE&#39;: [\n        mean_squared_error(y_test, knn_y_pred),\n        mean_squared_error(y_test, lin_y_pred)\n    ],\n    &#39;R²&#39;: [\n        r2_score(y_test, knn_y_pred),\n        r2_score(y_test, lin_y_pred)\n    ]\n}\n\n# Convertir el diccionario en un DataFrame de Pandas para una mejor visualización\ndf = pd.DataFrame(data)\nprint(df)\n&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="comparacion-de-modelos">
+<h2>COMPARACIÓN DE MODELOS:<a class="headerlink" href="#comparacion-de-modelos" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>              Modelo       MAPE       MAE      RMSE       MSE        R²
+0               K-NN   8.585485  0.782599  1.544978  3.202212  0.213194
+1  Linear Regression  13.028350  0.770418  1.432576  2.730580  0.295072
+</pre></div>
+</div>
+<p><em>Se muestran los resultados de esta forma por el alto costo computacional.</em></p>
+<p>Los resultados comparativos de los modelos muestran que el <strong>modelo K-NN</strong> tiene un <strong>MAPE de 8.59</strong>, un <strong>MAE de 0.78</strong>, un <strong>RMSE de 1.54</strong>, un <strong>MSE de 3.20</strong>, y un <strong>R² de 0.21</strong>. Estos valores indican que el modelo K-NN tiene una aproximacion relativamente baja en términos de precisión y capacidad de explicación de la variabilidad de los datos.</p>
+<p>Por otro lado, la <strong>regresión lineal</strong> muestra un <strong>MAPE de 13.03</strong>, un <strong>MAE de 0.77</strong>, un <strong>RMSE de 1.43</strong>, un <strong>MSE de 2.73</strong>, y un <strong>R² de 0.30</strong>. Aunque el MAPE es mayor comparado con el K-NN, la regresión lineal tiene un menor MAE, RMSE y MSE, lo que indica que tiene ajuste relativamente más preciso.</p>
+<p><strong>Conclusión</strong>: Ambos modelos presentan tienes falencias en términos de ajuste y capacidad predictiva, pero la regresión lineal parece tener un desempeño superior en términos de precisión y capacidad de explicación de los datos comparado con el K-NN.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Ejercicio_3_NEURIPS.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Ejercicio 3</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Ejercicio 4</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion"><strong>Introducción:</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias">Librerias</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#base-de-datos">Base de datos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-y-gridsearchcv">Pipeline y Gridsearchcv()</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dividir-el-conjunto-de-datos">Dividir el conjunto de datos</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-de-regresion-knn">Modelo de regresion KNN:</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-resultados-k-nn">LOS RESULTADOS K-NN:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">Linear Regression</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-resultados-regresion-lineal">LOS RESULTADOS REGRESION LINEAL:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-de-resultados">Comparación de Resultados</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluacion-de-los-modelos">Evaluación de los Modelos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-de-modelos">COMPARACIÓN DE MODELOS:</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By LORENZO GUTIERREZ, JUAN SEBASTIAN QUINTANA
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
