@@ -1,4 +1,3 @@
-# Parcial #1 MACHINE LEARNING
-Parcial #1 MACHINE LEARNING
+# Parcial Machine Learning 2
 ```{tableofcontents}
 ```
