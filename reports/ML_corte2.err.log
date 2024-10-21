@@ -1,72 +1,150 @@
 Traceback (most recent call last):
-  File "C:\Users\loren\miniconda3\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+  File "C:\Users\loren\miniconda3\envs\venv_py\lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
     executenb(
-  File "C:\Users\loren\miniconda3\Lib\site-packages\nbclient\client.py", line 1314, in execute
+  File "C:\Users\loren\miniconda3\envs\venv_py\lib\site-packages\nbclient\client.py", line 1314, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\loren\AppData\Roaming\Python\Python311\site-packages\jupyter_core\utils\__init__.py", line 166, in wrapped
+  File "C:\Users\loren\miniconda3\envs\venv_py\lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\loren\miniconda3\Lib\asyncio\base_events.py", line 653, in run_until_complete
+  File "C:\Users\loren\miniconda3\envs\venv_py\lib\asyncio\base_events.py", line 647, in run_until_complete
     return future.result()
-           ^^^^^^^^^^^^^^^
-  File "C:\Users\loren\miniconda3\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+  File "C:\Users\loren\miniconda3\envs\venv_py\lib\site-packages\nbclient\client.py", line 709, in async_execute
     await self.async_execute_cell(
-  File "C:\Users\loren\miniconda3\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+  File "C:\Users\loren\miniconda3\envs\venv_py\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "C:\Users\loren\miniconda3\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+  File "C:\Users\loren\miniconda3\envs\venv_py\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_percentage_error
-from sklearn.model_selection import train_test_split
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-from statsmodels.graphics.tsaplots import plot_pacf
-import matplotlib.pyplot as plt
-import numpy as np
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import r2_score
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import MinMaxScaler
-import statsmodels.api as sm
-from IPython.display import display
-from statsmodels.stats.diagnostic import acorr_ljungbox
-from scipy.stats import jarque_bera
-from sklearn.model_selection import train_test_split
-from sklearn.model_selection import GridSearchCV
-from sklearn import neighbors
-from sklearn.metrics import mean_absolute_error
-from sklearn.metrics import mean_squared_error
-from sklearn.metrics import mean_squared_log_error
-from sklearn.metrics import r2_score
-from sklearn.metrics import explained_variance_score
-from sklearn.neighbors import KNeighborsRegressor
-from sklearn.linear_model import LinearRegression
-from sklearn.linear_model import Ridge
-from sklearn.linear_model import Lasso
-import mglearn
-import plotly.express as px
-import pandas as pd
-import numpy as np
-from typing import Tuple, List, Any
-sns.set_style("whitegrid")
+from re import M
+def grid_search_custom(*, X_train: pd.DataFrame, y_train: pd.Series, hour_test: int, T: int, type_model: str) -> Any:
+    ##############################################################
+    param_grid = {'alpha': [0.01, 0.1, 1, 10, 100],
+                  'n_neighbors':[i for i in range(1,20)]}
+    ##############################################################
+    all_sub = len(X_train) // T
+    block_size = T * hour_test
+    best_score = float('inf')
+    best_model = None
+    last_index = 0
+
+    if block_size == 0:
+        raise ValueError("T es demasiado grande para el tamaño del dataset.")
+
+    if type_model == 'linear':
+        model = Pipeline([('scaler', MinMaxScaler()), ('classifier', LinearRegression())])
+        for index in range(1, all_sub+1, T):
+
+                  xtrain         = X_train.iloc[last_index:index * block_size]
+                  ytrain         = y_train.iloc[last_index:index * block_size]
+                  if len(xtrain) > 0 or len(ytrain) > 0:
+                      model.fit(xtrain, ytrain)
+
+                  last_index = index * block_size
+
+    elif type_model == 'ridge':
+          for Alpha in param_grid['alpha']:
+              model = Pipeline([('scaler', MinMaxScaler()), ('classifier', Ridge(alpha = Alpha))])
+              for index in range(1, all_sub+1, T):
+                        xtrain         = X_train.iloc[last_index:index * block_size]
+                        ytrain         = y_train.iloc[last_index:index * block_size]
+                        if len(xtrain) > 0 or len(ytrain) > 0:
+                            model.fit(xtrain, ytrain)
+                            ypred          = model.predict(X_test)
+                            rmse           = (y_test.iloc[hour_test-1] - ypred[hour_test-1])**2
+                            if rmse < best_score:
+                                best_score = rmse
+                                best_model = model
+                            last_index = index * block_size
+          model =  best_model
+    elif type_model == 'lasso':
+          for Alpha in param_grid['alpha']:
+              model = Pipeline([('scaler', MinMaxScaler()), ('classifier', Lasso(alpha = Alpha))])
+              for index in range(1, all_sub+1, T):
+                        xtrain         = X_train.iloc[last_index:index * block_size]
+                        ytrain         = y_train.iloc[last_index:index * block_size]
+                        if len(xtrain) > 0 or len(ytrain) > 0:
+                            model.fit(xtrain, ytrain)
+                            ypred          = model.predict(X_test)
+                            rmse           = (y_test.iloc[hour_test-1] - ypred[hour_test-1])**2
+                            if rmse < best_score:
+                                best_score = rmse
+                                best_model = model
+                            last_index = index * block_size
+          model =  best_model
+    else:
+        for n in param_grid['n_neighbors']:
+            model = Pipeline([('scaler', MinMaxScaler()), ('classifier', KNeighborsRegressor(n_neighbors=n))])
+            for index in range(1, all_sub+1, T):
+                xtrain = X_train.iloc[last_index:index * block_size]
+                ytrain = y_train.iloc[last_index:index * block_size]
+                if len(xtrain) > 0 and len(ytrain) > 0:
+                    model.fit(xtrain, ytrain)
+                    ypred = model.predict(X_test)
+                    rmse = (y_test.iloc[hour_test-1] - ypred[hour_test-1])**2
+                    if rmse < best_score:
+                        best_score = rmse
+                        best_model = model
+                last_index = index * block_size
+        model = best_model
+    return model
+
+def best_window_calculator(*, X_train, y_train, type_model, hour_test, best_rmse = 1) -> List:
+      results = []
+      for T in [7, 14, 21, 28]:
+            all_sub    = len(X_train) // T
+            block_size = 24 * T
+            last_index = 00
+            sum_rmse   = 00
+            for  index  in  range(1, all_sub + 1, T):
+              try:
+                  xtrain         = X_train.iloc[last_index:index * block_size]
+                  xtest          = X_train.iloc[(index + hour_test - 1) * block_size:(index + hour_test) * block_size]
+                  ytrain         = y_train.iloc[last_index:index * block_size]
+                  ytest          = y_train.iloc[(index + hour_test - 1) * block_size:(index + hour_test) * block_size]
+                  if len(xtrain) == 0 or len(xtest) == 0:                       continue
+                  reg        =   Pipeline([('scaler', MinMaxScaler()), ('clasificator', type_model)])
+                  reg.fit(xtrain, ytrain)
+                  ypred      = reg.predict(xtest)
+                  rmse       = np.sqrt(mean_squared_error(ytest, ypred))
+                  sum_rmse   += rmse
+                  last_index = index * block_size
+              except ValueError as e :                                          continue
+              except Exception as e  :                                          continue
+            results.append(sum_rmse/all_sub)
+      return results
+
+def calcular_metricas(y_true, y_pred):
+    y_true = np.array(y_true)
+    y_pred = np.array(y_pred)
+    rmse = np.sqrt(np.mean((y_true - y_pred) ** 2))
+    mape = np.mean(np.abs((y_true - y_pred) / y_true)) * 100
+    ss_res = np.sum((y_true - y_pred) ** 2)
+    ss_tot = np.sum((y_true - np.mean(y_true)) ** 2)
+    r2 = 1 - (ss_res / ss_tot)
+    lb_test = acorr_ljungbox(y_true - y_pred, lags=[10], return_df=True)
+    ljung_box_p_value = lb_test['lb_pvalue'].iloc[0]
+    jb_test = jarque_bera(y_true - y_pred)
+    jarque_bera_p_value = jb_test[1]
+
+    return {
+        'RMSE': [rmse],
+        'MAPE': [mape],
+        'R2': [r2],
+        'Ljung-Box p-value': [ljung_box_p_value],
+        'Jarque-Bera p-value': [jarque_bera_p_value]
+    }
 ------------------
 
 
 [1;31m---------------------------------------------------------------------------[0m
-[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [1;32mIn[1], line 2[0m
-[0;32m      1[0m [38;5;28;01mimport[39;00m [38;5;21;01mpandas[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpd[39;00m
-[1;32m----> 2[0m [38;5;28;01mimport[39;00m [38;5;21;01mseaborn[39;00m [38;5;28;01mas[39;00m [38;5;21;01msns[39;00m
-[0;32m      3[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
-[0;32m      4[0m [38;5;28;01mfrom[39;00m [38;5;21;01msklearn[39;00m[38;5;21;01m.[39;00m[38;5;21;01mmetrics[39;00m [38;5;28;01mimport[39;00m mean_squared_error, r2_score, mean_absolute_percentage_error
+[1;31mNameError[0m                                 Traceback (most recent call last)
+Cell [1;32mIn[7], line 2[0m
+[0;32m      1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mre[39;00m [38;5;28;01mimport[39;00m M
+[1;32m----> 2[0m [38;5;28;01mdef[39;00m [38;5;21mgrid_search_custom[39m([38;5;241m*[39m, X_train: pd[38;5;241m.[39mDataFrame, y_train: pd[38;5;241m.[39mSeries, hour_test: [38;5;28mint[39m, T: [38;5;28mint[39m, type_model: [38;5;28mstr[39m) [38;5;241m-[39m[38;5;241m>[39m [43mAny[49m:
+[0;32m      3[0m     [38;5;66;03m##############################################################[39;00m
+[0;32m      4[0m     param_grid [38;5;241m=[39m {[38;5;124m'[39m[38;5;124malpha[39m[38;5;124m'[39m: [[38;5;241m0.01[39m, [38;5;241m0.1[39m, [38;5;241m1[39m, [38;5;241m10[39m, [38;5;241m100[39m],
+[0;32m      5[0m                   [38;5;124m'[39m[38;5;124mn_neighbors[39m[38;5;124m'[39m:[i [38;5;28;01mfor[39;00m i [38;5;129;01min[39;00m [38;5;28mrange[39m([38;5;241m1[39m,[38;5;241m20[39m)]}
+[0;32m      6[0m     [38;5;66;03m##############################################################[39;00m
 
-[1;31mModuleNotFoundError[0m: No module named 'seaborn'
+[1;31mNameError[0m: name 'Any' is not defined
 
