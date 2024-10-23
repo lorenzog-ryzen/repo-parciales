@@ -1,0 +1,2365 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>\(\textit{Punto 2}\) &#8212; Parcial 2</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'punto_2';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="\(\textit{Punto 3}\)" href="punto_3.html" />
+    <link rel="prev" title="Parcial Machine Learning 2" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Parcial 2 - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Parcial 2 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Parcial Machine Learning 2
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><span class="math notranslate nohighlight">\(\textit{Punto 2}\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="punto_3.html"><span class="math notranslate nohighlight">\(\textit{Punto 3}\)</span></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fpunto_2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/punto_2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>\textit{Punto 2}</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#textit-clasificacion-sin-adasyn"><span class="math notranslate nohighlight">\(\textit{Clasificación sin ADASYN}\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#textit-clasificasion-bayesiana"><span class="math notranslate nohighlight">\(\textit{Clasificasión Bayesiana}\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#textit-pipeline-y-gridsearchcv"><span class="math notranslate nohighlight">\(\textit{Pipeline y GridsearchCV}\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#textit-optimizacion-bayesiana"><span class="math notranslate nohighlight">\(\textit{Optimizacion Bayesiana}\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#textit-knn"><span class="math notranslate nohighlight">\(\textit{Knn}\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><span class="math notranslate nohighlight">\(\textit{Pipeline y GridsearchCV}\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><span class="math notranslate nohighlight">\(\textit{Optimizacion Bayesiana}\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#textit-logistic"><span class="math notranslate nohighlight">\(\textit{Logistic}\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><span class="math notranslate nohighlight">\(\textit{Pipeline y GridsearchCV}\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><span class="math notranslate nohighlight">\(\textit{Optimizacion Bayesiana}\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#textbf-mejor-opcion-entre-pipeline-y-bayesianoptimization"><span class="math notranslate nohighlight">\(\textbf{Mejor opción entre Pipeline y BayesianOptimization: :}\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#textit-clasificacion-con-adasyn"><span class="math notranslate nohighlight">\(\textit{Clasificación con ADASYN}\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><span class="math notranslate nohighlight">\(\textit{Clasificasión Bayesiana}\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><span class="math notranslate nohighlight">\(\textit{Pipeline y GridsearchCV}\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><span class="math notranslate nohighlight">\(\textit{Optimizacion Bayesiana}\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><span class="math notranslate nohighlight">\(\textit{Knn}\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><span class="math notranslate nohighlight">\(\textit{Pipeline y GridsearchCV}\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><span class="math notranslate nohighlight">\(\textit{Optimizacion Bayesiana}\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><span class="math notranslate nohighlight">\(\textit{Logistic}\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12"><span class="math notranslate nohighlight">\(\textit{Pipeline y GridsearchCV}\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13"><span class="math notranslate nohighlight">\(\textit{Optimizacion Bayesiana}\)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#textit-conclusiones"><span class="math notranslate nohighlight">\(\textit{Conclusiones}\)</span></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="textit-punto-2">
+<h1><span class="math notranslate nohighlight">\(\textit{Punto 2}\)</span><a class="headerlink" href="#textit-punto-2" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_blobs</span><span class="p">,</span> <span class="n">load_iris</span><span class="p">,</span> <span class="n">load_breast_cancer</span><span class="p">,</span> <span class="n">make_classification</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span><span class="p">,</span> <span class="n">train_test_split</span><span class="p">,</span> <span class="n">StratifiedKFold</span><span class="p">,</span> <span class="n">cross_val_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span><span class="p">,</span> <span class="n">MinMaxScaler</span><span class="p">,</span> <span class="n">RobustScaler</span><span class="p">,</span> <span class="n">MaxAbsScaler</span><span class="p">,</span> <span class="n">OneHotEncoder</span><span class="p">,</span> <span class="n">LabelEncoder</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsRegressor</span><span class="p">,</span> <span class="n">KNeighborsClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">StackingClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="p">(</span><span class="n">accuracy_score</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">,</span> <span class="n">precision_score</span><span class="p">,</span> <span class="n">f1_score</span><span class="p">,</span> <span class="n">roc_auc_score</span><span class="p">,</span> 
+                             <span class="n">roc_curve</span><span class="p">,</span> <span class="n">auc</span><span class="p">,</span> <span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">classification_report</span><span class="p">,</span> 
+                             <span class="n">mean_absolute_error</span><span class="p">,</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">mean_squared_log_error</span><span class="p">,</span> 
+                             <span class="n">r2_score</span><span class="p">,</span> <span class="n">explained_variance_score</span><span class="p">,</span> <span class="n">mean_absolute_percentage_error</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_selection</span> <span class="kn">import</span> <span class="n">SelectKBest</span><span class="p">,</span> <span class="n">chi2</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">RocCurveDisplay</span>
+<span class="kn">from</span> <span class="nn">skopt</span> <span class="kn">import</span> <span class="n">BayesSearchCV</span>
+<span class="kn">from</span> <span class="nn">skopt.space</span> <span class="kn">import</span> <span class="n">Real</span><span class="p">,</span> <span class="n">Categorical</span><span class="p">,</span> <span class="n">Integer</span>
+<span class="kn">from</span> <span class="nn">bayes_opt</span> <span class="kn">import</span> <span class="n">BayesianOptimization</span>
+<span class="kn">from</span> <span class="nn">imblearn.over_sampling</span> <span class="kn">import</span> <span class="n">ADASYN</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="kn">from</span> <span class="nn">statsmodels.stats.outliers_influence</span> <span class="kn">import</span> <span class="n">variance_inflation_factor</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">mglearn</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">time</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Datos</span><span class="p">:</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">X_train</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_train</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">X_test</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_test</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_data</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+  <span class="k">def</span> <span class="nf">_load_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">stratify</span> <span class="o">=</span> <span class="n">y</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">11</span><span class="p">)</span>
+    <span class="n">X_train</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">X_test</span> <span class="o">=</span> <span class="n">X_test</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">y_train</span> <span class="o">=</span> <span class="n">y_train</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">y_test</span> <span class="o">=</span> <span class="n">y_test</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span>
+<span class="k">def</span> <span class="nf">plot_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">class_names</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span> <span class="n">cbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                <span class="n">xticklabels</span><span class="o">=</span><span class="n">class_names</span><span class="p">,</span> <span class="n">yticklabels</span><span class="o">=</span><span class="n">class_names</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Confusion Matrix&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted labels&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;True labels&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;conf1_2.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="textit-clasificacion-sin-adasyn">
+<h2><span class="math notranslate nohighlight">\(\textit{Clasificación sin ADASYN}\)</span><a class="headerlink" href="#textit-clasificacion-sin-adasyn" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;X = pd.read_parquet(&#39;/content/drive/My Drive/X_clasificacion.parquet&#39;)</span>
+<span class="sd">y= pd.read_parquet(&#39;/content/drive/My Drive/y_clasificacion.parquet&#39;)&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;X = pd.read_parquet(&#39;/content/drive/My Drive/X_clasificacion.parquet&#39;)\ny= pd.read_parquet(&#39;/content/drive/My Drive/y_clasificacion.parquet&#39;)&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="" src="_images/output.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;datos = Datos(X, y)&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;datos = Datos(X, y)&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="textit-clasificasion-bayesiana">
+<h3><span class="math notranslate nohighlight">\(\textit{Clasificasión Bayesiana}\)</span><a class="headerlink" href="#textit-clasificasion-bayesiana" title="Link to this heading">#</a></h3>
+<section id="textit-pipeline-y-gridsearchcv">
+<h4><span class="math notranslate nohighlight">\(\textit{Pipeline y GridsearchCV}\)</span><a class="headerlink" href="#textit-pipeline-y-gridsearchcv" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;start_time = time.time()</span>
+<span class="sd">pipe = Pipeline([ (&#39;scaler&#39;, StandardScaler()),  (&#39;classifier&#39;, GaussianNB())])</span>
+<span class="sd">grid_gauss = GridSearchCV(pipe, {}, cv=5, scoring=&#39;accuracy&#39;)</span>
+<span class="sd">grid_gauss.fit(datos.X_train, datos.y_train)</span>
+<span class="sd">end_time = time.time()</span>
+<span class="sd">print(f&quot;Tiempo de ejecución: {end_time - start_time} segundos&quot;)&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;start_time = time.time()\npipe = Pipeline([ (\&#39;scaler\&#39;, StandardScaler()),  (\&#39;classifier\&#39;, GaussianNB())])\ngrid_gauss = GridSearchCV(pipe, {}, cv=5, scoring=\&#39;accuracy\&#39;)\ngrid_gauss.fit(datos.X_train, datos.y_train)\nend_time = time.time()\nprint(f&quot;Tiempo de ejecución: {end_time - start_time} segundos&quot;)&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Tiempo de ejecución: 101.63016390800476 segundos</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;y_pred = grid_gauss.predict(datos.X_test)</span>
+<span class="sd">print(f&quot;Accuracy del mejor modelo en el conjunto de prueba: {accuracy_score(datos.y_test, y_pred)}&quot;)</span>
+<span class="sd">dix_predicts_for_plot[&#39;GaussianNB&#39;] = y_pred&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;y_pred = grid_gauss.predict(datos.X_test)\nprint(f&quot;Accuracy del mejor modelo en el conjunto de prueba: {accuracy_score(datos.y_test, y_pred)}&quot;)\ndix_predicts_for_plot[\&#39;GaussianNB\&#39;] = y_pred&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Accuracy</span> <span class="k">del</span> <span class="n">mejor</span> <span class="n">modelo</span> <span class="n">en</span> <span class="n">el</span> <span class="n">conjunto</span> <span class="n">de</span> <span class="n">prueba</span><span class="p">:</span> <span class="mf">0.8376281670707799</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;precission&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.6836017036077661</span><span class="p">],</span>
+ <span class="s1">&#39;f1_score&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.665402015891087</span><span class="p">],</span>
+ <span class="s1">&#39;recall&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.6481462665509323</span><span class="p">],</span>
+ <span class="s1">&#39;AUC&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.7743156226533143</span><span class="p">],</span>
+ <span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.7289586631305403</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>precission</th>
+      <th>f1_score</th>
+      <th>recall</th>
+      <th>AUC</th>
+      <th>M</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.683602</td>
+      <td>0.665402</td>
+      <td>0.648146</td>
+      <td>0.774316</td>
+      <td>0.728959</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(([[</span><span class="mi">150052</span><span class="p">,</span>  <span class="mi">16091</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">19504</span><span class="p">,</span>  <span class="mi">35611</span><span class="p">]]))</span>
+<span class="n">class_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Clase 0&#39;</span><span class="p">,</span> <span class="s1">&#39;Clase 1&#39;</span><span class="p">]</span>
+<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">class_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/815eac48eec8bbb867fbfc72b8e30b05d9b4f719d7485f9602ee7eca4cb39096.png" src="_images/815eac48eec8bbb867fbfc72b8e30b05d9b4f719d7485f9602ee7eca4cb39096.png" />
+</div>
+</div>
+<p>Para la “Clase 0”, se predijeron correctamente 150,052 casos (verdaderos negativos) y se clasificaron incorrectamente 16,091 como “Clase 1” (falsos positivos). Para la “Clase 1”, el modelo clasificó correctamente 35,611 casos (verdaderos positivos) y cometió 19,504 errores al clasificarlos como “Clase 0” (falsos negativos). Los indicadores de rendimiento ubicados en la parte superior del gráfico incluyen precisión (0.6836), puntaje F1 (0.6654), recall (0.6481), AUC (0.7743), y una métrica adicional “M” con un valor de 0.7289. Esto refleja un desempeño moderado del modelo, con un balance entre las clases y errores en ambos tipos de predicción.</p>
+</section>
+<section id="textit-optimizacion-bayesiana">
+<h4><span class="math notranslate nohighlight">\(\textit{Optimizacion Bayesiana}\)</span><a class="headerlink" href="#textit-optimizacion-bayesiana" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;def optimize_gaussian_nb(var_smoothing):</span>
+<span class="sd">    gnb = GaussianNB(var_smoothing=10**var_smoothing)</span>
+<span class="sd">    gnb.fit(datos.X_train, datos.y_train)</span>
+<span class="sd">    y_pred = gnb.predict(datos.X_test)</span>
+<span class="sd">    accuracy = accuracy_score(datos.y_test, y_pred)</span>
+<span class="sd">    return accuracy</span>
+
+<span class="sd">bayes_optimizer = BayesianOptimization(</span>
+<span class="sd">    f=optimize_gaussian_nb,</span>
+<span class="sd">    pbounds={&#39;var_smoothing&#39;: (-10, -1)},  random_state=42,verbose=2)</span>
+<span class="sd">start_time = time.time()</span>
+<span class="sd">bayes_optimizer.maximize(init_points=5, n_iter=20)</span>
+<span class="sd">print(&quot;Mejor valor de var_smoothing: &quot;, 10**bayes_optimizer.max[&#39;params&#39;][&#39;var_smoothing&#39;])</span>
+<span class="sd">print(&quot;Mejor precisión obtenida: &quot;, bayes_optimizer.max[&#39;target&#39;])&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;def optimize_gaussian_nb(var_smoothing):\n    gnb = GaussianNB(var_smoothing=10**var_smoothing)\n    gnb.fit(datos.X_train, datos.y_train)\n    y_pred = gnb.predict(datos.X_test)\n    accuracy = accuracy_score(datos.y_test, y_pred)\n    return accuracy\n\nbayes_optimizer = BayesianOptimization(\n    f=optimize_gaussian_nb,\n    pbounds={\&#39;var_smoothing\&#39;: (-10, -1)},  random_state=42,verbose=2)\nstart_time = time.time()\nbayes_optimizer.maximize(init_points=5, n_iter=20)\nprint(&quot;Mejor valor de var_smoothing: &quot;, 10**bayes_optimizer.max[\&#39;params\&#39;][\&#39;var_smoothing\&#39;])\nprint(&quot;Mejor precisión obtenida: &quot;, bayes_optimizer.max[\&#39;target\&#39;])&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span>   <span class="nb">iter</span>    <span class="o">|</span>  <span class="n">target</span>   <span class="o">|</span> <span class="n">var_sm</span><span class="o">...</span> <span class="o">|</span>
+<span class="o">-------------------------------------</span>
+<span class="o">|</span> <span class="mi">1</span>         <span class="o">|</span> <span class="mf">0.8393</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">6.629</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">2</span>         <span class="o">|</span> <span class="mf">0.7548</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">1.444</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">3</span>         <span class="o">|</span> <span class="mf">0.8274</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">3.412</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">4</span>         <span class="o">|</span> <span class="mf">0.8415</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">4.612</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">5</span>         <span class="o">|</span> <span class="mf">0.8391</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">8.596</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">6</span>         <span class="o">|</span> <span class="mf">0.8391</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">10.0</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">7</span>         <span class="o">|</span> <span class="mf">0.8399</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">5.621</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">8</span>         <span class="o">|</span> <span class="mf">0.8392</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">7.644</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">9</span>         <span class="o">|</span> <span class="mf">0.8391</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">9.374</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">10</span>        <span class="o">|</span> <span class="mf">0.8406</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">5.019</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">11</span>        <span class="o">|</span> <span class="mf">0.8428</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">4.245</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">12</span>        <span class="o">|</span> <span class="mf">0.8428</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">4.101</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">13</span>        <span class="o">|</span> <span class="mf">0.8429</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">4.168</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">14</span>        <span class="o">|</span> <span class="mf">0.8429</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">4.164</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">15</span>        <span class="o">|</span> <span class="mf">0.8429</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">4.166</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">16</span>        <span class="o">|</span> <span class="mf">0.8429</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">4.164</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">17</span>        <span class="o">|</span> <span class="mf">0.8429</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">4.164</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">18</span>        <span class="o">|</span> <span class="mf">0.8429</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">4.163</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">19</span>        <span class="o">|</span> <span class="mf">0.8429</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">4.163</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">20</span>        <span class="o">|</span> <span class="mf">0.8429</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">4.163</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">21</span>        <span class="o">|</span> <span class="mf">0.8429</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">4.164</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">22</span>        <span class="o">|</span> <span class="mf">0.8429</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">4.163</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">23</span>        <span class="o">|</span> <span class="mf">0.8429</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">4.163</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">24</span>        <span class="o">|</span> <span class="mf">0.8429</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">4.163</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">25</span>        <span class="o">|</span> <span class="mf">0.8429</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">4.162</span>    <span class="o">|</span>
+<span class="o">=====================================</span>
+<span class="n">Mejor</span> <span class="n">valor</span> <span class="n">de</span> <span class="n">var_smoothing</span><span class="p">:</span>  <span class="mf">6.88115652271368e-05</span>
+<span class="n">Mejor</span> <span class="n">precisión</span> <span class="n">obtenida</span><span class="p">:</span>  <span class="mf">0.8429480515958745</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;mejor_var_smoothing = 10**bayes_optimizer.max[&#39;params&#39;][&#39;var_smoothing&#39;]</span>
+<span class="sd">mejor_modelo = GaussianNB(var_smoothing=mejor_var_smoothing)</span>
+<span class="sd">mejor_modelo.fit(datos.X_train, datos.y_train)</span>
+<span class="sd">y_pred_mejor = mejor_modelo.predict(datos.X_test)</span>
+<span class="sd">accuracy_mejor = accuracy_score(datos.y_test, y_pred_mejor)</span>
+<span class="sd">print(f&quot;Precisión con el mejor var_smoothing: {accuracy_mejor}&quot;)</span>
+<span class="sd">print(f&quot;Predicciones del modelo: {y_pred_mejor}&quot;)</span>
+<span class="sd">end_time = time.time()</span>
+<span class="sd">print(f&quot;Tiempo de ejecución: {end_time - start_time} segundos&quot;)&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;mejor_var_smoothing = 10**bayes_optimizer.max[\&#39;params\&#39;][\&#39;var_smoothing\&#39;]\nmejor_modelo = GaussianNB(var_smoothing=mejor_var_smoothing)\nmejor_modelo.fit(datos.X_train, datos.y_train)\ny_pred_mejor = mejor_modelo.predict(datos.X_test)\naccuracy_mejor = accuracy_score(datos.y_test, y_pred_mejor)\nprint(f&quot;Precisión con el mejor var_smoothing: {accuracy_mejor}&quot;)\nprint(f&quot;Predicciones del modelo: {y_pred_mejor}&quot;)\nend_time = time.time()\nprint(f&quot;Tiempo de ejecución: {end_time - start_time} segundos&quot;)&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Precisión</span> <span class="n">con</span> <span class="n">el</span> <span class="n">mejor</span> <span class="n">var_smoothing</span><span class="p">:</span> <span class="mf">0.8415020142993196</span>
+<span class="n">Predicciones</span> <span class="k">del</span> <span class="n">modelo</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="o">...</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">Tiempo</span> <span class="n">de</span> <span class="n">ejecución</span><span class="p">:</span> <span class="mf">347.50248670578003</span> <span class="n">segundos</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;precission&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.7031924072476272</span><span class="p">],</span>
+ <span class="s1">&#39;f1_score&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.6642247315633134</span><span class="p">],</span>
+ <span class="s1">&#39;recall&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.6293491103647084</span><span class="p">],</span>
+ <span class="s1">&#39;AUC&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.770614293008771</span><span class="p">],</span>
+ <span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.7369033501281992</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>precission</th>
+      <th>f1_score</th>
+      <th>recall</th>
+      <th>AUC</th>
+      <th>M</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.703192</td>
+      <td>0.664225</td>
+      <td>0.629349</td>
+      <td>0.770614</td>
+      <td>0.736903</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(([[</span><span class="mi">151673</span><span class="p">,</span><span class="mi">14470</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">20279</span><span class="p">,</span><span class="mi">34836</span><span class="p">]]))</span>
+<span class="n">class_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Clase 0&#39;</span><span class="p">,</span> <span class="s1">&#39;Clase 1&#39;</span><span class="p">]</span>
+<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">class_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/3ea384fed43fb9407b6c30ba6dc4d0a4214088d49ad8f635ea4568c5b5041987.png" src="_images/3ea384fed43fb9407b6c30ba6dc4d0a4214088d49ad8f635ea4568c5b5041987.png" />
+</div>
+</div>
+<p>En este caso, el modelo predijo correctamente 151,673 casos como “Clase 0” (verdaderos negativos), mientras que 14,470 fueron clasificados incorrectamente como “Clase 1” (falsos positivos). Para la “Clase 1”, 34,836 predicciones fueron correctas (verdaderos positivos), y 20,279 casos fueron clasificados erróneamente como “Clase 0” (falsos negativos). Los indicadores de rendimiento en la parte superior muestran una precisión de 0.7032, un puntaje F1 de 0.6642, un recall de 0.6293, un AUC de 0.7706, y la métrica “M” con un valor de 0.7369. Este modelo tiene un desempeño ligeramente mejor en términos de precisión en comparación con el anterior, pero sigue mostrando un nivel considerable de errores, especialmente en los falsos negativos.</p>
+</section>
+</section>
+<section id="textit-knn">
+<h3><span class="math notranslate nohighlight">\(\textit{Knn}\)</span><a class="headerlink" href="#textit-knn" title="Link to this heading">#</a></h3>
+<section id="id1">
+<h4><span class="math notranslate nohighlight">\(\textit{Pipeline y GridsearchCV}\)</span><a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;start_time = time.time()</span>
+<span class="sd">param_grid = {</span>
+<span class="sd">    &#39;classifier__n_neighbors&#39;: [i for i in range(1,20)]}</span>
+<span class="sd">pipe = Pipeline([ (&#39;scaler&#39;, StandardScaler()),  (&#39;classifier&#39;, KNeighborsClassifier())])</span>
+<span class="sd">grid_knn = GridSearchCV(pipe, param_grid, cv=5, scoring=&#39;accuracy&#39;)</span>
+<span class="sd">grid_knn.fit(datos.X_train, datos.y_train)</span>
+<span class="sd">end_time = time.time()</span>
+<span class="sd">print(f&quot;Tiempo de ejecución: {end_time - start_time} segundos&quot;)</span>
+
+<span class="sd">y_pred = grid_knn.predict(data_1.X_test[:len(data_1.X_train)])</span>
+<span class="sd">print(f&quot;Accuracy del mejor modelo en el conjunto de prueba: {accuracy_score(data_1.y_test[:len(data_1.X_train)], y_pred)}&quot;)</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;start_time = time.time()\nparam_grid = {\n    \&#39;classifier__n_neighbors\&#39;: [i for i in range(1,20)]}\npipe = Pipeline([ (\&#39;scaler\&#39;, StandardScaler()),  (\&#39;classifier\&#39;, KNeighborsClassifier())])\ngrid_knn = GridSearchCV(pipe, param_grid, cv=5, scoring=\&#39;accuracy\&#39;)\ngrid_knn.fit(datos.X_train, datos.y_train)\nend_time = time.time()\nprint(f&quot;Tiempo de ejecución: {end_time - start_time} segundos&quot;)\n\ny_pred = grid_knn.predict(data_1.X_test[:len(data_1.X_train)])\nprint(f&quot;Accuracy del mejor modelo en el conjunto de prueba: {accuracy_score(data_1.y_test[:len(data_1.X_train)], y_pred)}&quot;)\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Tiempo de ejecución: 176.43437218666077 segundos <br />
+Accuracy del mejor modelo en el conjunto de prueba: 0.8537725189597665</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;precission&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.751871611737372</span><span class="p">],</span>
+ <span class="s1">&#39;f1_score&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.6835918399280224</span><span class="p">],</span>
+ <span class="s1">&#39;recall&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.6266810112963959</span><span class="p">],</span>
+ <span class="s1">&#39;AUC&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.7784920574223447</span><span class="p">],</span>
+ <span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.7651818345798584</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>precission</th>
+      <th>f1_score</th>
+      <th>recall</th>
+      <th>AUC</th>
+      <th>M</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.751872</td>
+      <td>0.683592</td>
+      <td>0.626681</td>
+      <td>0.778492</td>
+      <td>0.765182</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(([[</span><span class="mi">154833</span><span class="p">,</span>  <span class="mi">11310</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">19923</span><span class="p">,</span> <span class="mi">35192</span><span class="p">]]))</span>
+<span class="n">class_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Clase 0&#39;</span><span class="p">,</span> <span class="s1">&#39;Clase 1&#39;</span><span class="p">]</span>
+<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">class_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/17fa3c172b4e071c5b399578c955844b32be17989b8a697b8dd73fea46aad1aa.png" src="_images/17fa3c172b4e071c5b399578c955844b32be17989b8a697b8dd73fea46aad1aa.png" />
+</div>
+</div>
+<p>Se predijo correctamente 154,833 casos como “Clase 0” (verdaderos negativos), mientras que 11,310 fueron clasificados incorrectamente como “Clase 1” (falsos positivos). Para la “Clase 1”, 35,192 predicciones fueron correctas (verdaderos positivos), y 19,923 casos fueron clasificados erróneamente como “Clase 0” (falsos negativos). En cuanto a las métricas de rendimiento, el modelo obtuvo una precisión de 0.7519, un puntaje F1 de 0.6836, un recall de 0.6267, un AUC de 0.7785, y la métrica “M” con un valor de 0.7652. Este modelo muestra una mejora notable en términos de precisión y menor cantidad de falsos positivos, lo que sugiere un mejor balance en el rendimiento entre las dos clases.</p>
+</section>
+<section id="id2">
+<h4><span class="math notranslate nohighlight">\(\textit{Optimizacion Bayesiana}\)</span><a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">optimize_knn</span><span class="p">(</span><span class="n">n_neighbors</span><span class="p">):</span>
+    <span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">n_neighbors</span><span class="p">))</span>
+    <span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">datos</span><span class="o">.</span><span class="n">X_train</span><span class="p">,</span> <span class="n">datos</span><span class="o">.</span><span class="n">y_train</span><span class="p">)</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">datos</span><span class="o">.</span><span class="n">X_test</span><span class="p">)</span>
+    <span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">datos</span><span class="o">.</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">accuracy</span>
+<span class="sd">&#39;&#39;&#39;knn_optimizer = BayesianOptimization(</span>
+<span class="sd">    f=optimize_knn,</span>
+<span class="sd">    pbounds={&#39;n_neighbors&#39;: (1, 20)},  </span>
+<span class="sd">    random_state=42,</span>
+<span class="sd">    verbose=2)</span>
+<span class="sd">start_time = time.time()</span>
+<span class="sd">knn_optimizer.maximize(init_points=5, n_iter=20)</span>
+
+<span class="sd">print(&quot;Mejor valor de n_neighbors: &quot;, int(knn_optimizer.max[&#39;params&#39;][&#39;n_neighbors&#39;]))</span>
+<span class="sd">print(&quot;Mejor precisión obtenida: &quot;, knn_optimizer.max[&#39;target&#39;])&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;knn_optimizer = BayesianOptimization(\n    f=optimize_knn,\n    pbounds={\&#39;n_neighbors\&#39;: (1, 20)},  \n    random_state=42,\n    verbose=2)\nstart_time = time.time()\nknn_optimizer.maximize(init_points=5, n_iter=20)\n\nprint(&quot;Mejor valor de n_neighbors: &quot;, int(knn_optimizer.max[\&#39;params\&#39;][\&#39;n_neighbors\&#39;]))\nprint(&quot;Mejor precisión obtenida: &quot;, knn_optimizer.max[\&#39;target\&#39;])&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span>   <span class="nb">iter</span>    <span class="o">|</span>  <span class="n">target</span>   <span class="o">|</span> <span class="n">n_neig</span><span class="o">...</span> <span class="o">|</span>
+<span class="o">-------------------------------------</span>
+<span class="o">|</span> <span class="mi">1</span>         <span class="o">|</span> <span class="mf">0.8414</span>    <span class="o">|</span> <span class="mf">8.116</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">2</span>         <span class="o">|</span> <span class="mf">0.8516</span>    <span class="o">|</span> <span class="mf">19.06</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">3</span>         <span class="o">|</span> <span class="mf">0.8472</span>    <span class="o">|</span> <span class="mf">14.91</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">4</span>         <span class="o">|</span> <span class="mf">0.8459</span>    <span class="o">|</span> <span class="mf">12.37</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">5</span>         <span class="o">|</span> <span class="mf">0.8389</span>    <span class="o">|</span> <span class="mf">3.964</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">6</span>         <span class="o">|</span> <span class="mf">0.8516</span>    <span class="o">|</span> <span class="mf">19.99</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">7</span>         <span class="o">|</span> <span class="mf">0.8516</span>    <span class="o">|</span> <span class="mf">19.53</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">8</span>         <span class="o">|</span> <span class="mf">0.8485</span>    <span class="o">|</span> <span class="mf">18.2</span>      <span class="o">|</span>
+<span class="o">|</span> <span class="mi">9</span>         <span class="o">|</span> <span class="mf">0.8258</span>    <span class="o">|</span> <span class="mf">1.0</span>       <span class="o">|</span>
+<span class="o">|</span> <span class="mi">10</span>        <span class="o">|</span> <span class="mf">0.8445</span>    <span class="o">|</span> <span class="mf">10.41</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">11</span>        <span class="o">|</span> <span class="mf">0.8435</span>    <span class="o">|</span> <span class="mf">5.985</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">12</span>        <span class="o">|</span> <span class="mf">0.8497</span>    <span class="o">|</span> <span class="mf">13.77</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">13</span>        <span class="o">|</span> <span class="mf">0.8516</span>    <span class="o">|</span> <span class="mf">19.27</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">14</span>        <span class="o">|</span> <span class="mf">0.8516</span>    <span class="o">|</span> <span class="mf">19.8</span>      <span class="o">|</span>
+<span class="o">|</span> <span class="mi">15</span>        <span class="o">|</span> <span class="mf">0.8516</span>    <span class="o">|</span> <span class="mf">19.16</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">16</span>        <span class="o">|</span> <span class="mf">0.8516</span>    <span class="o">|</span> <span class="mf">19.67</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">17</span>        <span class="o">|</span> <span class="mf">0.8516</span>    <span class="o">|</span> <span class="mf">19.91</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">18</span>        <span class="o">|</span> <span class="mf">0.8516</span>    <span class="o">|</span> <span class="mf">19.41</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">19</span>        <span class="o">|</span> <span class="mf">0.8516</span>    <span class="o">|</span> <span class="mf">19.15</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">20</span>        <span class="o">|</span> <span class="mf">0.8516</span>    <span class="o">|</span> <span class="mf">20.0</span>      <span class="o">|</span>
+<span class="o">|</span> <span class="mi">21</span>        <span class="o">|</span> <span class="mf">0.8516</span>    <span class="o">|</span> <span class="mf">19.73</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">22</span>        <span class="o">|</span> <span class="mf">0.8516</span>    <span class="o">|</span> <span class="mf">19.58</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">23</span>        <span class="o">|</span> <span class="mf">0.8516</span>    <span class="o">|</span> <span class="mf">19.0</span>      <span class="o">|</span>
+<span class="o">|</span> <span class="mi">24</span>        <span class="o">|</span> <span class="mf">0.8516</span>    <span class="o">|</span> <span class="mf">19.07</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">25</span>        <span class="o">|</span> <span class="mf">0.8516</span>    <span class="o">|</span> <span class="mf">19.35</span>     <span class="o">|</span>
+<span class="o">=====================================</span>
+<span class="n">Mejor</span> <span class="n">valor</span> <span class="n">de</span> <span class="n">n_neighbors</span><span class="p">:</span>  <span class="mi">19</span>
+<span class="n">Mejor</span> <span class="n">precisión</span> <span class="n">obtenida</span><span class="p">:</span>  <span class="mf">0.8516392627611205</span>
+</pre></div>
+</div>
+<p>mejor_n = knn_optimizer.max[‘params’][‘n_neighbors’]
+mejor_modelo = KNeighborsClassifier(n_neighbors=int(mejor_n))
+mejor_modelo.fit(data_1.X_train, data_1.y_train)
+y_pred_mejor = mejor_modelo.predict(data_1.X_test)
+accuracy_mejor = accuracy_score(data_1.y_test, y_pred_mejor)
+print(f”Precisión con el mejor var_smoothing: {accuracy_mejor}”)
+print(f”Predicciones del modelo: {y_pred_mejor}”)
+end_time = time.time()
+print(f”Tiempo de ejecución: {end_time - start_time} segundos”)</p>
+<p>Precisión con el mejor var_smoothing: 0.7509027228711808 <br />
+Predicciones del modelo: [0 0 0 … 0 0 0]
+Tiempo de ejecución: 534.8886618614197 segundos</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;precission&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.756754</span><span class="p">],</span>
+ <span class="s1">&#39;f1_score&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.682819</span><span class="p">],</span>
+ <span class="s1">&#39;recall&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.622045</span><span class="p">],</span>
+ <span class="s1">&#39;AUC&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.777858</span><span class="p">],</span>
+ <span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.767306</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>precission</th>
+      <th>f1_score</th>
+      <th>recall</th>
+      <th>AUC</th>
+      <th>M</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.756754</td>
+      <td>0.682819</td>
+      <td>0.622045</td>
+      <td>0.777858</td>
+      <td>0.767306</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(([[</span><span class="mi">155123</span><span class="p">,</span>  <span class="mi">11020</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">20831</span><span class="p">,</span> <span class="mi">34284</span><span class="p">]]))</span>
+<span class="n">class_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Clase 0&#39;</span><span class="p">,</span> <span class="s1">&#39;Clase 1&#39;</span><span class="p">]</span>
+<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">class_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/25537848c3909de4a87c54e43e7b913adb0aa4eb7274aa8957ac7d5a2b04595a.png" src="_images/25537848c3909de4a87c54e43e7b913adb0aa4eb7274aa8957ac7d5a2b04595a.png" />
+</div>
+</div>
+<p>Se predijo correctamente 34,284 casos como “Clase 1” (verdaderos positivos), mientras que 20,831 fueron clasificados incorrectamente como “Clase 0” (falsos negativos). Las métricas de rendimiento del modelo incluyen una precisión de 0.7568, un puntaje F1 de 0.6828, un recall de 0.6220, un AUC de 0.7779, y una métrica “M” con un valor de 0.7673. Este modelo tiene un rendimiento consistente con los anteriores, con una ligera mejora en la precisión, lo que sugiere un manejo más equilibrado entre falsos positivos y falsos negativos.</p>
+</section>
+</section>
+<section id="textit-logistic">
+<h3><span class="math notranslate nohighlight">\(\textit{Logistic}\)</span><a class="headerlink" href="#textit-logistic" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h4><span class="math notranslate nohighlight">\(\textit{Pipeline y GridsearchCV}\)</span><a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;pipeline = Pipeline([</span>
+<span class="sd">    (&#39;scaler&#39;, StandardScaler()),  </span>
+<span class="sd">    (&#39;logreg&#39;, LogisticRegression(penalty=&#39;elasticnet&#39;, solver=&#39;saga&#39;, max_iter=5000))  </span>
+<span class="sd">])</span>
+<span class="sd">param_grid = {</span>
+<span class="sd">    &#39;logreg__C&#39;: [0.01, 0.1, 1, 10],        </span>
+<span class="sd">    &#39;logreg__l1_ratio&#39;: [0.1, 0.5, 0.7, 0.9]  </span>
+<span class="sd">}</span>
+<span class="sd">grid_log = GridSearchCV(pipeline, param_grid, cv=5, scoring=&#39;accuracy&#39;, n_jobs=-1)</span>
+<span class="sd">grid_log.fit(data_1.X_train, data_1.y_train)</span>
+<span class="sd">best_model =grid_log.best_estimator_</span>
+<span class="sd">y_pred = best_model.predict(data_1.X_test)</span>
+<span class="sd">accuracy = accuracy_score(data_1.y_test, y_pred)</span>
+<span class="sd">dix[&#39;log&#39;] = list(y_pred)</span>
+<span class="sd">print(f&quot;Mejor precisión: {accuracy}&quot;)</span>
+<span class="sd">print(f&quot;Mejores hiperparámetros: {grid_log.best_params_}&quot;)&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;pipeline = Pipeline([\n    (\&#39;scaler\&#39;, StandardScaler()),  \n    (\&#39;logreg\&#39;, LogisticRegression(penalty=\&#39;elasticnet\&#39;, solver=\&#39;saga\&#39;, max_iter=5000))  \n])\nparam_grid = {\n    \&#39;logreg__C\&#39;: [0.01, 0.1, 1, 10],        \n    \&#39;logreg__l1_ratio\&#39;: [0.1, 0.5, 0.7, 0.9]  \n}\ngrid_log = GridSearchCV(pipeline, param_grid, cv=5, scoring=\&#39;accuracy\&#39;, n_jobs=-1)\ngrid_log.fit(data_1.X_train, data_1.y_train)\nbest_model =grid_log.best_estimator_\ny_pred = best_model.predict(data_1.X_test)\naccuracy = accuracy_score(data_1.y_test, y_pred)\ndix[\&#39;log\&#39;] = list(y_pred)\nprint(f&quot;Mejor precisión: {accuracy}&quot;)\nprint(f&quot;Mejores hiperparámetros: {grid_log.best_params_}&quot;)&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mejor precisión: 0.8690 <br />
+Mejores hiperparámetros: {‘logreg__C’: 0.1, ‘logreg__l1_ratio’: 0.1}</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;precission&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.7549113326440234</span><span class="p">],</span> <span class="s1">&#39;f1_score&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.7275462048996936</span><span class="p">],</span> <span class="s1">&#39;recall&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.7020956182527442</span><span class="p">],</span> <span class="s1">&#39;AUC&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.8132400170436483</span><span class="p">],</span> <span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.7840756748438359</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>precission</th>
+      <th>f1_score</th>
+      <th>recall</th>
+      <th>AUC</th>
+      <th>M</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.754911</td>
+      <td>0.727546</td>
+      <td>0.702096</td>
+      <td>0.81324</td>
+      <td>0.784076</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(([[</span><span class="mi">153580</span><span class="p">,</span>  <span class="mi">12563</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">16419</span><span class="p">,</span> <span class="mi">38696</span><span class="p">]]))</span>
+<span class="n">class_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Clase 0&#39;</span><span class="p">,</span> <span class="s1">&#39;Clase 1&#39;</span><span class="p">]</span>
+<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">class_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/e469ecc9f99bff879a96e8ff021263c6ef33d775ff8ed367ab6dff4d8accf492.png" src="_images/e469ecc9f99bff879a96e8ff021263c6ef33d775ff8ed367ab6dff4d8accf492.png" />
+</div>
+</div>
+<p>El modelo predijo correctamente 153,580 casos como “Clase 0” (verdaderos negativos), mientras que cometió 12,563 errores al clasificarlos incorrectamente como “Clase 1” (falsos positivos). En cuanto a la “Clase 1”, el modelo predijo correctamente 38,696 casos (verdaderos positivos), y cometió 16,419 errores al clasificarlos incorrectamente como “Clase 0” (falsos negativos). Las métricas asociadas con este modelo incluyen una precisión de 0.7549, un puntaje F1 de 0.7275, un recall de 0.7021, un AUC de 0.8132, y una métrica “M” de 0.7841. Comparado con las iteraciones anteriores, este modelo muestra una mejora en el recall y un aumento en el AUC, lo que indica una mayor capacidad para distinguir entre las clases, aunque todavía existen errores considerables en ambas clases.</p>
+</section>
+<section id="id4">
+<h4><span class="math notranslate nohighlight">\(\textit{Optimizacion Bayesiana}\)</span><a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">optimize_logistic_regression</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">l1_ratio</span><span class="p">):</span>
+    <span class="n">log</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">penalty</span><span class="o">=</span><span class="s1">&#39;elasticnet&#39;</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="s1">&#39;saga&#39;</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="n">C</span><span class="p">,</span> <span class="n">l1_ratio</span><span class="o">=</span><span class="n">l1_ratio</span><span class="p">)</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data_1</span><span class="o">.</span><span class="n">X_train</span><span class="p">,</span> <span class="n">data_1</span><span class="o">.</span><span class="n">y_train</span><span class="p">)</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">log</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">data_1</span><span class="o">.</span><span class="n">X_test</span><span class="p">)</span>
+    <span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">data_1</span><span class="o">.</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">accuracy</span>
+<span class="n">pbounds</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="s1">&#39;l1_ratio&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)}</span>
+<span class="sd">&#39;&#39;&#39;bayes_optimizer = BayesianOptimization(f=optimize_logistic_regression, pbounds=pbounds, random_state=42, verbose=2)</span>
+<span class="sd">start_time = time.time()</span>
+<span class="sd">bayes_optimizer.maximize(init_points=5, n_iter=20)</span>
+<span class="sd">print(&quot;Mejor valor de C: &quot;, 10**bayes_optimizer.max[&#39;params&#39;][&#39;C&#39;])</span>
+<span class="sd">print(&quot;Mejor valor de l1_ratio: &quot;, bayes_optimizer.max[&#39;params&#39;][&#39;l1_ratio&#39;])</span>
+<span class="sd">print(&quot;Mejor precisión obtenida: &quot;, bayes_optimizer.max[&#39;target&#39;])&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;bayes_optimizer = BayesianOptimization(f=optimize_logistic_regression, pbounds=pbounds, random_state=42, verbose=2)\nstart_time = time.time()\nbayes_optimizer.maximize(init_points=5, n_iter=20)\nprint(&quot;Mejor valor de C: &quot;, 10**bayes_optimizer.max[\&#39;params\&#39;][\&#39;C\&#39;])\nprint(&quot;Mejor valor de l1_ratio: &quot;, bayes_optimizer.max[\&#39;params\&#39;][\&#39;l1_ratio\&#39;])\nprint(&quot;Mejor precisión obtenida: &quot;, bayes_optimizer.max[\&#39;target\&#39;])&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">v</span><span class="o">|</span>   <span class="nb">iter</span>    <span class="o">|</span>  <span class="n">target</span>   <span class="o">|</span>     <span class="n">C</span>     <span class="o">|</span> <span class="n">l1_ratio</span>  <span class="o">|</span>
+<span class="o">-------------------------------------------------</span>
+<span class="o">|</span> <span class="mi">1</span>         <span class="o">|</span> <span class="mf">0.7574</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">1.127</span>    <span class="o">|</span> <span class="mf">0.9507</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">2</span>         <span class="o">|</span> <span class="mf">0.7575</span>    <span class="o">|</span> <span class="mf">0.66</span>      <span class="o">|</span> <span class="mf">0.5987</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">3</span>         <span class="o">|</span> <span class="mf">0.7574</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">2.22</span>     <span class="o">|</span> <span class="mf">0.156</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">4</span>         <span class="o">|</span> <span class="mf">0.7564</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">2.71</span>     <span class="o">|</span> <span class="mf">0.8662</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">5</span>         <span class="o">|</span> <span class="mf">0.7574</span>    <span class="o">|</span> <span class="mf">0.005575</span>  <span class="o">|</span> <span class="mf">0.7081</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">6</span>         <span class="o">|</span> <span class="mf">0.7575</span>    <span class="o">|</span> <span class="mf">0.5859</span>    <span class="o">|</span> <span class="mf">0.5381</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">7</span>         <span class="o">|</span> <span class="mf">0.7575</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">1.291</span>    <span class="o">|</span> <span class="mf">0.008644</span>  <span class="o">|</span>
+<span class="o">|</span> <span class="mi">8</span>         <span class="o">|</span> <span class="mf">0.7575</span>    <span class="o">|</span> <span class="mf">1.848</span>     <span class="o">|</span> <span class="mf">0.004469</span>  <span class="o">|</span>
+<span class="o">|</span> <span class="mi">9</span>         <span class="o">|</span> <span class="mf">0.7575</span>    <span class="o">|</span> <span class="mf">1.998</span>     <span class="o">|</span> <span class="mf">0.9905</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">10</span>        <span class="o">|</span> <span class="mf">0.7574</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">0.3638</span>   <span class="o">|</span> <span class="mf">0.003525</span>  <span class="o">|</span>
+<span class="o">|</span> <span class="mi">11</span>        <span class="o">|</span> <span class="mf">0.7574</span>    <span class="o">|</span> <span class="mf">1.055</span>     <span class="o">|</span> <span class="mf">0.002725</span>  <span class="o">|</span>
+<span class="o">|</span> <span class="mi">12</span>        <span class="o">|</span> <span class="mf">0.7575</span>    <span class="o">|</span> <span class="mf">1.318</span>     <span class="o">|</span> <span class="mf">0.9874</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">13</span>        <span class="o">|</span> <span class="mf">0.7574</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">0.543</span>    <span class="o">|</span> <span class="mf">0.9995</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">14</span>        <span class="o">|</span> <span class="mf">0.7574</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">1.839</span>    <span class="o">|</span> <span class="mf">0.005386</span>  <span class="o">|</span>
+<span class="o">|</span> <span class="mi">15</span>        <span class="o">|</span> <span class="mf">0.7575</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">0.8178</span>   <span class="o">|</span> <span class="mf">0.4252</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">16</span>        <span class="o">|</span> <span class="mf">0.7574</span>    <span class="o">|</span> <span class="mf">1.572</span>     <span class="o">|</span> <span class="mf">0.4999</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">17</span>        <span class="o">|</span> <span class="mf">0.7574</span>    <span class="o">|</span> <span class="mf">0.3147</span>    <span class="o">|</span> <span class="mf">0.003836</span>  <span class="o">|</span>
+<span class="o">|</span> <span class="mi">18</span>        <span class="o">|</span> <span class="mf">0.7574</span>    <span class="o">|</span> <span class="mf">0.443</span>     <span class="o">|</span> <span class="mf">0.997</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">19</span>        <span class="o">|</span> <span class="mf">0.7575</span>    <span class="o">|</span> <span class="mf">1.997</span>     <span class="o">|</span> <span class="mf">0.4604</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">20</span>        <span class="o">|</span> <span class="mf">0.7574</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">1.457</span>    <span class="o">|</span> <span class="mf">0.4511</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">21</span>        <span class="o">|</span> <span class="mf">0.7574</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">2.678</span>    <span class="o">|</span> <span class="mf">0.002374</span>  <span class="o">|</span>
+<span class="o">|</span> <span class="mi">22</span>        <span class="o">|</span> <span class="mf">0.7574</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">0.8228</span>   <span class="o">|</span> <span class="mf">0.006424</span>  <span class="o">|</span>
+<span class="o">|</span> <span class="mi">23</span>        <span class="o">|</span> <span class="mf">0.7574</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">2.324</span>    <span class="o">|</span> <span class="mf">0.005164</span>  <span class="o">|</span>
+<span class="o">|</span> <span class="mi">24</span>        <span class="o">|</span> <span class="mf">0.7575</span>    <span class="o">|</span> <span class="mf">0.9062</span>    <span class="o">|</span> <span class="mf">0.9972</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">25</span>        <span class="o">|</span> <span class="mf">0.7575</span>    <span class="o">|</span> <span class="mf">1.44</span>      <span class="o">|</span> <span class="mf">0.001353</span>  <span class="o">|</span>
+<span class="o">=================================================</span>
+<span class="n">Mejor</span> <span class="n">valor</span> <span class="n">de</span> <span class="n">C</span><span class="p">:</span>  <span class="mf">0.05118875868829046</span>
+<span class="n">Mejor</span> <span class="n">valor</span> <span class="n">de</span> <span class="n">l1_ratio</span><span class="p">:</span>  <span class="mf">0.00864382149691345</span>
+<span class="n">Mejor</span> <span class="n">precisión</span> <span class="n">obtenida</span><span class="p">:</span>  <span class="mf">0.7574641368899656</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;mejor_C = 10**bayes_optimizer.max[&#39;params&#39;][&#39;C&#39;]</span>
+<span class="sd">mejor_l1 = float(bayes_optimizer.max[&#39;params&#39;][&#39;l1_ratio&#39;])</span>
+
+<span class="sd"># Crear y entrenar el modelo de Logistic Regression con los mejores hiperparámetros</span>
+<span class="sd">mejor_modelo = LogisticRegression(penalty=&#39;elasticnet&#39;, solver=&#39;saga&#39;, max_iter=5000, C=mejor_C, l1_ratio=mejor_l1)</span>
+<span class="sd">mejor_modelo.fit(data_1.X_train, data_1.y_train)</span>
+
+<span class="sd"># Hacer predicciones con el conjunto de prueba</span>
+<span class="sd">y_pred_mejor_logreg = mejor_modelo.predict(data_1.X_test)</span>
+<span class="sd"># Calcular la precisión</span>
+<span class="sd">accuracy_mejor = accuracy_score(data_1.y_test, y_pred_mejor_logreg)</span>
+<span class="sd">print(f&quot;Precisión con el mejor C y l1_ratio: {accuracy_mejor}&quot;)</span>
+<span class="sd">print(f&quot;Predicciones del modelo: {y_pred_mejor_logreg}&quot;)</span>
+<span class="sd">end_time = time.time()</span>
+<span class="sd">print(f&quot;Tiempo de ejecución: {end_time - start_time} segundos&quot;)&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;mejor_C = 10**bayes_optimizer.max[\&#39;params\&#39;][\&#39;C\&#39;]\nmejor_l1 = float(bayes_optimizer.max[\&#39;params\&#39;][\&#39;l1_ratio\&#39;])\n\n# Crear y entrenar el modelo de Logistic Regression con los mejores hiperparámetros\nmejor_modelo = LogisticRegression(penalty=\&#39;elasticnet\&#39;, solver=\&#39;saga\&#39;, max_iter=5000, C=mejor_C, l1_ratio=mejor_l1)\nmejor_modelo.fit(data_1.X_train, data_1.y_train)\n\n# Hacer predicciones con el conjunto de prueba\ny_pred_mejor_logreg = mejor_modelo.predict(data_1.X_test)\n# Calcular la precisión\naccuracy_mejor = accuracy_score(data_1.y_test, y_pred_mejor_logreg)\nprint(f&quot;Precisión con el mejor C y l1_ratio: {accuracy_mejor}&quot;)\nprint(f&quot;Predicciones del modelo: {y_pred_mejor_logreg}&quot;)\nend_time = time.time()\nprint(f&quot;Tiempo de ejecución: {end_time - start_time} segundos&quot;)&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Precisión con el mejor C y l1_ratio: 0.7574460584476042 <br />
+Predicciones del modelo: [0 0 0 … 0 0 0]</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;precission&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.7549113326440234</span><span class="p">],</span> <span class="s1">&#39;f1_score&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.7275462048996936</span><span class="p">],</span> <span class="s1">&#39;recall&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.7020956182527442</span><span class="p">],</span> <span class="s1">&#39;AUC&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.8132400170436483</span><span class="p">],</span> <span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.7840756748438359</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>precission</th>
+      <th>f1_score</th>
+      <th>recall</th>
+      <th>AUC</th>
+      <th>M</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.754911</td>
+      <td>0.727546</td>
+      <td>0.702096</td>
+      <td>0.81324</td>
+      <td>0.784076</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(([[</span><span class="mi">165963</span> <span class="p">,</span>  <span class="mi">180</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">53487</span><span class="p">,</span> <span class="mi">1628</span><span class="p">]]))</span>
+<span class="n">class_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Clase 0&#39;</span><span class="p">,</span> <span class="s1">&#39;Clase 1&#39;</span><span class="p">]</span>
+<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">class_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1a64d5c5979364d575827c43153cccc26f27d78d0bf552475c60f094dab345e7.png" src="_images/1a64d5c5979364d575827c43153cccc26f27d78d0bf552475c60f094dab345e7.png" />
+</div>
+</div>
+<p>solo cometió 180 errores al clasificarlos como “Clase 1” (falsos positivos). Para la “Clase 1”, el rendimiento es significativamente menor, con solo 1,628 predicciones correctas (verdaderos positivos) y 53,487 errores al clasificarlos como “Clase 0” (falsos negativos). Las métricas en la parte superior reflejan este comportamiento: la precisión es alta, con un valor de 0.9004, pero el puntaje F1 es extremadamente bajo (0.0572) debido al bajo recall de 0.0295. El AUC también es bajo, con un valor de 0.5142, lo que indica que el modelo no distingue bien entre las clases. Y, evidentement, hay un fuerte desbalanceo en la prediccion.</p>
+</section>
+</section>
+<section id="textbf-mejor-opcion-entre-pipeline-y-bayesianoptimization">
+<h3><span class="math notranslate nohighlight">\(\textbf{Mejor opción entre Pipeline y BayesianOptimization: :}\)</span><a class="headerlink" href="#textbf-mejor-opcion-entre-pipeline-y-bayesianoptimization" title="Link to this heading">#</a></h3>
+<p>Los modelos con Pipeline y GridSearchCV superaron el rendimiento de BayesianOptimization en varios aspectos clave. Aunque ambos métodos ofrecieron métricas de recall, F1-score y AUC similares, con algunas ventajas para BayesianOptimization en casos puntuales, el enfoque basado en Pipeline y GridSearchCV demostró un mejor equilibrio general en la identificación de casos positivos. Este mejor balance se reflejó en un aumento en la capacidad del modelo para detectar tanto verdaderos positivos como verdaderos negativos, lo que es crucial en contextos donde las clases tienen un peso similar; El caso es especialmente acentuado en el modelo logístico, donde las métricas parecen indicar un buen rendimiento, pero al observar la matriz de confusión, se evidencia un desbalance inaceptable entre las clases.</p>
+<p>Adicionalmente, uno de los aspectos más significativos fue el tiempo de cómputo. El uso de Pipeline y GridSearchCV resultó ser considerablemente más eficiente, reduciendo el tiempo necesario para ajustar los hiperparámetros y entrenar el modelo en comparación con BayesianOptimization. Este ahorro de tiempo no solo permite iterar con mayor rapidez durante el proceso de modelado, sino que también ofrece una solución más escalable para grandes volúmenes de datos o cuando es necesario realizar múltiples experimentos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span> <span class="s1">&#39;&#39;</span><span class="p">:[</span><span class="s1">&#39;Clasificasión Bayesiana&#39;</span><span class="p">,</span><span class="s1">&#39;K-NN&#39;</span><span class="p">,</span><span class="s1">&#39;L1/L2 Penalty Logistic Regression&#39;</span><span class="p">]</span>
+    <span class="p">,</span><span class="s1">&#39;precission&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.6836017036077661</span><span class="p">,</span><span class="mf">0.751871611737372</span><span class="p">,</span> <span class="mf">0.756754</span><span class="p">],</span>
+ <span class="s1">&#39;f1_score&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.665402015891087</span><span class="p">,</span><span class="mf">0.6835918399280224</span><span class="p">,</span> <span class="mf">0.682819</span><span class="p">],</span>
+ <span class="s1">&#39;recall&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.6481462665509323</span><span class="p">,</span><span class="mf">0.6266810112963959</span><span class="p">,</span> <span class="mf">0.622045</span><span class="p">],</span>
+ <span class="s1">&#39;AUC&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.7743156226533143</span><span class="p">,</span><span class="mf">0.7784920574223447</span><span class="p">,</span> <span class="mf">0.777858</span><span class="p">],</span>
+ <span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.7289586631305403</span><span class="p">,</span><span class="mf">0.7651818345798584</span><span class="p">,</span><span class="mf">00.767306</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>precission</th>
+      <th>f1_score</th>
+      <th>recall</th>
+      <th>AUC</th>
+      <th>M</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Clasificasión Bayesiana</td>
+      <td>0.683602</td>
+      <td>0.665402</td>
+      <td>0.648146</td>
+      <td>0.774316</td>
+      <td>0.728959</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>K-NN</td>
+      <td>0.751872</td>
+      <td>0.683592</td>
+      <td>0.626681</td>
+      <td>0.778492</td>
+      <td>0.765182</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>L1/L2 Penalty Logistic Regression</td>
+      <td>0.756754</td>
+      <td>0.682819</td>
+      <td>0.622045</td>
+      <td>0.777858</td>
+      <td>0.767306</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="textit-clasificacion-con-adasyn">
+<h2><span class="math notranslate nohighlight">\(\textit{Clasificación con ADASYN}\)</span><a class="headerlink" href="#textit-clasificacion-con-adasyn" title="Link to this heading">#</a></h2>
+<p><img alt="" src="_images/output4.png" /></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Original dataset shape: </span><span class="si">{</span><span class="n">Counter</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">ada</span> <span class="o">=</span> <span class="n">ADASYN</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">X_res</span><span class="p">,</span> <span class="n">y_res</span> <span class="o">=</span> <span class="n">ada</span><span class="o">.</span><span class="n">fit_resample</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Resampled dataset shape: </span><span class="si">{</span><span class="n">Counter</span><span class="p">(</span><span class="n">y_res</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">Original</span> <span class="n">dataset</span> <span class="n">shape</span><span class="p">:</span> <span class="n">Counter</span><span class="p">({</span><span class="mi">0</span><span class="p">:</span> <span class="mi">4153582</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">1377869</span><span class="p">})</span>
+<span class="n">Resampled</span> <span class="n">dataset</span> <span class="n">shape</span><span class="p">:</span> <span class="n">Counter</span><span class="p">({</span><span class="mi">0</span><span class="p">:</span> <span class="mi">4153582</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">4008392</span><span class="p">})</span>
+
+</pre></div>
+</div>
+<p>Con el metodo ADASYN logramos equilibrar la clase objetivo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;datos_ada = Datos(X_ada, y_ada)&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;datos_ada = Datos(X_ada, y_ada)&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id5">
+<h3><span class="math notranslate nohighlight">\(\textit{Clasificasión Bayesiana}\)</span><a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<section id="id6">
+<h4><span class="math notranslate nohighlight">\(\textit{Pipeline y GridsearchCV}\)</span><a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;start_time = time.time()</span>
+<span class="sd">pipe = Pipeline([ (&#39;scaler&#39;, StandardScaler()),  (&#39;classifier&#39;, GaussianNB())])</span>
+<span class="sd">grid_gauss = GridSearchCV(pipe, {}, cv=5, scoring=&#39;accuracy&#39;)</span>
+<span class="sd">grid_gauss.fit(datos.X_train, datos.y_train)</span>
+<span class="sd">end_time = time.time()</span>
+<span class="sd">print(f&quot;Tiempo de ejecución: {end_time - start_time} segundos&quot;)&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;start_time = time.time()\npipe = Pipeline([ (\&#39;scaler\&#39;, StandardScaler()),  (\&#39;classifier\&#39;, GaussianNB())])\ngrid_gauss = GridSearchCV(pipe, {}, cv=5, scoring=\&#39;accuracy\&#39;)\ngrid_gauss.fit(datos.X_train, datos.y_train)\nend_time = time.time()\nprint(f&quot;Tiempo de ejecución: {end_time - start_time} segundos&quot;)&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Accuracy del mejor modelo en el conjunto de prueba: 0.7024621475513158</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;precission&#39;</span><span class="p">:[</span><span class="mf">0.831615</span><span class="p">],</span>
+ <span class="s1">&#39;f1_score&#39;</span><span class="p">:[</span><span class="mf">0.63954</span><span class="p">],</span>
+ <span class="s1">&#39;recall&#39;</span><span class="p">:[</span><span class="mf">0.519543</span><span class="p">],</span>
+  <span class="s1">&#39;AUC&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.705453</span>	<span class="p">],</span>
+  <span class="s1">&#39;M&#39;</span><span class="p">:[</span><span class="mf">.768534</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>precission</th>
+      <th>f1_score</th>
+      <th>recall</th>
+      <th>AUC</th>
+      <th>M</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.831615</td>
+      <td>0.63954</td>
+      <td>0.519543</td>
+      <td>0.705453</td>
+      <td>0.768534</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(([[</span><span class="mi">148198</span><span class="p">,</span>  <span class="mi">18062</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">82493</span><span class="p">,</span> <span class="mi">89204</span><span class="p">]]))</span>
+<span class="n">class_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Clase 0&#39;</span><span class="p">,</span> <span class="s1">&#39;Clase 1&#39;</span><span class="p">]</span>
+<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">class_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/061e5a62ceb50d365be3ba58065b52582c8b40306e842011c53c6ffe61a2ce66.png" src="_images/061e5a62ceb50d365be3ba58065b52582c8b40306e842011c53c6ffe61a2ce66.png" />
+</div>
+</div>
+<p>Para la “Clase 0”, el modelo predijo correctamente 148,198 casos (verdaderos negativos) y clasificó incorrectamente 18,062 casos como “Clase 1” (falsos positivos). Para la “Clase 1”, se identificaron correctamente 89,204 casos (verdaderos positivos) y 82,493 fueron clasificados incorrectamente como “Clase 0” (falsos negativos). Las métricas principales del modelo incluyen una precisión de 0.8316, un F1-score de 0.6395, un recall de 0.5195, un AUC de 0.7055, y una métrica adicional M de 0.7685. Estas métricas sugieren que el modelo tiene un buen nivel de precisión, pero su capacidad para identificar correctamente los casos positivos (recall) es moderada, lo que indica la necesidad de mejorar la detección de verdaderos positivos.</p>
+</section>
+<section id="id7">
+<h4><span class="math notranslate nohighlight">\(\textit{Optimizacion Bayesiana}\)</span><a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;def optimize_gaussian_nb(var_smoothing):</span>
+<span class="sd">    gnb = GaussianNB(var_smoothing=10**var_smoothing)</span>
+<span class="sd">    gnb.fit(data_1.X_train, data_1.y_train)</span>
+<span class="sd">    y_pred = gnb.predict(data_1.X_test)</span>
+<span class="sd">    accuracy = accuracy_score(data_1.y_test, y_pred)</span>
+<span class="sd">    return accuracy</span>
+
+<span class="sd">bayes_optimizer = BayesianOptimization(</span>
+<span class="sd">    f=optimize_gaussian_nb,</span>
+<span class="sd">    pbounds={&#39;var_smoothing&#39;: (-10, -1)},  random_state=42,verbose=2)</span>
+<span class="sd">start_time = time.time()</span>
+<span class="sd">bayes_optimizer.maximize(init_points=5, n_iter=20)</span>
+<span class="sd">print(&quot;Mejor valor de var_smoothing: &quot;, 10**bayes_optimizer.max[&#39;params&#39;][&#39;var_smoothing&#39;])</span>
+<span class="sd">print(&quot;Mejor precisión obtenida: &quot;, bayes_optimizer.max[&#39;target&#39;])&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;def optimize_gaussian_nb(var_smoothing):\n    gnb = GaussianNB(var_smoothing=10**var_smoothing)\n    gnb.fit(data_1.X_train, data_1.y_train)\n    y_pred = gnb.predict(data_1.X_test)\n    accuracy = accuracy_score(data_1.y_test, y_pred)\n    return accuracy\n\nbayes_optimizer = BayesianOptimization(\n    f=optimize_gaussian_nb,\n    pbounds={\&#39;var_smoothing\&#39;: (-10, -1)},  random_state=42,verbose=2)\nstart_time = time.time()\nbayes_optimizer.maximize(init_points=5, n_iter=20)\nprint(&quot;Mejor valor de var_smoothing: &quot;, 10**bayes_optimizer.max[\&#39;params\&#39;][\&#39;var_smoothing\&#39;])\nprint(&quot;Mejor precisión obtenida: &quot;, bayes_optimizer.max[\&#39;target\&#39;])&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span>   <span class="nb">iter</span>    <span class="o">|</span>  <span class="n">target</span>   <span class="o">|</span> <span class="n">var_sm</span><span class="o">...</span> <span class="o">|</span>
+<span class="o">-------------------------------------</span>
+<span class="o">|</span> <span class="mi">1</span>         <span class="o">|</span> <span class="mf">0.705</span>     <span class="o">|</span> <span class="o">-</span><span class="mf">6.629</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">2</span>         <span class="o">|</span> <span class="mf">0.5023</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">1.444</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">3</span>         <span class="o">|</span> <span class="mf">0.6389</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">3.412</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">4</span>         <span class="o">|</span> <span class="mf">0.7087</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">4.612</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">5</span>         <span class="o">|</span> <span class="mf">0.7025</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">8.596</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">6</span>         <span class="o">|</span> <span class="mf">0.7025</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">10.0</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">7</span>         <span class="o">|</span> <span class="mf">0.7098</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">5.554</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">8</span>         <span class="o">|</span> <span class="mf">0.7029</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">7.621</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">9</span>         <span class="o">|</span> <span class="mf">0.7105</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">5.054</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">10</span>        <span class="o">|</span> <span class="mf">0.7025</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">9.376</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">11</span>        <span class="o">|</span> <span class="mf">0.7078</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">6.016</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">12</span>        <span class="o">|</span> <span class="mf">0.7102</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">4.863</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">13</span>        <span class="o">|</span> <span class="mf">0.7104</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">5.28</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">14</span>        <span class="o">|</span> <span class="mf">0.7105</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">5.152</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">15</span>        <span class="o">|</span> <span class="mf">0.7105</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">5.145</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">16</span>        <span class="o">|</span> <span class="mf">0.7106</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">5.068</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">17</span>        <span class="o">|</span> <span class="mf">0.7105</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">5.158</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">18</span>        <span class="o">|</span> <span class="mf">0.7105</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">5.047</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">19</span>        <span class="o">|</span> <span class="mf">0.7106</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">5.136</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">20</span>        <span class="o">|</span> <span class="mf">0.7106</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">5.126</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">21</span>        <span class="o">|</span> <span class="mf">0.7105</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">5.16</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">22</span>        <span class="o">|</span> <span class="mf">0.7106</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">5.09</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">23</span>        <span class="o">|</span> <span class="mf">0.7106</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">5.095</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">24</span>        <span class="o">|</span> <span class="mf">0.7106</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">5.097</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mi">25</span>        <span class="o">|</span> <span class="mf">0.7106</span>    <span class="o">|</span> <span class="o">-</span><span class="mf">5.103</span>    <span class="o">|</span>
+<span class="o">=====================================</span>
+<span class="n">Mejor</span> <span class="n">valor</span> <span class="n">de</span> <span class="n">var_smoothing</span><span class="p">:</span>  <span class="mf">7.489734927704792e-06</span>
+<span class="n">Mejor</span> <span class="n">precisión</span> <span class="n">obtenida</span><span class="p">:</span>  <span class="mf">0.710575605772332</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">mejor_var_smoothing = 10**bayes_optimizer.max[&#39;params&#39;][&#39;var_smoothing&#39;]</span>
+<span class="sd">mejor_modelo = GaussianNB(var_smoothing=mejor_var_smoothing)</span>
+<span class="sd">mejor_modelo.fit(data_1.X_train, data_1.y_train)</span>
+<span class="sd">y_pred_mejor = mejor_modelo.predict(data_1.X_test)</span>
+<span class="sd">accuracy_mejor = accuracy_score(data_1.y_test, y_pred_mejor)</span>
+<span class="sd">print(f&quot;Precisión con el mejor var_smoothing: {accuracy_mejor}&quot;)</span>
+<span class="sd">print(f&quot;Predicciones del modelo: {y_pred_mejor}&quot;)</span>
+<span class="sd">end_time = time.time()</span>
+<span class="sd">print(f&quot;Tiempo de ejecución: {end_time - start_time} segundos&quot;)</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\nmejor_var_smoothing = 10**bayes_optimizer.max[\&#39;params\&#39;][\&#39;var_smoothing\&#39;]\nmejor_modelo = GaussianNB(var_smoothing=mejor_var_smoothing)\nmejor_modelo.fit(data_1.X_train, data_1.y_train)\ny_pred_mejor = mejor_modelo.predict(data_1.X_test)\naccuracy_mejor = accuracy_score(data_1.y_test, y_pred_mejor)\nprint(f&quot;Precisión con el mejor var_smoothing: {accuracy_mejor}&quot;)\nprint(f&quot;Predicciones del modelo: {y_pred_mejor}&quot;)\nend_time = time.time()\nprint(f&quot;Tiempo de ejecución: {end_time - start_time} segundos&quot;)\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Precisión con el mejor var_smoothing: 0.710575605772332 <br />
+Predicciones del modelo: [1 0 0 … 0 0 1]<br />
+Tiempo de ejecución: 39.60585927963257 segundos</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;precission&#39;</span><span class="p">:[</span><span class="mf">0.82215</span><span class="p">],</span>
+ <span class="s1">&#39;f1_score&#39;</span><span class="p">:[</span><span class="mf">0.6454</span><span class="p">],</span>
+ <span class="s1">&#39;recall&#39;</span><span class="p">:[</span><span class="mf">0.535743</span><span class="p">],</span>
+  <span class="s1">&#39;AUC&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.733</span>	<span class="p">],</span>
+  <span class="s1">&#39;M&#39;</span><span class="p">:[</span><span class="mf">.7123</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>precission</th>
+      <th>f1_score</th>
+      <th>recall</th>
+      <th>AUC</th>
+      <th>M</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.82215</td>
+      <td>0.6454</td>
+      <td>0.535743</td>
+      <td>0.733</td>
+      <td>0.7123</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(([[</span><span class="mi">147295</span><span class="p">,</span>  <span class="mi">18965</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">78848</span><span class="p">,</span> <span class="mi">92849</span><span class="p">]]))</span>
+<span class="n">class_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Clase 0&#39;</span><span class="p">,</span> <span class="s1">&#39;Clase 1&#39;</span><span class="p">]</span>
+<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">class_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/4b0c2e4f740f280f7503919a41e0c0d13e17b63a2d26b889003c3798e9d2e06e.png" src="_images/4b0c2e4f740f280f7503919a41e0c0d13e17b63a2d26b889003c3798e9d2e06e.png" />
+</div>
+</div>
+<p>Se ha identificado correctamente 147,295 casos de “Clase 0” (verdaderos negativos) y ha clasificado erróneamente 18,965 como “Clase 1” (falsos positivos). En cuanto a la “Clase 1”, el modelo ha clasificado correctamente 92,849 casos (verdaderos positivos) y ha cometido 78,848 errores clasificándolos como “Clase 0” (falsos negativos). Las métricas del modelo reflejan una precisión de 0.8221, un F1-score de 0.6454, un recall de 0.5357, un AUC de 0.733 y una métrica M de 0.7123. Aunque el modelo tiene una buena precisión, su capacidad para recuperar todos los casos positivos (recall) es moderada, lo que indica que el modelo aún podría mejorar en la identificación de la “Clase 1”.</p>
+</section>
+</section>
+<section id="id8">
+<h3><span class="math notranslate nohighlight">\(\textit{Knn}\)</span><a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<section id="id9">
+<h4><span class="math notranslate nohighlight">\(\textit{Pipeline y GridsearchCV}\)</span><a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">start_time = time.time()</span>
+<span class="sd">param_grid = {</span>
+<span class="sd">    &#39;classifier__n_neighbors&#39;: [i for i in range(1,20)]}</span>
+<span class="sd">pipe = Pipeline([ (&#39;scaler&#39;, StandardScaler()),  </span>
+<span class="sd">        (&#39;classifier&#39;, KNeighborsClassifier())])</span>
+<span class="sd">grid_knn = GridSearchCV(pipe, param_grid, cv=5, scoring=&#39;accuracy&#39;, n_jobs=-1)</span>
+<span class="sd">grid_knn.fit(data_1.X_train, data_1.y_train)</span>
+<span class="sd">end_time = time.time()</span>
+<span class="sd">print(f&quot;Tiempo de ejecución: {end_time - start_time} segundos&quot;)</span>
+<span class="sd">y_pred = grid_knn.predict(data_1.X_test)</span>
+<span class="sd">dix[&#39;knn&#39;] = y_pred</span>
+<span class="sd">print(f&quot;Accuracy del mejor modelo en el conjunto de prueba: {accuracy_score(data_1.y_test, y_pred)}&quot;)</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\nstart_time = time.time()\nparam_grid = {\n    \&#39;classifier__n_neighbors\&#39;: [i for i in range(1,20)]}\npipe = Pipeline([ (\&#39;scaler\&#39;, StandardScaler()),  \n        (\&#39;classifier\&#39;, KNeighborsClassifier())])\ngrid_knn = GridSearchCV(pipe, param_grid, cv=5, scoring=\&#39;accuracy\&#39;, n_jobs=-1)\ngrid_knn.fit(data_1.X_train, data_1.y_train)\nend_time = time.time()\nprint(f&quot;Tiempo de ejecución: {end_time - start_time} segundos&quot;)\ny_pred = grid_knn.predict(data_1.X_test)\ndix[\&#39;knn\&#39;] = y_pred\nprint(f&quot;Accuracy del mejor modelo en el conjunto de prueba: {accuracy_score(data_1.y_test, y_pred)}&quot;)\n\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Tiempo de ejecución: 477.20 segundos <br />
+Accuracy del mejor modelo en el conjunto de prueba: 0.8347008643111402</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;precission&#39;</span><span class="p">:[</span><span class="mf">0.8050</span><span class="p">],</span>
+ <span class="s1">&#39;f1_score&#39;</span><span class="p">:[</span><span class="mf">0.845</span><span class="p">],</span>
+ <span class="s1">&#39;recall&#39;</span><span class="p">:[</span><span class="mf">0.8901</span><span class="p">],</span>
+  <span class="s1">&#39;AUC&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.8337</span><span class="p">],</span>
+  <span class="s1">&#39;M&#39;</span><span class="p">:[</span><span class="mf">0.81943</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>precission</th>
+      <th>f1_score</th>
+      <th>recall</th>
+      <th>AUC</th>
+      <th>M</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.805</td>
+      <td>0.845</td>
+      <td>0.8901</td>
+      <td>0.8337</td>
+      <td>0.81943</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(([[</span><span class="mi">129256</span><span class="p">,</span>  <span class="mi">37004</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">18860</span><span class="p">,</span> <span class="mi">152837</span><span class="p">]]))</span>
+<span class="n">class_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Clase 0&#39;</span><span class="p">,</span> <span class="s1">&#39;Clase 1&#39;</span><span class="p">]</span>
+<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">class_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/088dfb4f669c3bd8a0a7b968c1b2db69146829dede7ff064d03938a8619b4356.png" src="_images/088dfb4f669c3bd8a0a7b968c1b2db69146829dede7ff064d03938a8619b4356.png" />
+</div>
+</div>
+<p>El modelo ha identificado correctamente 129,256 casos de la “Clase 0” (verdaderos negativos) y ha clasificado incorrectamente 37,004 casos como “Clase 1” (falsos positivos). Para la “Clase 1”, el modelo ha clasificado correctamente 152,837 casos (verdaderos positivos), y ha cometido 18,860 errores clasificándolos como “Clase 0” (falsos negativos). Las métricas asociadas reflejan una precisión de 0.805, un F1-score de 0.845, un recall de 0.8901, un AUC de 0.8337, y una métrica M de 0.8194. Estas métricas sugieren un modelo con buen rendimiento general, especialmente en la identificación de la “Clase 1” (recall alto), lo que indica que el modelo es efectivo para detectar la clase positiva, aunque todavía comete algunos errores en la identificación de la “Clase 0”.</p>
+</section>
+<section id="id10">
+<h4><span class="math notranslate nohighlight">\(\textit{Optimizacion Bayesiana}\)</span><a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+
+<span class="sd">def optimize_knn(n_neighbors):</span>
+<span class="sd">    knn = KNeighborsClassifier(n_neighbors=int(n_neighbors))</span>
+<span class="sd">    knn.fit(data_1.X_train, data_1.y_train)</span>
+<span class="sd">    y_pred = knn.predict(data_1.X_test)</span>
+<span class="sd">    accuracy = accuracy_score(data_1.y_test, y_pred)</span>
+<span class="sd">    return accuracy</span>
+<span class="sd">knn_optimizer = BayesianOptimization(</span>
+<span class="sd">    f=optimize_knn,</span>
+<span class="sd">    pbounds={&#39;n_neighbors&#39;: (1, 20)},  </span>
+<span class="sd">    random_state=42,</span>
+<span class="sd">    verbose=2)</span>
+<span class="sd">start_time = time.time()</span>
+<span class="sd">knn_optimizer.maximize(init_points=5, n_iter=20)</span>
+
+<span class="sd">print(&quot;Mejor valor de n_neighbors: &quot;, int(knn_optimizer.max[&#39;params&#39;][&#39;n_neighbors&#39;]))</span>
+<span class="sd">print(&quot;Mejor precisión obtenida: &quot;, knn_optimizer.max[&#39;target&#39;])</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\n\ndef optimize_knn(n_neighbors):\n    knn = KNeighborsClassifier(n_neighbors=int(n_neighbors))\n    knn.fit(data_1.X_train, data_1.y_train)\n    y_pred = knn.predict(data_1.X_test)\n    accuracy = accuracy_score(data_1.y_test, y_pred)\n    return accuracy\nknn_optimizer = BayesianOptimization(\n    f=optimize_knn,\n    pbounds={\&#39;n_neighbors\&#39;: (1, 20)},  \n    random_state=42,\n    verbose=2)\nstart_time = time.time()\nknn_optimizer.maximize(init_points=5, n_iter=20)\n\nprint(&quot;Mejor valor de n_neighbors: &quot;, int(knn_optimizer.max[\&#39;params\&#39;][\&#39;n_neighbors\&#39;]))\nprint(&quot;Mejor precisión obtenida: &quot;, knn_optimizer.max[\&#39;target\&#39;])\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span>   <span class="nb">iter</span>    <span class="o">|</span>  <span class="n">target</span>   <span class="o">|</span> <span class="n">n_neig</span><span class="o">...</span> <span class="o">|</span>
+<span class="o">-------------------------------------</span>
+<span class="o">|</span> <span class="mi">1</span>         <span class="o">|</span> <span class="mf">0.8249</span>    <span class="o">|</span> <span class="mf">8.116</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">2</span>         <span class="o">|</span> <span class="mf">0.8242</span>    <span class="o">|</span> <span class="mf">19.06</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">3</span>         <span class="o">|</span> <span class="mf">0.8256</span>    <span class="o">|</span> <span class="mf">14.91</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">4</span>         <span class="o">|</span> <span class="mf">0.8258</span>    <span class="o">|</span> <span class="mf">12.37</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">5</span>         <span class="o">|</span> <span class="mf">0.8294</span>    <span class="o">|</span> <span class="mf">3.964</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">6</span>         <span class="o">|</span> <span class="mf">0.8294</span>    <span class="o">|</span> <span class="mf">3.176</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">7</span>         <span class="o">|</span> <span class="mf">0.8352</span>    <span class="o">|</span> <span class="mf">1.003</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">8</span>         <span class="o">|</span> <span class="mf">0.8352</span>    <span class="o">|</span> <span class="mf">1.544</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">9</span>         <span class="o">|</span> <span class="mf">0.828</span>     <span class="o">|</span> <span class="mf">5.783</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">10</span>        <span class="o">|</span> <span class="mf">0.8352</span>    <span class="o">|</span> <span class="mf">1.274</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">11</span>        <span class="o">|</span> <span class="mf">0.8352</span>    <span class="o">|</span> <span class="mf">1.866</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">12</span>        <span class="o">|</span> <span class="mf">0.8258</span>    <span class="o">|</span> <span class="mf">10.32</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">13</span>        <span class="o">|</span> <span class="mf">0.8352</span>    <span class="o">|</span> <span class="mf">1.73</span>      <span class="o">|</span>
+<span class="o">|</span> <span class="mi">14</span>        <span class="o">|</span> <span class="mf">0.8252</span>    <span class="o">|</span> <span class="mf">16.89</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">15</span>        <span class="o">|</span> <span class="mf">0.8352</span>    <span class="o">|</span> <span class="mf">1.119</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">16</span>        <span class="o">|</span> <span class="mf">0.8352</span>    <span class="o">|</span> <span class="mf">1.413</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">17</span>        <span class="o">|</span> <span class="mf">0.8022</span>    <span class="o">|</span> <span class="mf">2.001</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">18</span>        <span class="o">|</span> <span class="mf">0.828</span>     <span class="o">|</span> <span class="mf">5.376</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">19</span>        <span class="o">|</span> <span class="mf">0.8352</span>    <span class="o">|</span> <span class="mf">1.802</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">20</span>        <span class="o">|</span> <span class="mf">0.8352</span>    <span class="o">|</span> <span class="mf">1.274</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">21</span>        <span class="o">|</span> <span class="mf">0.8352</span>    <span class="o">|</span> <span class="mf">1.635</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">22</span>        <span class="o">|</span> <span class="mf">0.8254</span>    <span class="o">|</span> <span class="mf">13.63</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">23</span>        <span class="o">|</span> <span class="mf">0.82</span>      <span class="o">|</span> <span class="mf">4.381</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">24</span>        <span class="o">|</span> <span class="mf">0.8294</span>    <span class="o">|</span> <span class="mf">3.703</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="mi">25</span>        <span class="o">|</span> <span class="mf">0.8294</span>    <span class="o">|</span> <span class="mf">3.438</span>     <span class="o">|</span>
+<span class="o">=====================================</span>
+<span class="n">Mejor</span> <span class="n">valor</span> <span class="n">de</span> <span class="n">n_neighbors</span><span class="p">:</span>  <span class="mi">1</span>
+<span class="n">Mejor</span> <span class="n">precisión</span> <span class="n">obtenida</span><span class="p">:</span>  <span class="mf">0.8352453122734549</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;mejor_n = int(knn_optimizer.max[&#39;params&#39;][&#39;n_neighbors&#39;])</span>
+<span class="sd">mejor_modelo =  KNeighborsClassifier(n_neighbors=int(mejor_n))</span>
+<span class="sd">mejor_modelo.fit(data_1.X_train, data_1.y_train)</span>
+<span class="sd">y_pred_mejor_knn = mejor_modelo.predict(data_1.X_test)</span>
+<span class="sd">accuracy_mejor = accuracy_score(data_1.y_test, y_pred_mejor_knn )</span>
+<span class="sd">print(f&quot;Precisión con el mejor n: {accuracy_mejor}&quot;)</span>
+<span class="sd">print(f&quot;Predicciones del modelo: {y_pred_mejor_knn }&quot;)</span>
+<span class="sd">end_time = time.time()</span>
+<span class="sd">print(f&quot;Tiempo de ejecución: {end_time - start_time} segundos&quot;)&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;mejor_n = int(knn_optimizer.max[\&#39;params\&#39;][\&#39;n_neighbors\&#39;])\nmejor_modelo =  KNeighborsClassifier(n_neighbors=int(mejor_n))\nmejor_modelo.fit(data_1.X_train, data_1.y_train)\ny_pred_mejor_knn = mejor_modelo.predict(data_1.X_test)\naccuracy_mejor = accuracy_score(data_1.y_test, y_pred_mejor_knn )\nprint(f&quot;Precisión con el mejor n: {accuracy_mejor}&quot;)\nprint(f&quot;Predicciones del modelo: {y_pred_mejor_knn }&quot;)\nend_time = time.time()\nprint(f&quot;Tiempo de ejecución: {end_time - start_time} segundos&quot;)&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Precisión con el mejor n: 0.8352453122734549 <br />
+Predicciones del modelo: [1 1 0 … 1 0 1] <br />
+Tiempo de ejecución: 1148.0673167705536 segundos \</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;precission&#39;</span><span class="p">:[</span><span class="mf">0.8055</span><span class="p">],</span>
+ <span class="s1">&#39;f1_score&#39;</span><span class="p">:[</span><span class="mf">0.845</span><span class="p">],</span>
+ <span class="s1">&#39;recall&#39;</span><span class="p">:[</span><span class="mf">0.890</span><span class="p">],</span>
+  <span class="s1">&#39;AUC&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.834</span><span class="p">],</span>
+  <span class="s1">&#39;M&#39;</span><span class="p">:[</span><span class="mf">0.8199</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">scores</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>precission</th>
+      <th>f1_score</th>
+      <th>recall</th>
+      <th>AUC</th>
+      <th>M</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.8055</td>
+      <td>0.845</td>
+      <td>0.89</td>
+      <td>0.834</td>
+      <td>0.8199</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(([[</span><span class="mi">129352</span><span class="p">,</span>  <span class="mi">36908</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">18772</span><span class="p">,</span> <span class="mi">152925</span><span class="p">]]))</span>
+<span class="n">class_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Clase 0&#39;</span><span class="p">,</span> <span class="s1">&#39;Clase 1&#39;</span><span class="p">]</span>
+<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">class_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/fc612018243142c590dc5a00a1e8de118015eb1d3beb6916e2bb02be1fe69a0e.png" src="_images/fc612018243142c590dc5a00a1e8de118015eb1d3beb6916e2bb02be1fe69a0e.png" />
+</div>
+</div>
+<p>La clasificacion fue hecha correctamente 129,352 casos de la “Clase 0” (verdaderos negativos) y ha cometido 36,908 errores clasificando falsamente como “Clase 1” (falsos positivos). En la “Clase 1”, el modelo ha identificado correctamente 152,925 casos (verdaderos positivos), mientras que 18,772 fueron clasificados incorrectamente como “Clase 0” (falsos negativos). Las métricas indican un buen rendimiento, con una precisión de 0.8055, un F1-score de 0.845, un recall de 0.89, un AUC de 0.834, y una métrica M de 0.8199. Estas cifras demuestran un balance adecuado en la identificación tanto de verdaderos positivos como de verdaderos negativos, con un fuerte rendimiento en la detección de la “Clase 1”. Sin embargo, hay un número considerable de falsos positivos que podrían mejorarse para optimizar el rendimiento general.</p>
+</section>
+</section>
+<section id="id11">
+<h3><span class="math notranslate nohighlight">\(\textit{Logistic}\)</span><a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<section id="id12">
+<h4><span class="math notranslate nohighlight">\(\textit{Pipeline y GridsearchCV}\)</span><a class="headerlink" href="#id12" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;pipeline = Pipeline([</span>
+<span class="sd">    (&#39;scaler&#39;, StandardScaler()),  </span>
+<span class="sd">    (&#39;logreg&#39;, LogisticRegression(penalty=&#39;elasticnet&#39;, solver=&#39;saga&#39;, max_iter=50))  </span>
+<span class="sd">])</span>
+<span class="sd">param_grid = {</span>
+<span class="sd">    &#39;logreg__C&#39;: [0.01, 0.1, 1, 10],        </span>
+<span class="sd">    &#39;logreg__l1_ratio&#39;: [0.1, 0.5, 0.7, 0.9]  </span>
+<span class="sd">}</span>
+<span class="sd">grid_log = GridSearchCV(pipeline, param_grid, cv=5, scoring=&#39;accuracy&#39;, n_jobs=-1)</span>
+<span class="sd">grid_log.fit(data_1.X_train, data_1.y_train)</span>
+<span class="sd">best_model =grid_log.best_estimator_</span>
+<span class="sd">y_pred = best_model.predict(data_1.X_test)</span>
+<span class="sd">accuracy = accuracy_score(data_1.y_test, y_pred)</span>
+<span class="sd">dix[&#39;log&#39;] = list(y_pred)</span>
+<span class="sd">print(f&quot;Mejor precisión: {accuracy}&quot;)</span>
+<span class="sd">print(f&quot;Mejores hiperparámetros: {grid_log.best_params_}&quot;)&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;pipeline = Pipeline([\n    (\&#39;scaler\&#39;, StandardScaler()),  \n    (\&#39;logreg\&#39;, LogisticRegression(penalty=\&#39;elasticnet\&#39;, solver=\&#39;saga\&#39;, max_iter=50))  \n])\nparam_grid = {\n    \&#39;logreg__C\&#39;: [0.01, 0.1, 1, 10],        \n    \&#39;logreg__l1_ratio\&#39;: [0.1, 0.5, 0.7, 0.9]  \n}\ngrid_log = GridSearchCV(pipeline, param_grid, cv=5, scoring=\&#39;accuracy\&#39;, n_jobs=-1)\ngrid_log.fit(data_1.X_train, data_1.y_train)\nbest_model =grid_log.best_estimator_\ny_pred = best_model.predict(data_1.X_test)\naccuracy = accuracy_score(data_1.y_test, y_pred)\ndix[\&#39;log\&#39;] = list(y_pred)\nprint(f&quot;Mejor precisión: {accuracy}&quot;)\nprint(f&quot;Mejores hiperparámetros: {grid_log.best_params_}&quot;)&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mejor precisión: 0.8344 <br />
+Mejores hiperparámetros: {‘logreg__C’: 0.01, ‘logreg__l1_ratio’: 0.7}</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;precission&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.8199032748376399</span><span class="p">],</span> <span class="s1">&#39;f1_score&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.8413598697755671</span><span class="p">],</span> <span class="s1">&#39;recall&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.8639696674956464</span><span class="p">],</span> <span class="s1">&#39;AUC&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.8339937354680205</span><span class="p">],</span> <span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.8269485051528302</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>precission</th>
+      <th>f1_score</th>
+      <th>recall</th>
+      <th>AUC</th>
+      <th>M</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.819903</td>
+      <td>0.84136</td>
+      <td>0.86397</td>
+      <td>0.833994</td>
+      <td>0.826949</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(([[</span><span class="mi">133676</span><span class="p">,</span>  <span class="mi">32584</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">23356</span><span class="p">,</span> <span class="mi">148341</span><span class="p">]]))</span>
+<span class="n">class_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Clase 0&#39;</span><span class="p">,</span> <span class="s1">&#39;Clase 1&#39;</span><span class="p">]</span>
+<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">class_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/99dd258e4ba9b8f85d7616c5cd618d3e4328270e11d6c522bae99e064dbf97b0.png" src="_images/99dd258e4ba9b8f85d7616c5cd618d3e4328270e11d6c522bae99e064dbf97b0.png" />
+</div>
+</div>
+<p>En esta matriz de confusión, el modelo ha clasificado correctamente 133,676 casos de la “Clase 0” (verdaderos negativos) y ha cometido 32,584 errores clasificándolos incorrectamente como “Clase 1” (falsos positivos). Para la “Clase 1”, el modelo ha identificado correctamente 148,341 casos (verdaderos positivos), mientras que 23,356 fueron clasificados erróneamente como “Clase 0” (falsos negativos). Las métricas asociadas muestran una precisión de 0.8199, un F1-score de 0.8414, un recall de 0.8639, un AUC de 0.834, y una métrica M de 0.8269. Estos resultados sugieren que el modelo tiene un buen rendimiento general, especialmente en la detección de la “Clase 1” (alto recall), lo que indica que está capturando la mayoría de los casos positivos correctamente, aunque todavía hay margen para mejorar en la reducción de los falsos positivos.</p>
+</section>
+<section id="id13">
+<h4><span class="math notranslate nohighlight">\(\textit{Optimizacion Bayesiana}\)</span><a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">def optimize_logistic_regression(C, l1_ratio):</span>
+<span class="sd">    log = LogisticRegression(penalty=&#39;elasticnet&#39;, solver=&#39;saga&#39;, max_iter=50, C=10**C, l1_ratio=l1_ratio)</span>
+<span class="sd">    log.fit(data_1.X_train, data_1.y_train)</span>
+<span class="sd">    y_pred = log.predict(data_1.X_test)</span>
+<span class="sd">    accuracy = accuracy_score(data_1.y_test, y_pred)</span>
+<span class="sd">    return accuracy</span>
+<span class="sd">pbounds = {&#39;C&#39;: (-3, 2), &#39;l1_ratio&#39;: (0, 1)}</span>
+<span class="sd">bayes_optimizer = BayesianOptimization(f=optimize_logistic_regression, pbounds=pbounds, random_state=42, verbose=2)</span>
+<span class="sd">start_time = time.time()</span>
+<span class="sd">bayes_optimizer.maximize(init_points=5, n_iter=20)</span>
+<span class="sd">print(&quot;Mejor valor de C: &quot;, 10**bayes_optimizer.max[&#39;params&#39;][&#39;C&#39;])</span>
+<span class="sd">print(&quot;Mejor valor de l1_ratio: &quot;, bayes_optimizer.max[&#39;params&#39;][&#39;l1_ratio&#39;])</span>
+<span class="sd">print(&quot;Mejor precisión obtenida: &quot;, bayes_optimizer.max[&#39;target&#39;])</span>
+
+<span class="sd">mejor_C = 10**bayes_optimizer.max[&#39;params&#39;][&#39;C&#39;]</span>
+<span class="sd">mejor_l1 = float(bayes_optimizer.max[&#39;params&#39;][&#39;l1_ratio&#39;])</span>
+<span class="sd">mejor_modelo = LogisticRegression(penalty=&#39;elasticnet&#39;, solver=&#39;saga&#39;, max_iter=50, C=mejor_C, l1_ratio=mejor_l1)</span>
+<span class="sd">mejor_modelo.fit(data_1.X_train, data_1.y_train)</span>
+
+<span class="sd"># Hacer predicciones con el conjunto de prueba</span>
+<span class="sd">y_pred_mejor_logreg = mejor_modelo.predict(data_1.X_test)</span>
+<span class="sd"># Calcular la precisión</span>
+<span class="sd">accuracy_mejor = accuracy_score(data_1.y_test, y_pred_mejor_logreg)</span>
+<span class="sd">print(f&quot;Precisión con el mejor C y l1_ratio: {accuracy_mejor}&quot;)</span>
+<span class="sd">print(f&quot;Predicciones del modelo: {y_pred_mejor_logreg}&quot;)</span>
+
+<span class="sd">print(f&quot;Tiempo de ejecución: {end_time - start_time} segundos&quot;)</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\ndef optimize_logistic_regression(C, l1_ratio):\n    log = LogisticRegression(penalty=\&#39;elasticnet\&#39;, solver=\&#39;saga\&#39;, max_iter=50, C=10**C, l1_ratio=l1_ratio)\n    log.fit(data_1.X_train, data_1.y_train)\n    y_pred = log.predict(data_1.X_test)\n    accuracy = accuracy_score(data_1.y_test, y_pred)\n    return accuracy\npbounds = {\&#39;C\&#39;: (-3, 2), \&#39;l1_ratio\&#39;: (0, 1)}\nbayes_optimizer = BayesianOptimization(f=optimize_logistic_regression, pbounds=pbounds, random_state=42, verbose=2)\nstart_time = time.time()\nbayes_optimizer.maximize(init_points=5, n_iter=20)\nprint(&quot;Mejor valor de C: &quot;, 10**bayes_optimizer.max[\&#39;params\&#39;][\&#39;C\&#39;])\nprint(&quot;Mejor valor de l1_ratio: &quot;, bayes_optimizer.max[\&#39;params\&#39;][\&#39;l1_ratio\&#39;])\nprint(&quot;Mejor precisión obtenida: &quot;, bayes_optimizer.max[\&#39;target\&#39;])\n\nmejor_C = 10**bayes_optimizer.max[\&#39;params\&#39;][\&#39;C\&#39;]\nmejor_l1 = float(bayes_optimizer.max[\&#39;params\&#39;][\&#39;l1_ratio\&#39;])\nmejor_modelo = LogisticRegression(penalty=\&#39;elasticnet\&#39;, solver=\&#39;saga\&#39;, max_iter=50, C=mejor_C, l1_ratio=mejor_l1)\nmejor_modelo.fit(data_1.X_train, data_1.y_train)\n\n# Hacer predicciones con el conjunto de prueba\ny_pred_mejor_logreg = mejor_modelo.predict(data_1.X_test)\n# Calcular la precisión\naccuracy_mejor = accuracy_score(data_1.y_test, y_pred_mejor_logreg)\nprint(f&quot;Precisión con el mejor C y l1_ratio: {accuracy_mejor}&quot;)\nprint(f&quot;Predicciones del modelo: {y_pred_mejor_logreg}&quot;)\n\nprint(f&quot;Tiempo de ejecución: {end_time - start_time} segundos&quot;)\n\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Precisión con el mejor C y l1_ratio: 0.796 <br />
+Predicciones del modelo: [1 1 0 … 1 0 1] <br />
+Tiempo de ejecución: 1148.0673167705536 segundos \</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;precision&#39;</span><span class="p">:</span> <span class="p">[</span> <span class="mf">0.787193</span><span class="p">],</span>
+    <span class="s1">&#39;f1_score&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.80384</span><span class="p">],</span>
+    <span class="s1">&#39;recall&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.8212</span><span class="p">],</span>
+    <span class="s1">&#39;AUC&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">.7959</span><span class="p">],</span>
+    <span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="p">[</span> <span class="mf">0.7915</span><span class="p">]</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>precision</th>
+      <th>f1_score</th>
+      <th>recall</th>
+      <th>AUC</th>
+      <th>M</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.787193</td>
+      <td>0.80384</td>
+      <td>0.8212</td>
+      <td>0.7959</td>
+      <td>0.7915</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(([[</span><span class="mi">128142</span><span class="p">,</span>  <span class="mi">38118</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">30695</span><span class="p">,</span> <span class="mi">141002</span><span class="p">]]))</span>
+<span class="n">class_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Clase 0&#39;</span><span class="p">,</span> <span class="s1">&#39;Clase 1&#39;</span><span class="p">]</span>
+<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">class_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/0c1629f3597db347821f67fc6b5bffeb932c4d26171e58ca16e698529629a4e2.png" src="_images/0c1629f3597db347821f67fc6b5bffeb932c4d26171e58ca16e698529629a4e2.png" />
+</div>
+</div>
+<p>El modelo ha clasificado correctamente 128,142 casos de la “Clase 0” (verdaderos negativos) y ha cometido 38,118 errores al clasificarlos incorrectamente como “Clase 1” (falsos positivos). Para la “Clase 1”, el modelo ha identificado correctamente 141,002 casos (verdaderos positivos), mientras que 30,695 fueron clasificados erróneamente como “Clase 0” (falsos negativos). Las métricas muestran una precisión de 0.7872, un F1-score de 0.8038, un recall de 0.8212, un AUC de 0.7959, y una métrica M de 0.7915. Estos resultados indican que el modelo tiene un rendimiento aceptable en la identificación de ambas clases, aunque aún existen errores notables en la clasificación de la “Clase 0”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Clasificasión Bayesiana&#39;</span><span class="p">,</span><span class="s1">&#39;K-NN&#39;</span><span class="p">,</span><span class="s1">&#39;L1/L2 Penalty Logistic Regression&#39;</span><span class="p">],</span>
+    <span class="s2">&quot;precision&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.8316</span><span class="p">,</span> <span class="mf">0.8055</span><span class="p">,</span> <span class="mf">0.8199</span><span class="p">],</span>
+    <span class="s2">&quot;f1_score&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.6395</span><span class="p">,</span> <span class="mf">0.845</span><span class="p">,</span> <span class="mf">0.8414</span><span class="p">],</span>
+    <span class="s2">&quot;recall&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.5195</span><span class="p">,</span> <span class="mf">0.89</span><span class="p">,</span> <span class="mf">0.8639</span><span class="p">],</span>
+    <span class="s2">&quot;AUC&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.7055</span><span class="p">,</span> <span class="mf">0.834</span><span class="p">,</span> <span class="mf">0.834</span><span class="p">],</span>
+    <span class="s2">&quot;M&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.7685</span><span class="p">,</span> <span class="mf">0.8199</span><span class="p">,</span> <span class="mf">0.8269</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>precision</th>
+      <th>f1_score</th>
+      <th>recall</th>
+      <th>AUC</th>
+      <th>M</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Clasificasión Bayesiana</td>
+      <td>0.8316</td>
+      <td>0.6395</td>
+      <td>0.5195</td>
+      <td>0.7055</td>
+      <td>0.7685</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>K-NN</td>
+      <td>0.8055</td>
+      <td>0.8450</td>
+      <td>0.8900</td>
+      <td>0.8340</td>
+      <td>0.8199</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>L1/L2 Penalty Logistic Regression</td>
+      <td>0.8199</td>
+      <td>0.8414</td>
+      <td>0.8639</td>
+      <td>0.8340</td>
+      <td>0.8269</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+</section>
+<section id="textit-conclusiones">
+<h2><span class="math notranslate nohighlight">\(\textit{Conclusiones}\)</span><a class="headerlink" href="#textit-conclusiones" title="Link to this heading">#</a></h2>
+<ul>
+<li><div class="math notranslate nohighlight">
+\[\textbf{\textit{Computo}}\]</div>
+</li>
+</ul>
+<p>En términos de cómputo, los tiempos de ejecución fueron prácticamente los mismos tanto para los modelos entrenados sin la técnica de sobremuestreo ADASYN como para los que se entrenaron con ella. Esto sugiere que la inclusión de ADASYN en el proceso no impuso una sobrecarga significativa en el tiempo total de cómputo. De este modo, la aplicación de ADASYN mejora el balance de clases sin comprometer la eficiencia del entrenamiento de los modelos, lo que es beneficioso para casos donde el tiempo es una variable importante.</p>
+<ul>
+<li><div class="math notranslate nohighlight">
+\[\textbf{\textit{Metricas}}\]</div>
+</li>
+</ul>
+<p>La tabla de métricas sin el balanceo ADASYN:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Modelo</p></th>
+<th class="head"><p>precision</p></th>
+<th class="head"><p>f1_score</p></th>
+<th class="head"><p>recall</p></th>
+<th class="head"><p>AUC</p></th>
+<th class="head"><p>M</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Clasificación Bayesiana</p></td>
+<td><p>0.683602</p></td>
+<td><p>0.665402</p></td>
+<td><p>0.648146</p></td>
+<td><p>0.774316</p></td>
+<td><p>0.728959</p></td>
+</tr>
+<tr class="row-odd"><td><p>K-NN</p></td>
+<td><p>0.751872</p></td>
+<td><p>0.683592</p></td>
+<td><p>0.626681</p></td>
+<td><p>0.778492</p></td>
+<td><p>0.765182</p></td>
+</tr>
+<tr class="row-even"><td><p>L1/L2 Penalty Logistic Regression</p></td>
+<td><p>0.756754</p></td>
+<td><p>0.682819</p></td>
+<td><p>0.622045</p></td>
+<td><p>0.777858</p></td>
+<td><p>0.767306</p></td>
+</tr>
+</tbody>
+</table>
+<p>La tabla de métricas con el balanceo ADASYN:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Modelo</p></th>
+<th class="head"><p>precision</p></th>
+<th class="head"><p>f1_score</p></th>
+<th class="head"><p>recall</p></th>
+<th class="head"><p>AUC</p></th>
+<th class="head"><p>M</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Clasificación Bayesiana</p></td>
+<td><p>0.8316</p></td>
+<td><p>0.6395</p></td>
+<td><p>0.5195</p></td>
+<td><p>0.7055</p></td>
+<td><p>0.7685</p></td>
+</tr>
+<tr class="row-odd"><td><p>K-NN</p></td>
+<td><p>0.8055</p></td>
+<td><p>0.8450</p></td>
+<td><p>0.8900</p></td>
+<td><p>0.8340</p></td>
+<td><p>0.8199</p></td>
+</tr>
+<tr class="row-even"><td><p>L1/L2 Penalty Logistic Regression</p></td>
+<td><p>0.8199</p></td>
+<td><p>0.8414</p></td>
+<td><p>0.8639</p></td>
+<td><p>0.8340</p></td>
+<td><p>0.8269</p></td>
+</tr>
+</tbody>
+</table>
+<p>Resultados curvas ROC sin el método de balanceo ADASYN:</p>
+<p><br />
+<img alt="" src="_images/curvas_2.png" /></p>
+<p><br />
+Resultados curvas ROC con el metodo de balanceo ADASYN</p>
+<p><img alt="" src="_images/curvas_1.png" /></p>
+<p><br />
+En la comparación de las métricas sin el balanceo ADASYN frente a los resultados con ADASYN, se puede observar que el balanceo de clases mejora la capacidad de los modelos para identificar correctamente los casos positivos. Sin ADASYN, las métricas de precisión y F1-score son más bajas en comparación con los resultados obtenidos al aplicar ADASYN, especialmente en el modelo K-NN, que muestra una mejora notable en el recall, pasando de 0.6267 a 0.8900. En cuanto a la regresión logística, el F1-score y el recall también mejoran con ADASYN, lo que indica que el modelo es más equilibrado en la detección de ambas clases tras aplicar esta técnica de sobremuestreo.</p>
+<p>En las curvas ROC, el área bajo la curva (AUC) mejora levemente para K-NN y la regresión logística cuando se aplica ADASYN, manteniendo un valor similar alrededor de 0.83. Sin embargo, para el modelo Gaussiano, aunque el AUC disminuye ligeramente de 0.77 a 0.71 con ADASYN, los otros dos modelos se benefician claramente de la técnica, mostrando una mejor capacidad predictiva general. Estos resultados destacan que ADASYN puede ser una herramienta efectiva para mejorar el rendimiento en modelos con datos desbalanceados, especialmente en la detección de la clase positiva sin un impacto significativo en el tiempo de cómputo.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Parcial Machine Learning 2</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="punto_3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="math notranslate nohighlight">\(\textit{Punto 3}\)</span></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#textit-clasificacion-sin-adasyn"><span class="math notranslate nohighlight">\(\textit{Clasificación sin ADASYN}\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#textit-clasificasion-bayesiana"><span class="math notranslate nohighlight">\(\textit{Clasificasión Bayesiana}\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#textit-pipeline-y-gridsearchcv"><span class="math notranslate nohighlight">\(\textit{Pipeline y GridsearchCV}\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#textit-optimizacion-bayesiana"><span class="math notranslate nohighlight">\(\textit{Optimizacion Bayesiana}\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#textit-knn"><span class="math notranslate nohighlight">\(\textit{Knn}\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><span class="math notranslate nohighlight">\(\textit{Pipeline y GridsearchCV}\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><span class="math notranslate nohighlight">\(\textit{Optimizacion Bayesiana}\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#textit-logistic"><span class="math notranslate nohighlight">\(\textit{Logistic}\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><span class="math notranslate nohighlight">\(\textit{Pipeline y GridsearchCV}\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><span class="math notranslate nohighlight">\(\textit{Optimizacion Bayesiana}\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#textbf-mejor-opcion-entre-pipeline-y-bayesianoptimization"><span class="math notranslate nohighlight">\(\textbf{Mejor opción entre Pipeline y BayesianOptimization: :}\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#textit-clasificacion-con-adasyn"><span class="math notranslate nohighlight">\(\textit{Clasificación con ADASYN}\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><span class="math notranslate nohighlight">\(\textit{Clasificasión Bayesiana}\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><span class="math notranslate nohighlight">\(\textit{Pipeline y GridsearchCV}\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><span class="math notranslate nohighlight">\(\textit{Optimizacion Bayesiana}\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><span class="math notranslate nohighlight">\(\textit{Knn}\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><span class="math notranslate nohighlight">\(\textit{Pipeline y GridsearchCV}\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><span class="math notranslate nohighlight">\(\textit{Optimizacion Bayesiana}\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><span class="math notranslate nohighlight">\(\textit{Logistic}\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12"><span class="math notranslate nohighlight">\(\textit{Pipeline y GridsearchCV}\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13"><span class="math notranslate nohighlight">\(\textit{Optimizacion Bayesiana}\)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#textit-conclusiones"><span class="math notranslate nohighlight">\(\textit{Conclusiones}\)</span></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Lorenzo David Gutierrez Vesga, Juan Sebastian Quintana Contreras
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
